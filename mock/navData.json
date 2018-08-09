@@ -138,6 +138,14 @@
           "permissionIcon": "",
           "permissionUrl": "/app/doc",
           "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "视频播放",
+          "permissionIcon": "",
+          "permissionUrl": "/app/doc",
+          "children": []
         }
       ]
     }
