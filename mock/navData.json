@@ -5,10 +5,27 @@
     {
       "id": 8,
       "parentId": 0,
-      "permissionName": "数据中心",
+      "permissionName": "大盘",
       "permissionIcon": "",
       "permissionUrl": "/app/user",
-      "children": []
+      "children": [
+       {
+        "id": 3,
+        "parentId": 1,
+        "permissionName": "分析页面",
+        "permissionIcon": "",
+        "permissionUrl": "/app",
+        "children": []
+       },
+       {
+        "id": 3,
+        "parentId": 1,
+        "permissionName": "工作台",
+        "permissionIcon": "",
+        "permissionUrl": "/app",
+        "children": []
+       }
+      ]
     },
     {
       "id": 1,
@@ -20,7 +37,7 @@
         {
           "id": 3,
           "parentId": 1,
-          "permissionName": "用户管理",
+          "permissionName": "表单",
           "permissionIcon": "",
           "permissionUrl": "/app",
           "children": []
@@ -28,17 +45,17 @@
         {
           "id": 4,
           "parentId": 1,
-          "permissionName": "角色权限",
+          "permissionName": "表格常用",
           "permissionIcon": [],
           "permissionUrl": "/app/role",
           "children": []
         },
         {
-          "id": 5,
+          "id": 4,
           "parentId": 1,
-          "permissionName": "日志管理",
+          "permissionName": "表格搜索",
           "permissionIcon": [],
-          "permissionUrl": "/app/log",
+          "permissionUrl": "/app/role",
           "children": []
         }
       ]
@@ -46,14 +63,14 @@
     {
       "id": 2,
       "parentId": 0,
-      "permissionName": "智能分析",
+      "permissionName": "常用零件",
       "permissionIcon": "appstore",
       "permissionUrl": "",
       "children": [
         {
           "id": 6,
           "parentId": 2,
-          "permissionName": "明细查询",
+          "permissionName": "拖拽功能",
           "permissionIcon": "",
           "permissionUrl": "/app/detail",
           "children": []
@@ -61,7 +78,7 @@
         {
           "id": 7,
           "parentId": 2,
-          "permissionName": "数据分析",
+          "permissionName": "文本编辑器",
           "permissionIcon": "",
           "permissionUrl": "/app/analyze",
           "children": []
@@ -69,7 +86,55 @@
         {
           "id": 27,
           "parentId": 2,
-          "permissionName": "我的文档",
+          "permissionName": "代码编辑器",
+          "permissionIcon": "",
+          "permissionUrl": "/app/doc",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "websocket使用",
+          "permissionIcon": "",
+          "permissionUrl": "/app/doc",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "上传下载",
+          "permissionIcon": "",
+          "permissionUrl": "/app/doc",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "地图功能",
+          "permissionIcon": "",
+          "permissionUrl": "/app/doc",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "markdown使用",
+          "permissionIcon": "",
+          "permissionUrl": "/app/doc",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "图片轮播",
+          "permissionIcon": "",
+          "permissionUrl": "/app/doc",
+          "children": []
+        },
+        {
+          "id": 27,
+          "parentId": 2,
+          "permissionName": "json-view",
           "permissionIcon": "",
           "permissionUrl": "/app/doc",
           "children": []
