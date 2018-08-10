@@ -9,7 +9,8 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'
-import Routers from './routers';
+//import Routers from './routers';
+import Routers from './router'
 import { AppContainer } from 'react-hot-loader'
 import { createStore, applyMiddleware, combineReducers,compose } from 'redux'
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
@@ -30,9 +31,7 @@ const render = Component =>
     ReactDOM.render(
        <AppContainer>
            <Provider store={ store }>
-            <LocaleProvider locale={zhCN}>
-                <Component />
-             </LocaleProvider>
+             <Component />
            </Provider>
       </AppContainer>,
        document.getElementById('root')

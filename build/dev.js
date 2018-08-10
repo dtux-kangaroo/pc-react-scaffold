@@ -31,7 +31,7 @@ module.exports = function makeWebpackConfig() {
   config.devtool = 'cheap-eval-source-map';
   config.module = {
     rules: [{
-      test: /\.js$/,
+      test: /\.js|jsx$/,
       use: ['babel-loader'],
       exclude: /node_modules/,
     }, 
@@ -57,7 +57,11 @@ module.exports = function makeWebpackConfig() {
     },{
       test: /\.ejs$/,
       use: ["ejs-loader"]
-    }]
+    },{
+      test: /\.json$/,
+      loader: 'json-loader'
+    }
+  ]
   };
   config.resolve = {
     extensions: ['.js', '.jsx', '.less', '.scss', '.css', '.json'],
@@ -86,6 +90,7 @@ module.exports = function makeWebpackConfig() {
     filename: 'index.html',
     template: path.resolve(__dirname, '../src/webapp.ejs'),
     hash: false,
+    chunksSortMode:"none",
     assets: {
       favicon: '/images/favicon.ico',
       config_js: '/conf/conf.prod.js'

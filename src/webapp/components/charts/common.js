@@ -1,4 +1,4 @@
-import walden from '../../constants/walden.json'
+import walden from '../../constants/walden'
 import echarts from 'echarts/lib/echarts'; 
 import React from 'react'
 import 'echarts/lib/component/grid';

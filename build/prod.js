@@ -27,7 +27,7 @@ module.exports = function makeWebpackConfig() {
 
   config.module = {
     rules: [{
-      test: /\.js$/,
+      test: /\.js|jsx$/,
       use: ['babel-loader'],
       exclude: /node_modules/,
     },
@@ -126,6 +126,7 @@ module.exports = function makeWebpackConfig() {
       filename: 'index.html',
       template: path.resolve(__dirname, '../src/webapp.ejs'),
       hash: false,
+      chunksSortMode:"none",
       assets: {
         favicon: '/images/favicon.ico',
         config_js: '/conf/conf.prod.js'
