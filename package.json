@@ -1,7 +1,7 @@
 {
-  "name": "dtux-team",
-  "version": "1.2.6",
-  "description": "front end files of log app",
+  "name": "[[model.name]]",
+  "version": "[[model.version]]",
+  "description": "[[model.description]]",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile --config ./build/prod.js",
     "dev": "webpack-dev-server --progress --colors --config ./build/dev.js",
