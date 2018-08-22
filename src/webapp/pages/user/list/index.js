@@ -11,7 +11,6 @@ import {usercln} from './constant'
 import assign from "object-assign";
 import "./style.scss";
 
-
 const { Header, Content, Footer } = Layout;
 @connect(
   state => ({ ...state.userList }),

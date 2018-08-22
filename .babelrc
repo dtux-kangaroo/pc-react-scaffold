@@ -5,7 +5,7 @@
         "browsers": ["last 2 versions", "safari >= 7"]
       }
     }],
-    "es2015",
+    ["es2015", {"modules": false}],
     "react",
     "stage-0"
   ],
@@ -13,8 +13,17 @@
     ["import",
       { "libraryName": "antd", "style": true }
     ],
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true,
+      "moduleName": "babel-runtime"
+    }],
     "react-hot-loader/babel",
     "transform-decorators-legacy",
-    "transform-runtime"
+    "transform-async-to-generator",
+    "transform-do-expressions",
+    "syntax-do-expressions",
+    "syntax-dynamic-import"
   ]
 }

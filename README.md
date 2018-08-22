@@ -90,7 +90,7 @@ https://github.com/cindyrise/doc.git
 │     │     │     ├── components //全局公用组件
 │     │     │     ├── utils //提供一些小工具
 │     │     │     ├── app.js //应用的入口
-│     │     │     └── routers.js //根路由文件
+│     │     │     └── router //路由
 │     │     └── script //脚本目录
 ├── webapp.ejs //wepack打包模板文件
 ├── .babelrc //babel相关配置
