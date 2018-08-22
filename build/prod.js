@@ -34,17 +34,32 @@ module.exports = function makeWebpackConfig() {
     {
       test: /\.(less|css)$/,
       use: [
-        "style-loader",
+        {
+          loader: MiniCssExtractPlugin.loader
+        },
         "css-loader",
         "less-loader?{modifyVars:"+JSON.stringify(theme)+"}"
       ],
-    }
+     }
     , {
       test: /\.(scss|sass)$/,
       use: [
-        "style-loader",
-        "css-loader",
-        "sass-loader?sourceMap"
+        {
+          loader: MiniCssExtractPlugin.loader
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+            importLoaders: 1
+          }
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
+        }
       ]
     }, 
     {
@@ -78,7 +93,14 @@ module.exports = function makeWebpackConfig() {
           warnings: false
         }
       }),
-      new OptimizeCSSAssetsPlugin({})
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: {
+          map: {
+            inline: false,
+            annotation: true
+          }
+        }
+      })
     ],
     splitChunks:{
       chunks: 'async',
@@ -94,12 +116,6 @@ module.exports = function makeWebpackConfig() {
           priority: -10,
           reuseExistingChunk: false,
           test: /node_modules\/(.*)\.js/
-        },
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: false
         }
       }
     }

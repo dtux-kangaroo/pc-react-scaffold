@@ -93,7 +93,7 @@ module.exports = function makeWebpackConfig() {
     chunksSortMode:"none",
     assets: {
       favicon: '/images/favicon.ico',
-      config_js: '/conf/conf.prod.js'
+      config_js: '/conf/conf.dev.js'
     }
   }),
   );

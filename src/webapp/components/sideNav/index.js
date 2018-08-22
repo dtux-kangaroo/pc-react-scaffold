@@ -83,14 +83,16 @@ export default class SideNav extends React.Component {
   }
   render() {
     const {sideData,openKeys,selectedKeys}=this.state;
-    return  <Sider width={200} style={{ background: '#fff' }}
+    return  <Sider width={200} className="side-nav" style={{ background: '#fff' }}
           trigger={null}
           collapsible
           collapsed={this.state.collapsed}
       >
-     <div className="fold-btn"> 
+      {
+        FRONT_CONF.NAV_STRETCH && <div className="fold-btn"> 
         <Icon className="trigger" type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}onClick={this.toggle.bind(this)}/>
-     </div>
+       </div>
+      }
      <Menu
           selectedKeys={this.state.selectedKeys}
           onOpenChange={this.openKeys}
