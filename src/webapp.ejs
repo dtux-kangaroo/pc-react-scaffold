@@ -11,6 +11,11 @@
     <!-- <link href="<%= htmlWebpackPlugin.options.assets.favicon %>" type="image/x-icon" rel="shortcut icon"> -->
     <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/x-icon">
     <script src="<%= htmlWebpackPlugin.options.assets.config_js %>"></script>
+    <script>
+      window.appConfig = {
+        COMPONENT_URL: 'https://easyv-develop.oss-cn-hangzhou.aliyuncs.com/components/'
+      }
+    </script>
 </head>
 
 <body >

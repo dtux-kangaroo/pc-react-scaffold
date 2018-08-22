@@ -9,6 +9,9 @@ import moment from "moment";
 moment.locale("zh-cn");
 import {usercln} from './constant'
 import assign from "object-assign";
+import { ChinaMap2d } from 'easyv-components/src/components/chinaMap2d/index.jsx';
+import { config } from 'easyv-components/src/components/chinaMap2d/js/config';
+import childrenConfig from 'easyv-components/src/components/chinaMap2d/js/children';
 import "./style.scss";
 
 
@@ -51,6 +54,11 @@ export default class UserList extends Component {
    const{userList,isLoad}=this.state;
     return (
        <Row>
+         <Col>
+         <ChinaMap2d
+          configuration={config.configuration}
+          childrenConfig={childrenConfig}
+        /></Col>
          <Col><Table rowSelection={rowSelection} bordered  rowKey="id"    loading={isLoad} columns={usercln} dataSource={userList} /></Col>
        </Row>
     );
