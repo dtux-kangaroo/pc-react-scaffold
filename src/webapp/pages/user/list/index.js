@@ -54,12 +54,11 @@ export default class UserList extends Component {
    const{userList,isLoad}=this.state;
     return (
        <Row>
-         <Col>
-         <ChinaMap2d
-          configuration={config.configuration}
-          childrenConfig={childrenConfig}
-        /></Col>
-         <Col><Table rowSelection={rowSelection} bordered  rowKey="id"    loading={isLoad} columns={usercln} dataSource={userList} /></Col>
+         <Col style={{height:'500px'}}>
+          <ChinaMap2d
+            configuration={config.configuration}
+            childrenConfig={childrenConfig}
+          /></Col>
        </Row>
     );
   }

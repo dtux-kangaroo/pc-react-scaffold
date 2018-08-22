@@ -47,25 +47,38 @@ https://github.com/cindyrise/doc.git
 ```
 
 ==============================================
-### 使用技巧 (暂时不可用)
+### easy引入方式
+2.引入组件前
+```
+（1）build文件夹中dev及prod文件中注释 //exclude
+      rules: [{
+      test: /\.js|jsx$/,
+      use: ['babel-loader'],
+      //exclude: /node_modules/,
+    },
+（2）在ejs中加入
+    <script>
+      window.appConfig = {
+        COMPONENT_URL: 'https://easyv-develop.oss-cn-hangzhou.aliyuncs.com/components/'
+      }
+    </script>   
+```
 
-1.新建组件
+2.安装组件
 ```
- npm run newCom -- comName [-- d]（组件目录）
-
- comName地址：./src/webapp/components
+yarn add ssh://git@git.dtstack.cn:10022/dtstack/easyvcomponent.git
 ```
-2.新建页面
+3.引入组件
 ```
- 运行 npm run newPage -- pageName
-
- pageName地址：./src/webapp/pages/pageName
-
- 自动生成 actions,redux,routers,contants,api,type 
+import { Text } from 'easyv-components/src/components/text/index';
+import { config as textConfig } from 'easyv-components/src/components/text/js/config'; 
 ```
-3.组织规范
+4.组件调用
 ```
-https://github.com/cindyrise/doc.git
+<Text
+  configuration={textConfig.configuration}
+  data={[{text: 'hello, world'}]}
+/>
 
 ```
 
