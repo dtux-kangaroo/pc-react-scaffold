@@ -27,7 +27,6 @@ export default class TopNav extends React.Component {
 
   render() {
     const { navData, location, userData } = this.props;
-    console.log(navData,location,'121312',location.pathname.split('/')[1]);
     let menuKeys=location.pathname.match(/\/\w*/g);
     const topMenu=(
       <Menu  mode="horizontal"
@@ -43,7 +42,7 @@ export default class TopNav extends React.Component {
     </Menu>
     );
     const selfMenu=(
-      <Menu onClick={this.handleLogout}>
+      <Menu onClick={this.logout}>
               <Menu.Item key="1">
                 <span>退出</span>
               </Menu.Item>
@@ -51,7 +50,7 @@ export default class TopNav extends React.Component {
     )
     return <Header className="top-nav">
       <div className="logo">
-        <Link to="/app">
+        <Link to="/index">
           <img src={ FRONT_CONF.COMPANY_LOGO } alt="logo"/>
         </Link>
       </div>

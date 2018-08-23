@@ -47,7 +47,7 @@ export default class SideNav extends React.Component {
           mode="inline"
           className='side-menu'
         >
-           {
+        {
           navData.map((item, idx) => (
             item.children.length ?
               <SubMenu key={item.permissionUrl} title={<span><Icon type="mail" /><span>{item.permissionName}</span></span>}>
