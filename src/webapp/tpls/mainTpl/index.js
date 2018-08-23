@@ -28,7 +28,7 @@ export default class MainTpl extends Component {
       <Layout>
       <TopNav />
       <Layout>
-        <SideNav location={location}  sideData={navData}/>
+        <SideNav location={location}  navData={navData}/>
         <Layout className="layout" >
           {this.props.children}
         </Layout>

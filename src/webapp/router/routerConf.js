@@ -6,21 +6,43 @@ const UserList = Loadable({loader: () => import('../pages/user/list'),loading: L
 const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading})
 const routerConf = [
   {
-    path: '/',
+    path: '/index',
     layout: MainTpl,
     component: UserList,
     children:[
       {
-        path: '/noExit',
+        path: '/dashboard',
         layout: MainTpl,
         component: NoExist
+      },
+      {
+        path: '/workbench',
+        layout: MainTpl,
+        component: Home,
       }
     ]
   },
   {
-    path: '/page3',
+    path: '/back',
     layout: MainTpl,
-    component: Home,
+    component: UserList,
+    children:[
+      {
+        path: '/form',
+        layout: MainTpl,
+        component: NoExist
+      },
+      {
+        path: '/form_common',
+        layout: MainTpl,
+        component: NoExist
+      },
+      {
+        path: '/form_search',
+        layout: MainTpl,
+        component: NoExist
+      }
+    ]
   },
   {
     path: '*',
