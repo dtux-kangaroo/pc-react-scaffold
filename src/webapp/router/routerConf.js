@@ -45,6 +45,18 @@ const routerConf = [
     ]
   },
   {
+    path: '/parts',
+    layout: MainTpl,
+    component: UserList,
+    children:[
+       {
+        path: '/drag',
+        layout: MainTpl,
+        component: NoExist
+       }
+    ]
+  },
+  {
     path: '*',
     layout: null,
     component: NoExist,

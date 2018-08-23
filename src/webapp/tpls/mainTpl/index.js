@@ -26,9 +26,9 @@ export default class MainTpl extends Component {
     const {  navData,match, location } = this.props;
     return (
       <Layout>
-      <TopNav />
+      <TopNav location={location}  navData={navData.topNav} />
       <Layout>
-        <SideNav location={location}  navData={navData}/>
+        <SideNav location={location}  navData={navData.sideNav}/>
         <Layout className="layout" >
           {this.props.children}
         </Layout>
