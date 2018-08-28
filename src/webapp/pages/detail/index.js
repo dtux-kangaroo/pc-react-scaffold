@@ -47,7 +47,7 @@ class Detail extends React.PureComponent{
     );
     return (
       <div>
-        <div className="m-basicInfo">
+        <Card loading={loading} className="m-basicInfo">
           <Breadcrumb>
             <Breadcrumb.Item>首页</Breadcrumb.Item>
             <Breadcrumb.Item>后台管理</Breadcrumb.Item>
@@ -95,7 +95,7 @@ class Detail extends React.PureComponent{
               </Row>
             </Col>
           </Row>
-        </div>
+        </Card>
         <Card 
           title="流程进度" 
           loading={loading} 
