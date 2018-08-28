@@ -1,5 +1,5 @@
 import React from 'react';
-import {Breadcrumb,Row,Col,Button,Icon,Dropdown,Menu,Card,Steps,message as Message,Divider,Tabs} from 'antd';
+import {Breadcrumb,Row,Col,Button,Icon,Dropdown,Menu,Card,Steps,message as Message,Divider,Tabs,Tooltip} from 'antd';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import TabOne from './components/TabOne';
@@ -129,7 +129,7 @@ class Detail extends React.PureComponent{
             <Col className="info-item" span={8}>该数据更新时间：<span className="u-content">2017-08-08</span></Col>
           </Row>
           <Row>
-            <Col className="info-item" span={8}>某某数据：<span className="u-content">725</span></Col>
+            <Col className="info-item" span={8}>某某数据 <Tooltip placement="top" title="数据说明"><Icon style={{fontSize:16,lineHeight:'22px',marginLeft:6}} type="info-circle-o" /></Tooltip>：<span className="u-content">725</span></Col>
             <Col className="info-item" span={8}>该数据更新时间：<span className="u-content">2017-08-08</span></Col>
           </Row>
           <h4>信息组</h4>
