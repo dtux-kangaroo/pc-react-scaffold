@@ -28,7 +28,7 @@ module.exports = function makeWebpackConfig() {
     filename: "js/[name].[hash].js",
     chunkFilename: "js/[name].[chunkhash].js"
   };
-  config.devtool = 'cheap-eval-source-map';
+  config.devtool = 'cheap-module-eval-source-map';
   config.module = {
     rules: [{
       test: /\.js|jsx$/,

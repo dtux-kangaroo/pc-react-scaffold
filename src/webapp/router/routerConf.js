@@ -3,8 +3,15 @@ import Loading from '../components/loading'
 import MainTpl  from '../tpls/mainTpl/index'
 const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
-const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading})
+const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading});
+// const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
+const Result=Loadable({loader:() => import('../pages/result'),loading: Loading});
+import Detail from '../pages/detail';
 const routerConf = [
+  {
+    path:'/',
+    redirect:'/index'
+  },
   {
     path: '/index',
     layout: MainTpl,
@@ -41,7 +48,17 @@ const routerConf = [
         path: '/form_search',
         layout: MainTpl,
         component: NoExist
-      }
+      },
+      {
+        path:'/detail',
+        layout: MainTpl,
+        component: Detail,
+      },
+      {
+        path:'/result',
+        layout: MainTpl,
+        component: Result,
+      },
     ]
   },
   {

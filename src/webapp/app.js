@@ -19,6 +19,7 @@ import appReducer from './pages/global';
 import "./assets/styles/main.scss";
 
 
+
 export const history = createHistory();
 const middleware = routerMiddleware(history);
 const middlewares = [thunk, middleware];
