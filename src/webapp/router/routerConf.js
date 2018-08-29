@@ -4,9 +4,10 @@ import MainTpl  from '../tpls/mainTpl/index'
 const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
 const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading});
-// const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
-const Result=Loadable({loader:() => import('../pages/result'),loading: Loading});
-import Detail from '../pages/detail';
+const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
+const ResultSuccess=Loadable({loader:() => import('../pages/resultsuccess'),loading: Loading});
+const ResultFailure=Loadable({loader:() => import('../pages/resultfailure'),loading: Loading});
+
 const routerConf = [
   {
     path:'/',
@@ -55,9 +56,14 @@ const routerConf = [
         component: Detail,
       },
       {
-        path:'/result',
+        path:'/result/success',
         layout: MainTpl,
-        component: Result,
+        component: ResultSuccess,
+      },
+      {
+        path:'/result/failure',
+        layout: MainTpl,
+        component: ResultFailure,
       },
     ]
   },

@@ -46,7 +46,7 @@ class Detail extends React.PureComponent{
       </Menu>
     );
     return (
-      <div>
+      <div className="m-detail">
         <Card loading={loading} className="m-basicInfo">
           <Breadcrumb>
             <Breadcrumb.Item>首页</Breadcrumb.Item>
@@ -102,8 +102,8 @@ class Detail extends React.PureComponent{
           bordered={false} 
           style={{margin:'20px'}}>
           <Steps progressDot current={1}>
-            <Step title="创建项目" description={StepDesc({creator:'修能',createdTime:'2016-12-12 12:32'})}/>
-            <Step title="部门初审" description={StepDesc({creator:'维斯'})} />
+            <Step title="创建项目" description={StepDesc({creator:'曲丽丽',createdTime:'2016-12-12 12:32'})}/>
+            <Step title="部门初审" description={StepDesc({creator:'周毛毛'})} />
             <Step title="财务复核" description="" />
             <Step title="完成" description="" />
           </Steps>

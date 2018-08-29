@@ -96,9 +96,17 @@
           {
             "id": 6,
             "parentId": 1,
-            "permissionName": "结果",
+            "permissionName": "结果-成功",
             "permissionIcon": [],
-            "permissionUrl": "/back/result",
+            "permissionUrl": "/back/result/success",
+            "children": []
+          },
+          {
+            "id": 7,
+            "parentId": 1,
+            "permissionName": "结果-失败",
+            "permissionIcon": [],
+            "permissionUrl": "/back/result/failure",
             "children": []
           }
         ]
