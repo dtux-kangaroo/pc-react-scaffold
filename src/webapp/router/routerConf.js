@@ -5,8 +5,9 @@ const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
 const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading});
 const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
-const ResultSuccess=Loadable({loader:() => import('../pages/resultsuccess'),loading: Loading});
-const ResultFailure=Loadable({loader:() => import('../pages/resultfailure'),loading: Loading});
+const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
+const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
+const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
 
 const routerConf = [
   {
@@ -76,6 +77,11 @@ const routerConf = [
         path: '/drag',
         layout: MainTpl,
         component: NoExist
+       },
+       {
+          path: '/code',
+          layout: MainTpl,
+          component: CodeEditor
        }
     ]
   },

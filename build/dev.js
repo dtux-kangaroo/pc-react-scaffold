@@ -76,7 +76,7 @@ module.exports = function makeWebpackConfig() {
       { from: path.resolve(rootPath, './src/webapp/config'),to:"./conf"},
       {from: path.resolve(__dirname, '../mock'),to:"./mock"},
       {from: path.resolve(rootPath, './src/webapp/assets/img'),to:"./images"},
-
+      {from: path.resolve(rootPath, './src/webapp/assets/libs'),to:"./libs"}
     ]),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),
     new webpack.DefinePlugin({__PRODUCTION: JSON.stringify(false)}),
