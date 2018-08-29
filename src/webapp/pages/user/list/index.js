@@ -9,7 +9,7 @@ import moment from "moment";
 moment.locale("zh-cn");
 import {usercln} from './constant'
 import assign from "object-assign";
-import { ChinaMap2d } from 'easyv-components/src/components/chinaMap2d/index.jsx';
+import { ChinaMap2d } from 'easyv-components/src/components/chinaMap2d/index';
 import { config } from 'easyv-components/src/components/chinaMap2d/js/config';
 import childrenConfig from 'easyv-components/src/components/chinaMap2d/js/children';
 import "./style.scss";
@@ -27,6 +27,9 @@ export default class UserList extends Component {
       userList:[],
       isLoad:true
     };
+  }
+  static defaultProps={
+    data:'22'
   }
   componentDidMount() {
     this.props.getUserList({});

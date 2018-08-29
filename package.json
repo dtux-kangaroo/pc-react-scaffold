@@ -16,7 +16,7 @@
     "antd": "^3.4.0",
     "classnames": "^2.2.5",
     "core-js": "^2.4.1",
-    "easyv-components": "ssh://git@git.dtstack.cn:10022/dtstack/easyvcomponent.git",
+    "easyv-components": "git+http://git.dtstack.cn/dtstack/easyvcomponent.git",
     "echarts": "^4.0.4",
     "immutable": "^3.8.2",
     "mirror-creator": "^1.1.0",

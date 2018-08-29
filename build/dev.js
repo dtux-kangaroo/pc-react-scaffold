@@ -33,8 +33,13 @@ module.exports = function makeWebpackConfig() {
     rules: [{
       test: /\.js|jsx$/,
       use: ['babel-loader'],
-      //exclude: /node_modules/,
+      exclude: /node_modules/,
     }, 
+    {
+      test: /\.js|jsx$/,
+      use: ['babel-loader'],
+      include: /node_modules\/easyv-components/,
+    },
     {
       test: /\.(less|css)$/,
       use: [
