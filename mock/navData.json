@@ -57,6 +57,22 @@
           "permissionIcon": [],
           "permissionUrl": "/app/role",
           "children": []
+        },
+        {
+          "id": 5,
+          "parentId": 1,
+          "permissionName": "表格查询",
+          "permissionIcon": [],
+          "permissionUrl": "/searchTable",
+          "children": []
+        },
+        {
+          "id": 9,
+          "parentId": 1,
+          "permissionName": "标准列表",
+          "permissionIcon": [],
+          "permissionUrl": "/list",
+          "children": []
         }
       ]
     },
@@ -104,7 +120,7 @@
           "parentId": 2,
           "permissionName": "上传下载",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/upload",
           "children": []
         },
         {
@@ -112,7 +128,7 @@
           "parentId": 2,
           "permissionName": "地图功能",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/map",
           "children": []
         },
         {
