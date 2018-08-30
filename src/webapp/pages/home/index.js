@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux'
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Layout, Menu, Breadcrumb,Row,Col } from "antd";
 import * as home  from "./aciton"; 
 import { isEmpty } from "lodash";
