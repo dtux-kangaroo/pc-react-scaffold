@@ -7,7 +7,16 @@ const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: L
 const Markdown = Loadable({loader: () => import('../pages/markdown'),loading: Loading});
 const Swiper = Loadable({loader: () => import('../pages/swiper'),loading: Loading});
 const JsonView = Loadable({loader: () => import('../pages/jsonview'),loading: Loading});
+const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
+const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
+const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
+const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
+
 const routerConf = [
+  {
+    path:'/',
+    redirect:'/index'
+  },
   {
     path: '/index',
     layout: MainTpl,
@@ -44,7 +53,22 @@ const routerConf = [
         path: '/form_search',
         layout: MainTpl,
         component: NoExist
-      }
+      },
+      {
+        path:'/detail',
+        layout: MainTpl,
+        component: Detail,
+      },
+      {
+        path:'/result/success',
+        layout: MainTpl,
+        component: ResultSuccess,
+      },
+      {
+        path:'/result/failure',
+        layout: MainTpl,
+        component: ResultFailure,
+      },
     ]
   },
   {
@@ -71,6 +95,11 @@ const routerConf = [
          path: '/jsonview',
          layout: MainTpl,
          component: JsonView
+       },
+       {
+        path: '/code',
+        layout: MainTpl,
+        component: CodeEditor
        }
     ]
   },

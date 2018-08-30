@@ -84,6 +84,30 @@
             "permissionIcon": [],
             "permissionUrl": "/back/form_search",
             "children": []
+          },
+          {
+            "id": 5,
+            "parentId": 1,
+            "permissionName": "详情",
+            "permissionIcon": [],
+            "permissionUrl": "/back/detail",
+            "children": []
+          },
+          {
+            "id": 6,
+            "parentId": 1,
+            "permissionName": "结果-成功",
+            "permissionIcon": [],
+            "permissionUrl": "/back/result/success",
+            "children": []
+          },
+          {
+            "id": 7,
+            "parentId": 1,
+            "permissionName": "结果-失败",
+            "permissionIcon": [],
+            "permissionUrl": "/back/result/failure",
+            "children": []
           }
         ]
       },

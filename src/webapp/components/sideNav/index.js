@@ -31,7 +31,7 @@ export default class SideNav extends React.Component {
   render() {
     const {location,navData}=this.props;
     let menuKeys=location.pathname.match(/\/\w*/g),openKeys=menuKeys;
-    return <Sider width={200} className="side-nav" style={{ background: '#fff' }}
+    return <Sider width={200} className="side-nav" style={{ background: '#fff',borderRight:'1px solid #e6e6e6',overflow:'auto'}}
           trigger={null}
           collapsible
           collapsed={this.state.collapsed}

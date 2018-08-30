@@ -129,7 +129,7 @@ module.exports = function makeWebpackConfig() {
       { from: path.resolve(rootPath, './src/webapp/config'),to:"./conf"},
       {from: path.resolve(__dirname, '../mock'),to:"./mock"},
       {from: path.resolve(rootPath, './src/webapp/assets/img'),to:"./images"},
-
+      {from: path.resolve(rootPath, './src/webapp/assets/libs'),to:"./libs"}
     ]),
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
