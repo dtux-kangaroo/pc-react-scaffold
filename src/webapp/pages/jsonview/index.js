@@ -8,9 +8,18 @@ class JsonView extends Component{
         super(props)
     }
 
+    edit = (edit) => {
+        console.log(edit)
+    }
     render(){
         return(
-            <ReactJson src={testjson} collapsed={false} iconStyle='triangle' theme='Monokai'  />
+            <ReactJson 
+                src={testjson} 
+                collapsed={false} 
+                iconStyle='triangle' 
+                theme='flat'  
+                onEdit={this.edit}
+            />
         )
     }
 }

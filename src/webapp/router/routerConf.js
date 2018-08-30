@@ -7,6 +7,7 @@ const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: L
 const Markdown = Loadable({loader: () => import('../pages/markdown'),loading: Loading});
 const Swiper = Loadable({loader: () => import('../pages/swiper'),loading: Loading});
 const JsonView = Loadable({loader: () => import('../pages/jsonview'),loading: Loading});
+const Video = Loadable({loader:() => import('../pages/video'),loading: Loading});
 const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
@@ -100,6 +101,11 @@ const routerConf = [
         path: '/code',
         layout: MainTpl,
         component: CodeEditor
+       },
+       {
+         path: '/video',
+         layout: MainTpl,
+         component: Video
        }
     ]
   },
