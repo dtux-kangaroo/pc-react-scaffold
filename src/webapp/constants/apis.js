@@ -8,6 +8,7 @@ export default {
   /*---------------------searchTable---------------------------*/
   getSearchTableData:'/mock/searchTableData.json',
   getOptionData:'/mock/optionData.json',
+  saveTabelData:'/mock/success.json',
   /*---------------------list---------------------------*/
   getListData:'/mock/listData.json',
 

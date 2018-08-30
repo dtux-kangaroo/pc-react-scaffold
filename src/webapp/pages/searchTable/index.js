@@ -3,6 +3,7 @@ import { Card, Select, message, Button, Input, Table, Modal } from "antd";
 import moment from "moment";
 import http from "../../utils/http";
 import apis from "../../constants/apis";
+import { cloneDeep } from 'lodash'
 import './style.scss';
 const Option = Select.Option;
 const Search = Input.Search;
@@ -69,33 +70,57 @@ export default class SearchTable extends Component {
     }
     /* 保存 */
     handleSave = () => {
-        let { editRecord, productData } = this.state;
+        let { editRecord, tableData } = this.state;
         for (let key in editRecord) {
             if (editRecord[key] == '') {
                 message.warning(`${key}不得为空`)
                 return;
             }
         }
-        http.post(apis.saveTabelData, editRecord).then((res) => {
-            if(res.result){
+        this.setState({
+            tableLoading: true,
+        })
+        http.get(apis.saveTabelData, editRecord).then((res) => {
+            if (res.result) {
                 message.success("编辑成功！");
-                //TODO
-            }else{
+                tableData = tableData.map((item) => {
+                    if (item.id == editRecord.id) {
+                        item = editRecord;
+                        item.editable = false;
+                    }
+                    return item;
+                })
+                this.setState({
+                    tableData,
+                    editRecord: {},
+                })
+            } else {
                 message.warning(res.message)
             }
+            this.setState({
+                tableLoading: false
+            })
+        })
+    }
+    /* 取消 */
+    handleCancel = () => {
+        this.setState({
+            tableData:this.tableData,
+            editRecord:{}
         })
     }
     /* 编辑 */
     handleEdit = (record) => {
         let { editRecord, tableData } = this.state;
+        this.tableData = cloneDeep(tableData);/* 保存一个副本 */
         if (JSON.stringify(editRecord) == '{}') {
             tableData = tableData.map((item) => {
                 if (item.id == record.id) {
                     item.editable = true
+                    this.setState({
+                        editRecord: item,
+                    })
                 }
-                this.setState({
-                    editRecord: item,
-                })
                 return item;
             })
             this.setState({
