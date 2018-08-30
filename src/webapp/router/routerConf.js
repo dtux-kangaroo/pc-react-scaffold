@@ -12,6 +12,7 @@ const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading})
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
+const FormSearch=Loadable({loader:() => import('../pages/formSearch'),loading: Loading});
 
 const routerConf = [
   {
@@ -53,7 +54,7 @@ const routerConf = [
       {
         path: '/form_search',
         layout: MainTpl,
-        component: NoExist
+        component: FormSearch
       },
       {
         path:'/detail',
