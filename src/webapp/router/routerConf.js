@@ -11,9 +11,6 @@ const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading})
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
-const UploadAndDown = Loadable({ loader: () => import('../pages/uploadAndDown'), loading: Loading })
-const SearchTable = Loadable({ loader: () => import('../pages/searchTable'), loading: Loading });
-const List = Loadable({ loader: () => import('../pages/lists'), loading: Loading });
 const routerConf = [
   {
     path:'/',

@@ -3,33 +3,39 @@
         "data": [
             {
                 "id": 1,
-                "name": "小明",
-                "age": 1
+                "name": "Java",
+                "desc": "Java666",
+                "mainLanguage":false
             },
             {
                 "id": 2,
-                "name": "小红",
-                "age": 2
+                "name": "Python",
+                "desc": "Python666",
+                "mainLanguage":false
             },
             {
                 "id": 3,
-                "name": "小蓝",
-                "age": 3
+                "name": "Go",
+                "desc": "Go666",
+                "mainLanguage":false
             },
             {
                 "id": 4,
-                "name": "小刚",
-                "age": 4
+                "name": "Javascript",
+                "desc": "Javascript666",
+                "mainLanguage":true
             },
             {
                 "id": 5,
-                "name": "小天",
-                "age": 5
+                "name": "C#",
+                "desc": "C#abc",
+                "mainLanguage":false
             },
             {
                 "id": 6,
-                "name": "小白",
-                "age": 6
+                "name": "C++",
+                "desc": "C++asdfsdf",
+                "mainLanguage":false
             }
         ],
         "total": 6

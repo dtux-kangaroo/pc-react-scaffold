@@ -4,10 +4,12 @@ import moment from "moment";
 import Uploader from '../../components/uploader'
 import Downloader from '../../components/downloader'
 import MapDrap from '../../components/mapDrap'
+import './style.scss'
+import apis from "../../constants/apis";
 
-import { ChinaMap2d } from 'easyv-components/src/components/chinaMap2d/index.jsx';
-import { config } from 'easyv-components/src/components/chinaMap2d/js/config';
-import childrenConfig from 'easyv-components/src/components/chinaMap2d/js/children';
+// import { ChinaMap2d } from 'easyv-components/src/components/chinaMap2d/index.jsx';
+// import { config } from 'easyv-components/src/components/chinaMap2d/js/config';
+// import childrenConfig from 'easyv-components/src/components/chinaMap2d/js/children';
 
 moment.locale("zh-cn");
 
@@ -27,7 +29,7 @@ export default class UploadAndDown extends Component {
 	}
 	render() {
 		return (
-			<div className="content">
+			<div className="content uploadAndDown">
 				{/* <ChinaMap2d
 					configuration={config.configuration}
 					childrenConfig={childrenConfig}
@@ -36,7 +38,7 @@ export default class UploadAndDown extends Component {
 					<Uploader 
 						name="file"
 						title="普通上传"
-						action="#"/>
+						action={apis.saveTabelData}/>
 				<Divider orientation="left">多文件上传</Divider>
 					<Uploader 
 						multiple={true}
@@ -45,7 +47,7 @@ export default class UploadAndDown extends Component {
 						action="#"/>
 				<Divider orientation="left">excel上传</Divider>
 					<Uploader 
-						accept=".xls,.xlsm,xlsx"
+						accept=".xls,.xlsm,.xlsx"
 						name="file"
 						title="excel上传"
 						action="#"/>
@@ -69,8 +71,7 @@ export default class UploadAndDown extends Component {
 				<Divider orientation="left">地图</Divider>
 					<MapDrap
 						onDrag={this.handleMapDrag}
-						lat="39.992706"
-						lng="116.396574" />
+						 />
 	   		</div>
 		);
 	}

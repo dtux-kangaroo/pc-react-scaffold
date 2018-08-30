@@ -121,7 +121,7 @@ export default class Lists extends Component {
                     }
                 >
                     <List
-                        itemLayout="horizontal"
+                        itemLayout="vertical"
                         pagination={{
                             total: total,
                             pageSize: page.pageSize,
@@ -136,9 +136,10 @@ export default class Lists extends Component {
                         renderItem={(item) => (
                             <List.Item actions={[<a href="javascript:void(0)" onClick={() => this.handleEdit(item)}>编辑</a>, <a href="javascript:void(0)" onClick={() => this.handleDelete(item)}>删除</a>]}>
                                 <List.Item.Meta
-                                    title={<a href="https://ant.design">{item.title}</a>}
+                                    title={<a href="javascript:void(0)">{item.title}</a>}
                                     description={<article>{item.description}</article>}
                                 />
+                                {item.content}
                             </List.Item>
                         )}
                     />

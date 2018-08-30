@@ -26,17 +26,27 @@ export default class SearchTable extends Component {
                 pageNo: 1,
             },
             columns: [{
-                title: 'list',
+                title: '序号',
                 dataIndex: 'id',
                 render: (text, record, index) => <span>{index + 1}</span>,
             }, {
-                title: 'name',
+                title: '名字',
                 dataIndex: 'name',
                 render: (text, record, index) => this.renderColumns(text, record, 'name'),
             }, {
-                title: 'age',
-                dataIndex: 'age',
-                render: (text, record, index) => this.renderColumns(text, record, 'age'),
+                title: '描述',
+                dataIndex: 'desc',
+                render: (text, record, index) => this.renderColumns(text, record, 'desc'),
+            }, {
+                title: '是否为主要语言',
+                dataIndex: 'mainLanguage',
+                render: (text, record, index) => {
+                    if (record.mainLanguage) {
+                        return <span>是</span>
+                    } else {
+                        return <span>否</span>
+                    }
+                }
             }]
         };
     }
@@ -55,7 +65,7 @@ export default class SearchTable extends Component {
                             <a href="javascript:void(0)" onClick={() => this.handleDelete(record)}>删除</a>
                         </div> : <div>
                                 <a href="javascript:void(0)" onClick={this.handleSave}>保存</a>&nbsp;|&nbsp;
-                            <a href="javascript:void(0)" onClick={this.handleCancel}>取消</a>
+                                <a href="javascript:void(0)" onClick={this.handleCancel}>取消</a>
                             </div>
                     }
                 }
@@ -72,7 +82,7 @@ export default class SearchTable extends Component {
     handleSave = () => {
         let { editRecord, tableData } = this.state;
         for (let key in editRecord) {
-            if (editRecord[key] == '') {
+            if (editRecord[key].toString() == '') {
                 message.warning(`${key}不得为空`)
                 return;
             }
@@ -105,8 +115,8 @@ export default class SearchTable extends Component {
     /* 取消 */
     handleCancel = () => {
         this.setState({
-            tableData:this.tableData,
-            editRecord:{}
+            tableData: this.tableData,
+            editRecord: {}
         })
     }
     /* 编辑 */
@@ -156,10 +166,14 @@ export default class SearchTable extends Component {
                 let params = {
                     id: record.id
                 }
-                http.delete(apis.delelteTable, params).then((res) => {
+                http.get(apis.saveTabelData, params).then((res) => {
                     if (res.result) {
                         message.success("删除成功！");
-                        _this.getSearchTableData();
+                        _this.setState({
+                            tableLoading:true
+                        },()=>{
+                            _this.getSearchTableData();
+                        })
                     } else {
                         message.warning(res.message);
                     }
