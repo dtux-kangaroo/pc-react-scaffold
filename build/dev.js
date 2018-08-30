@@ -59,7 +59,7 @@ module.exports = function makeWebpackConfig() {
       use: ["ejs-loader"]
     },{
       test: /\.json$/,
-      loader: 'json-loader'
+      loader: "json-loader"
     }
   ]
   };
