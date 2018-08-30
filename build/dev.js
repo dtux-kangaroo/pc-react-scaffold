@@ -138,7 +138,9 @@ module.exports = function makeWebpackConfig() {
     }]
   };
   config.externals = {
-    'FRONT_CONF': 'FRONT_CONF'
+    'FRONT_CONF': 'FRONT_CONF',
+    'stompjs':'Stomp',
+    'sockjs':'SockJS'
   };
   return config;
 }();

@@ -8,6 +8,7 @@ const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading})
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
+const Websocker=Loadable({loader:() => import('../pages/websocker'),loading: Loading});
 
 const routerConf = [
   {
@@ -74,14 +75,19 @@ const routerConf = [
     component: UserList,
     children:[
        {
-        path: '/drag',
-        layout: MainTpl,
-        component: NoExist
+          path: '/drag',
+          layout: MainTpl,
+          component: NoExist
        },
        {
           path: '/code',
           layout: MainTpl,
           component: CodeEditor
+       },
+       {
+          path: '/websocker',
+          layout: MainTpl,
+          component: Websocker
        }
     ]
   },
