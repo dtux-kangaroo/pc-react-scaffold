@@ -3,7 +3,10 @@ import assign from 'object-assign';
 import {globalType} from './constant';
 const initialState = {
   userData: {name:''},
-  navData: [],
+  navData: {
+    topNav:[],
+    sideNav:[]
+  }
 };
  const globalReducer = (state = initialState, action) => {
   const { type, payload } = action;

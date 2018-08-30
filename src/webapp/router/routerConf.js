@@ -7,14 +7,25 @@ const NoExist = Loadable({ loader: () => import('../pages/except/404'), loading:
 const UploadAndDown = Loadable({ loader: () => import('../pages/uploadAndDown'), loading: Loading })
 const SearchTable = Loadable({ loader: () => import('../pages/searchTable'), loading: Loading });
 const List = Loadable({ loader: () => import('../pages/lists'), loading: Loading });
+const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
+const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
+const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
+const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
+const UploadAndDown = Loadable({ loader: () => import('../pages/uploadAndDown'), loading: Loading })
+const SearchTable = Loadable({ loader: () => import('../pages/searchTable'), loading: Loading });
+const List = Loadable({ loader: () => import('../pages/lists'), loading: Loading });
 const routerConf = [
   {
-    path: '/',
+    path:'/',
+    redirect:'/index'
+  },
+  {
+    path: '/index',
     layout: MainTpl,
     component: UserList,
     children: [
       {
-        path: '/noExit',
+        path: '/dashboard',
         layout: MainTpl,
         component: NoExist
       },
@@ -37,13 +48,67 @@ const routerConf = [
         path: '/list',
         layout: MainTpl,
         component: List,
+      },
+      {
+        path: '/workbench',
+        layout: MainTpl,
+        component: Home,
       }
     ]
   },
   {
-    path: '/page3',
+    path: '/back',
     layout: MainTpl,
-    component: Home,
+    component: UserList,
+    children:[
+      {
+        path: '/form',
+        layout: MainTpl,
+        component: NoExist
+      },
+      {
+        path: '/form_common',
+        layout: MainTpl,
+        component: NoExist
+      },
+      {
+        path: '/form_search',
+        layout: MainTpl,
+        component: NoExist
+      },
+      {
+        path:'/detail',
+        layout: MainTpl,
+        component: Detail,
+      },
+      {
+        path:'/result/success',
+        layout: MainTpl,
+        component: ResultSuccess,
+      },
+      {
+        path:'/result/failure',
+        layout: MainTpl,
+        component: ResultFailure,
+      },
+    ]
+  },
+  {
+    path: '/parts',
+    layout: MainTpl,
+    component: UserList,
+    children:[
+       {
+        path: '/drag',
+        layout: MainTpl,
+        component: NoExist
+       },
+       {
+          path: '/code',
+          layout: MainTpl,
+          component: CodeEditor
+       }
+    ]
   },
   {
     path: '*',

@@ -1,7 +1,7 @@
-**本项目wepack3，测试通过，快来体验吧！**
+**本项目wepack4，测试通过，快来体验吧！**
 #### 使用技术
 ```text
- 热更新、ES6/7、LESS、Router4、redux、webpack3、async／await、前端node服务器，按需加载...
+ 热更新、ES6/7、LESS、Router4、redux、webpack4、async／await、前端node服务器，按需加载...
 ```
 #### 客户端渲染
 ```
@@ -47,7 +47,7 @@ https://github.com/cindyrise/doc.git
 ```
 
 ==============================================
-### 使用技巧
+### 使用技巧 (暂时不可用)
 
 1.新建组件
 ```
@@ -90,7 +90,7 @@ https://github.com/cindyrise/doc.git
 │     │     │     ├── components //全局公用组件
 │     │     │     ├── utils //提供一些小工具
 │     │     │     ├── app.js //应用的入口
-│     │     │     └── routers.js //根路由文件
+│     │     │     └── router //路由
 │     │     └── script //脚本目录
 ├── webapp.ejs //wepack打包模板文件
 ├── .babelrc //babel相关配置

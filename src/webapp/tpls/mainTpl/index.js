@@ -6,6 +6,7 @@ import SideNav from "../../components/sideNav";
 import Foot from '../../components/footer'
 import * as global from "../../pages/global/action";
 import { bindActionCreators } from "redux";
+import './style.scss';
 @connect(
   state => ({ ...state.global }),
   dispatch => bindActionCreators({ ...global }, dispatch)
@@ -25,16 +26,18 @@ export default class MainTpl extends Component {
   render() {
     const {  navData,match, location } = this.props;
     return (
-      <Layout>
-      <TopNav />
-      <Layout>
-        <SideNav location={location}  sideData={navData}/>
-        <Layout className="layout" >
-          {this.props.children}
+      <Layout className="g-container">
+        <TopNav location={location}  navData={navData.topNav} />
+        <Layout className="g-body">
+          <SideNav location={location}  navData={navData.sideNav}/>
+          <Layout className="g-main" >
+            <div className="g-content">
+              {this.props.children}
+            </div>
+            <Foot className="g-footer"/>
+          </Layout>
         </Layout>
       </Layout>
-      <Foot/>
-    </Layout>
     );
   }
 }

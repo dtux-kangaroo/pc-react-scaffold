@@ -44,6 +44,7 @@ export default class BarChart extends React.Component {
   }
   chartResize=(width)=>{
     const { chart } = this.state;
+    console.log(chart,'chart');
     if(chart&&isInteger(width)) chart.resize();
   }
   render() {

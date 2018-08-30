@@ -13,4 +13,5 @@ export default {
   getListData:'/mock/listData.json',
 
 
+  getDetailData:'/mock/detailData.json'
 }

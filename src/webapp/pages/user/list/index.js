@@ -11,7 +11,6 @@ import {usercln} from './constant'
 import assign from "object-assign";
 import "./style.scss";
 
-
 const { Header, Content, Footer } = Layout;
 @connect(
   state => ({ ...state.userList }),
@@ -50,9 +49,12 @@ export default class UserList extends Component {
     };
    const{userList,isLoad}=this.state;
     return (
+      <div className="container">
        <Row>
          <Col><Table rowSelection={rowSelection} bordered  rowKey="id"    loading={isLoad} columns={usercln} dataSource={userList} /></Col>
        </Row>
+      </div>
+      
     );
   }
 }
