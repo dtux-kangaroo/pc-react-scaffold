@@ -11,6 +11,8 @@ const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading})
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
+const Analysis=Loadable({loader:() => import('../pages/analysis'),loading: Loading});
+
 const routerConf = [
   {
     path:'/',
@@ -24,7 +26,7 @@ const routerConf = [
       {
         path: '/dashboard',
         layout: MainTpl,
-        component: NoExist
+        component: Analysis
       },
       {
         path: '/upload',
