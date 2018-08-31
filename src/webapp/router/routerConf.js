@@ -8,11 +8,15 @@ const Markdown = Loadable({loader: () => import('../pages/markdown'),loading: Lo
 const Swiper = Loadable({loader: () => import('../pages/swiper'),loading: Loading});
 const JsonView = Loadable({loader: () => import('../pages/jsonview'),loading: Loading});
 const Video = Loadable({loader:() => import('../pages/video'),loading: Loading});
+const UploadAndDown = Loadable({ loader: () => import('../pages/uploadAndDown'), loading: Loading })
+const SearchTable = Loadable({ loader: () => import('../pages/searchTable'), loading: Loading });
+const List = Loadable({ loader: () => import('../pages/lists'), loading: Loading });
 const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
 const FormSearch=Loadable({loader:() => import('../pages/formSearch'),loading: Loading});
+const Analysis=Loadable({loader:() => import('../pages/analysis'),loading: Loading});
 
 const routerConf = [
   {
@@ -23,11 +27,31 @@ const routerConf = [
     path: '/index',
     layout: MainTpl,
     component: UserList,
-    children:[
+    children: [
       {
         path: '/dashboard',
         layout: MainTpl,
-        component: NoExist
+        component: Analysis
+      },
+      {
+        path: '/upload',
+        layout: MainTpl,
+        component: UploadAndDown,
+      },
+      {
+        path: '/map',
+        layout: MainTpl,
+        component: UploadAndDown,
+      },
+      {
+        path: '/searchTable',
+        layout: MainTpl,
+        component: SearchTable,
+      },
+      {
+        path: '/list',
+        layout: MainTpl,
+        component: List,
       },
       {
         path: '/workbench',
