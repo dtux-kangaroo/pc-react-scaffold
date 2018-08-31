@@ -21,4 +21,13 @@
             font-size: 12px;
         }
     }
+    .listContent{
+        width: 58%;
+        padding: 0 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
 }

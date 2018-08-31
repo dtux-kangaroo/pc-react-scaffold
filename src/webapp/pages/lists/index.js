@@ -121,7 +121,7 @@ export default class Lists extends Component {
                     }
                 >
                     <List
-                        itemLayout="vertical"
+                        itemLayout="horizontal"
                         pagination={{
                             total: total,
                             pageSize: page.pageSize,
@@ -139,7 +139,7 @@ export default class Lists extends Component {
                                     title={<a href="javascript:void(0)">{item.title}</a>}
                                     description={<article>{item.description}</article>}
                                 />
-                                {item.content}
+                                <div className="listContent">{item.content}</div>
                             </List.Item>
                         )}
                     />
