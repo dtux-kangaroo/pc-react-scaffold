@@ -41,7 +41,7 @@
           "parentId": 1,
           "permissionName": "分析页面",
           "permissionIcon": "",
-          "permissionUrl": "/index/dashboard",
+          "permissionUrl": "/index/analysis",
           "children": []
          },
          {
@@ -49,7 +49,7 @@
           "parentId": 1,
           "permissionName": "表格搜索",
           "permissionIcon": [],
-          "permissionUrl": "/app/role",
+          "permissionUrl": "/index/role",
           "children": []
         },
         {
@@ -82,7 +82,7 @@
           "parentId": 2,
           "permissionName": "拖拽功能",
           "permissionIcon": "",
-          "permissionUrl": "/app/detail",
+          "permissionUrl": "/app/draggable",
           "children": []
         },
         {
@@ -90,7 +90,7 @@
           "parentId": 2,
           "permissionName": "文本编辑器",
           "permissionIcon": "",
-          "permissionUrl": "/app/analyze",
+          "permissionUrl": "/app/textEditor",
           "children": []
         },
         {

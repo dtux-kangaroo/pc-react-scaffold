@@ -12,6 +12,9 @@ const UploadAndDown = Loadable({ loader: () => import('../pages/uploadAndDown'),
 const SearchTable = Loadable({ loader: () => import('../pages/searchTable'), loading: Loading });
 const List = Loadable({ loader: () => import('../pages/lists'), loading: Loading });
 const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
+const Draggable=Loadable({loader:() => import('../pages/draggable'),loading: Loading});
+const TextEditor=Loadable({loader:() => import('../pages/textEditor'),loading: Loading});
+
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
@@ -29,7 +32,7 @@ const routerConf = [
     component: UserList,
     children: [
       {
-        path: '/dashboard',
+        path: '/analysis',
         layout: MainTpl,
         component: Analysis
       },
@@ -98,14 +101,19 @@ const routerConf = [
     ]
   },
   {
-    path: '/parts',
+    path: '/app',
     layout: MainTpl,
     component: UserList,
     children:[
        {
-        path: '/drag',
+        path:'/draggable',
         layout: MainTpl,
-        component: NoExist
+        component: Draggable,
+       },
+       {
+        path:'/textEditor',
+        layout: MainTpl,
+        component: TextEditor,
        },
        {
          path: '/md',
