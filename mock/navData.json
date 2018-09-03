@@ -138,7 +138,7 @@
           "parentId": 2,
           "permissionName": "图片轮播",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/app/swiper",
           "children": []
         },
         {
@@ -146,7 +146,15 @@
           "parentId": 2,
           "permissionName": "json-view",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/app/jsonview",
+          "children": []
+        },
+        {
+          "id": 25,
+          "parentId": 2,
+          "permissionName": "视频播放",
+          "permissionIcon": "",
+          "permissionUrl": "/app/video",
           "children": []
         },
         {

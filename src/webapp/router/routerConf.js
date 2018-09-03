@@ -121,7 +121,7 @@ const routerConf = [
          component: Markdown
        },
        {
-        path: '/img',
+        path: '/swiper',
         layout: MainTpl,
         component: Swiper
        },
