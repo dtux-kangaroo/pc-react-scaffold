@@ -32,12 +32,12 @@ export default class TopNav extends React.Component {
       <Menu  mode="horizontal"
         selectedKeys={[menuKeys[0]]}
         style={{ verticalAlign: 'middle',display: 'inline-block',lineHeight: '60px', background:'#1A76D2'}} >
-        {
+        {navData.length?
           navData.map((item,idx)=>(
             <Menu.Item key={item.permissionUrl.match(/\/\w*/g)[0]}>  
                         <NavLink to={item.permissionUrl}>{item.permissionName}</NavLink>
             </Menu.Item>
-          ))
+          )):<Menu.Item></Menu.Item>
         }
     </Menu>
     );

@@ -1,4 +1,7 @@
 .top-nav{
+  .ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu {
+    top: 0px;
+}
   position: relative;
   .ant-menu .ant-menu-item-selected{
     border-bottom: 3px solid #1890ff;

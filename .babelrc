@@ -19,7 +19,6 @@
       "regenerator": true,
       "moduleName": "babel-runtime"
     }],
-    "react-hot-loader/babel",
     "transform-decorators-legacy",
     "transform-async-to-generator",
     "transform-do-expressions",

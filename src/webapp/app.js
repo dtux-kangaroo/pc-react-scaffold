@@ -11,7 +11,6 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'
 //import Routers from './routers';
 import Routers from './router'
-import { AppContainer } from 'react-hot-loader'
 import { createStore, applyMiddleware, combineReducers,compose } from 'redux'
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 import appReducer from './pages/global';
@@ -29,19 +28,14 @@ const store = createStore(
 )
 const render = Component =>
     ReactDOM.render(
-       <AppContainer>
            <Provider store={ store }>
              <Component />
-           </Provider>
-      </AppContainer>,
+           </Provider>,
        document.getElementById('root')
     )
 
 render(Routers)
 
 if(module.hot) {
-  module.hot.accept('./app', () => {
-      const NextRootContainer = require('./app').default
-      render(NextRootContainer)
-  })
+  module.hot.accept()
 }

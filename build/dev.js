@@ -15,7 +15,6 @@ module.exports = function makeWebpackConfig() {
       'moment', 'echarts'
     ],
     app: [
-      'react-hot-loader/patch',
       `webpack-dev-server/client?http://${serverConfig.host}:${serverConfig.port}`,
       'webpack/hot/only-dev-server',
       path.resolve(__dirname, '../src/webapp/app.js')
