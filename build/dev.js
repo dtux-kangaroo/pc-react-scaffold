@@ -27,7 +27,7 @@ module.exports = function makeWebpackConfig() {
     filename: "js/[name].[hash].js",
     chunkFilename: "js/[name].[chunkhash].js"
   };
-  config.devtool = 'cheap-eval-source-map';
+  config.devtool = 'cheap-module-eval-source-map';
   config.module = {
     rules: [{
       test: /\.js|jsx$/,
@@ -58,7 +58,7 @@ module.exports = function makeWebpackConfig() {
       use: ["ejs-loader"]
     },{
       test: /\.json$/,
-      loader: 'json-loader'
+      loader: "json-loader"
     }
   ]
   };
@@ -75,7 +75,7 @@ module.exports = function makeWebpackConfig() {
       { from: path.resolve(rootPath, './src/webapp/config'),to:"./conf"},
       {from: path.resolve(__dirname, '../mock'),to:"./mock"},
       {from: path.resolve(rootPath, './src/webapp/assets/img'),to:"./images"},
-
+      {from: path.resolve(rootPath, './src/webapp/assets/libs'),to:"./libs"}
     ]),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),
     new webpack.DefinePlugin({__PRODUCTION: JSON.stringify(false)}),

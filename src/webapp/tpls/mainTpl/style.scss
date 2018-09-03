@@ -1,0 +1,14 @@
+.g-container{
+  height: 100%;
+  .g-body{
+    .g-main{
+      display: flex;
+      .g-content{
+        flex:1;
+      }
+      .g-footer{
+
+      }
+    }
+  }
+}
