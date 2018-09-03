@@ -141,7 +141,6 @@ export default class Analysis extends Component {
     }
     render() {
         const { barOption, config, radioData, columns, tableData, tableLoading, total, page } = this.state;
-        console.log(barOption,config);
         return (
             <div className="content analysis">
                 <Row className="topLines" gutter={16}>
@@ -178,7 +177,7 @@ export default class Analysis extends Component {
                             </div>
                         </Card>
                     </Col>
-                      {/*
+                      
                     <Col span={6}>
                         <Card
                             hoverable={true}
@@ -206,9 +205,9 @@ export default class Analysis extends Component {
                                 <PieChart option={pieOption} conifg={config} />
                             </div>
                         </Card>
-                    </Col> */}
+                    </Col>
                 </Row>
-                {/* <div style={{ background: '#fff', margin: '10px 0', }}>
+                <div style={{ background: '#fff', margin: '10px 0', }}>
                     <Tabs
                         defaultActiveKey="1"
                         tabBarExtraContent={
@@ -279,7 +278,7 @@ export default class Analysis extends Component {
                                 }} />
                         </Card>
                     </Col>
-                </Row> */}
+                </Row>
             </div>
         );
     }

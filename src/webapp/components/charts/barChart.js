@@ -30,28 +30,28 @@ export default class BarChart extends React.Component {
     }
   }
   componentDidMount() {
-    let chart = echarts.init(this.id, "walden", { renderer: "svg" });
+    let chart = echarts.init(this.id, "walden", { renderer: "canvas" });
     this.setState({ chart }, () => {
       this.initChart();
     });
   }
   componentDidUpdate() {
-    this.initChart();  
+    this.initChart();
   }
   componentWillUnmount() {
     const { chart } = this.state;
     chart.dispose();
   }
-  chartResize=(width)=>{
+  chartResize = (width) => {
     const { chart } = this.state;
-    console.log(chart,'chart');
-    if(chart&&isInteger(width)) chart.resize();
+    console.log(chart, 'chart');
+    if (chart && isInteger(width)) chart.resize();
   }
   render() {
-    let { height="200px",width="100%"} = this.props.config;
+    let { height = "200px", width = "100%" } = this.props.config;
     return <div>
-       <div ref={id => (this.id = id)}style={{width, height}} />
-       <ReactResizeDetector  handleWidth  onResize={this.chartResize.bind(this)}/>
-      </div>
+      <div ref={id => (this.id = id)} style={{ width, height }} />
+      <ReactResizeDetector handleWidth onResize={this.chartResize.bind(this)} />
+    </div>
   }
 }
