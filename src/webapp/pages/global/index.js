@@ -11,8 +11,10 @@ const appReducer = {
   auth,
   userList,
   detail,
-  draggable,
+  draggable
 };
+	
+	
 	
 	
 	

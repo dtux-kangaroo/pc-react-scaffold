@@ -10,9 +10,9 @@ if (routerContent.indexOf(ins.smallCamel) > -1) {
   ins.log(ins.chalk.yellow(ins.chalk.bgBlue('命名重复或者传入参数为空')));
   return;
 }
-let routerPath =`const ${ins.bigCamel} =Loadable({loader:() => import('../pages/+ ${ins.smallCamel}'),loading: Loading})`;
+let routerPath =`const ${ins.bigCamel} =Loadable({loader:() => import('../pages/${ins.smallCamel}'),loading: Loading})`;
 routerContent = routerContent.replace(/(const routerConf)/g,`${routerPath}\n\n$1`)
-.replace(/(= \[)/g,`$1\n{path:${ ins.smallCamel},\n layout:null,\n component:${ins.bigCamel}\n},\n`);
+.replace(/(= \[)/g,`$1\n{\npath:"${ins.smallCamel}",\n layout:null,\n component:${ins.bigCamel}\n},\n`);
 ins.fs.writeFileSync(routerFile, routerContent);
 
 //新建页面
