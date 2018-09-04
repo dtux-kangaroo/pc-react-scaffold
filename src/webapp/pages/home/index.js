@@ -51,7 +51,7 @@ export default class Home extends Component {
  setChart=()=>{
   this.setState({barOption,
     config:{
-    height:'300px',
+    height:'301px',
     handle:this.clickBar
   }})
  }
@@ -117,7 +117,7 @@ export default class Home extends Component {
             <Geom type="interval" position="year*sales" />
           </Chart>
         </div>
-           {/* <a href="/noauth">noauth</a>&nbsp; <a href="/noexite">noexite</a>
+           <a href="/noauth">noauth</a>&nbsp; <a href="/noexite">noexite</a>
            <BarChart option={barOption} config={config}/>
            <br/>
            <LineChart option={lineOption} config={config}/>
@@ -126,7 +126,7 @@ export default class Home extends Component {
            <br/>
            <ScatterChart option={scatterOption} conifg={config}/>
            <br/>
-           <PieChart option={pieOption} conifg={config}/> */}
+           <PieChart option={pieOption} conifg={config}/>
 
        </div>
     );

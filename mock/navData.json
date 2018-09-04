@@ -12,19 +12,19 @@
         "children": []
       },
       {
+        "id": 6,
+        "parentId": 2,
+        "permissionName": "拖拽功能",
+        "permissionIcon": "",
+        "permissionUrl": "/part/draggable",
+        "children": []
+      } ,
+      {
         "id": 3,
         "parentId": 1,
         "permissionName": "表单",
         "permissionIcon": "",
         "permissionUrl": "/back/form",
-        "children": []
-      },
-      {
-        "id": 6,
-        "parentId": 2,
-        "permissionName": "拖拽功能",
-        "permissionIcon": "",
-        "permissionUrl": "/parts/drag",
         "children": []
       }
     ],
@@ -75,14 +75,14 @@
       "parentId": 0,
       "permissionName": "常用零件",
       "permissionIcon": "appstore",
-      "permissionUrl": "",
+      "permissionUrl": "/part",
       "children": [
         {
           "id": 6,
           "parentId": 2,
           "permissionName": "拖拽功能",
           "permissionIcon": "",
-          "permissionUrl": "/app/draggable",
+          "permissionUrl": "/part/draggable",
           "children": []
         },
         {
@@ -90,7 +90,7 @@
           "parentId": 2,
           "permissionName": "文本编辑器",
           "permissionIcon": "",
-          "permissionUrl": "/app/textEditor",
+          "permissionUrl": "/part/textEditor",
           "children": []
         },
         {
@@ -98,7 +98,7 @@
           "parentId": 2,
           "permissionName": "代码编辑器",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/doc",
           "children": []
         },
         {
@@ -106,7 +106,7 @@
           "parentId": 2,
           "permissionName": "websocket使用",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/websocket",
           "children": []
         },
         {
@@ -114,7 +114,7 @@
           "parentId": 2,
           "permissionName": "上传下载",
           "permissionIcon": "",
-          "permissionUrl": "/index/upload",
+          "permissionUrl": "/part/upload",
           "children": []
         },
         {
@@ -122,7 +122,7 @@
           "parentId": 2,
           "permissionName": "地图功能",
           "permissionIcon": "",
-          "permissionUrl": "/index/map",
+          "permissionUrl": "/part/map",
           "children": []
         },
         {
@@ -130,7 +130,7 @@
           "parentId": 2,
           "permissionName": "markdown使用",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/md",
           "children": []
         },
         {
@@ -138,7 +138,7 @@
           "parentId": 2,
           "permissionName": "图片轮播",
           "permissionIcon": "",
-          "permissionUrl": "/app/swiper",
+          "permissionUrl": "/part/swiper",
           "children": []
         },
         {
@@ -146,7 +146,7 @@
           "parentId": 2,
           "permissionName": "json-view",
           "permissionIcon": "",
-          "permissionUrl": "/app/jsonview",
+          "permissionUrl": "/part/jsonview",
           "children": []
         },
         {
@@ -154,17 +154,9 @@
           "parentId": 2,
           "permissionName": "视频播放",
           "permissionIcon": "",
-          "permissionUrl": "/app/video",
+          "permissionUrl": "/part/video",
           "children": []
-        },
-        {
-          "id": 27,
-          "parentId": 2,
-          "permissionName": "工作台",
-          "permissionIcon": "",
-          "permissionUrl": "/index/workbench",
-          "children": []
-         }
+        }
         ]
       },
       {

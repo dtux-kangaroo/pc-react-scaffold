@@ -101,7 +101,7 @@ const routerConf = [
     ]
   },
   {
-    path: '/app',
+    path: '/part',
     layout: MainTpl,
     component: UserList,
     children:[

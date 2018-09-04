@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, Col, Row, Icon, Tooltip, Tabs, Radio, message, Table } from "antd";
 import moment from "moment";
-import BarChart from '../../components/charts/barChart';
+import BarChart from 'components/charts/barChart';
 import LineChart from '../../components/charts/lineChart';
 import MapChart from '../../components/charts/mapChart';
 import ScatterChart from '../../components/charts/scatterChart';
@@ -148,7 +148,7 @@ export default class Analysis extends Component {
                         <Card
                             hoverable={true}
                             title={
-                                <span>今天周会</span>
+                                <span style={{color:'red'}}>今天周会</span>
                             }
                             extra={
                                 <Tooltip title="解释文字">
