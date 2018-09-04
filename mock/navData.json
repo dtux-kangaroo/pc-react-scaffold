@@ -1,61 +1,71 @@
 {
   "success": true,
   "message": "执行成功~~",
-  "data": [
-    {
-      "id": 8,
-      "parentId": 0,
-      "permissionName": "大盘",
-      "permissionIcon": "",
-      "permissionUrl": "/app/user",
-      "children": [
-       {
+  "data":{
+    "topNav":[
+      {
         "id": 3,
         "parentId": 1,
-        "permissionName": "分析页面",
+        "permissionName": "大盘",
         "permissionIcon": "",
-        "permissionUrl": "/app",
+        "permissionUrl": "/index/dashboard",
         "children": []
-       },
-       {
+      },
+      {
+        "id": 6,
+        "parentId": 2,
+        "permissionName": "拖拽功能",
+        "permissionIcon": "",
+        "permissionUrl": "/part/draggable",
+        "children": []
+      } ,
+      {
         "id": 3,
         "parentId": 1,
-        "permissionName": "工作台",
+        "permissionName": "表单",
         "permissionIcon": "",
-        "permissionUrl": "/app",
+        "permissionUrl": "/back/form",
         "children": []
-       }
-      ]
-    },
-    {
-      "id": 1,
-      "parentId": 0,
-      "permissionName": "后台管理",
-      "permissionIcon": "mail",
-      "permissionUrl": "",
-      "children": [
-        {
+      }
+    ],
+    "sideNav":[
+      {
+        "id": 8,
+        "parentId": 0,
+        "permissionName": "大盘",
+        "permissionIcon": "",
+        "permissionUrl": "/index",
+        "children": [
+         {
           "id": 3,
           "parentId": 1,
-          "permissionName": "表单",
+          "permissionName": "分析页面",
           "permissionIcon": "",
-          "permissionUrl": "/app",
+          "permissionUrl": "/index/analysis",
           "children": []
-        },
-        {
-          "id": 4,
-          "parentId": 1,
-          "permissionName": "表格常用",
-          "permissionIcon": [],
-          "permissionUrl": "/app/role",
-          "children": []
-        },
-        {
-          "id": 4,
+         },
+         {
+          "id": 3,
           "parentId": 1,
           "permissionName": "表格搜索",
           "permissionIcon": [],
-          "permissionUrl": "/app/role",
+          "permissionUrl": "/index/role",
+          "children": []
+        },
+        {
+          "id": 5,
+          "parentId": 1,
+          "permissionName": "表格查询",
+          "permissionIcon": [],
+          "permissionUrl": "/index/searchTable",
+          "children": []
+        },
+        {
+          "id": 9,
+          "parentId": 1,
+          "permissionName": "标准列表",
+          "permissionIcon": [],
+          "permissionUrl": "/index/list",
           "children": []
         }
       ]
@@ -65,14 +75,14 @@
       "parentId": 0,
       "permissionName": "常用零件",
       "permissionIcon": "appstore",
-      "permissionUrl": "",
+      "permissionUrl": "/part",
       "children": [
         {
           "id": 6,
           "parentId": 2,
           "permissionName": "拖拽功能",
           "permissionIcon": "",
-          "permissionUrl": "/app/detail",
+          "permissionUrl": "/part/draggable",
           "children": []
         },
         {
@@ -80,7 +90,7 @@
           "parentId": 2,
           "permissionName": "文本编辑器",
           "permissionIcon": "",
-          "permissionUrl": "/app/analyze",
+          "permissionUrl": "/part/textEditor",
           "children": []
         },
         {
@@ -88,7 +98,7 @@
           "parentId": 2,
           "permissionName": "代码编辑器",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/doc",
           "children": []
         },
         {
@@ -96,7 +106,7 @@
           "parentId": 2,
           "permissionName": "websocket使用",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/websocket",
           "children": []
         },
         {
@@ -104,7 +114,7 @@
           "parentId": 2,
           "permissionName": "上传下载",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/upload",
           "children": []
         },
         {
@@ -112,7 +122,7 @@
           "parentId": 2,
           "permissionName": "地图功能",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/map",
           "children": []
         },
         {
@@ -120,7 +130,7 @@
           "parentId": 2,
           "permissionName": "markdown使用",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/md",
           "children": []
         },
         {
@@ -128,7 +138,7 @@
           "parentId": 2,
           "permissionName": "图片轮播",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/swiper",
           "children": []
         },
         {
@@ -136,18 +146,76 @@
           "parentId": 2,
           "permissionName": "json-view",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/jsonview",
           "children": []
         },
         {
-          "id": 27,
+          "id": 25,
           "parentId": 2,
           "permissionName": "视频播放",
           "permissionIcon": "",
-          "permissionUrl": "/app/doc",
+          "permissionUrl": "/part/video",
           "children": []
         }
-      ]
-    }
-  ]
+        ]
+      },
+      {
+        "id": 1,
+        "parentId": 0,
+        "permissionName": "后台管理",
+        "permissionIcon": "mail",
+        "permissionUrl": "/back",
+        "children": [
+          {
+            "id": 3,
+            "parentId": 1,
+            "permissionName": "表单",
+            "permissionIcon": "",
+            "permissionUrl": "/back/form",
+            "children": []
+          },
+          {
+            "id": 4,
+            "parentId": 1,
+            "permissionName": "表格常用",
+            "permissionIcon": [],
+            "permissionUrl": "/back/form_common",
+            "children": []
+          },
+          {
+            "id": 4,
+            "parentId": 1,
+            "permissionName": "表格搜索",
+            "permissionIcon": [],
+            "permissionUrl": "/back/form_search",
+            "children": []
+          },
+          {
+            "id": 5,
+            "parentId": 1,
+            "permissionName": "详情",
+            "permissionIcon": [],
+            "permissionUrl": "/back/detail",
+            "children": []
+          },
+          {
+            "id": 6,
+            "parentId": 1,
+            "permissionName": "结果-成功",
+            "permissionIcon": [],
+            "permissionUrl": "/back/result/success",
+            "children": []
+          },
+          {
+            "id": 7,
+            "parentId": 1,
+            "permissionName": "结果-失败",
+            "permissionIcon": [],
+            "permissionUrl": "/back/result/failure",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
 }

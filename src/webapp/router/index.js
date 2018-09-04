@@ -1,6 +1,6 @@
 import React from 'react';
 import routerConf from './routerConf';
-import {  Router, Switch, Route } from 'react-router-dom';
+import {  Router, Switch, Route,Redirect } from 'react-router-dom';
  import createHistory from "history/createBrowserHistory";
 const history = createHistory();
 
@@ -29,7 +29,9 @@ function renderRouteConf(container, router, contextPath) {
           }}
         />
       );
-    } else if (routeContainer && routeItem.component) {
+    }else if(routeItem.redirect){
+      routeChildren.push(<Redirect key={routeItem.path}  exact from={routeItem.path} to={routeItem.redirect}/>);
+    }else if (routeContainer && routeItem.component) {
       routeChildren.push(
         <Route
           key={routePath}
