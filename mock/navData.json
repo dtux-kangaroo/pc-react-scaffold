@@ -8,13 +8,13 @@
         "parentId": 1,
         "permissionName": "大盘",
         "permissionIcon": "",
-        "permissionUrl": "/index/dashboard",
+        "permissionUrl": "/index",
         "children": []
       },
       {
         "id": 6,
         "parentId": 2,
-        "permissionName": "拖拽功能",
+        "permissionName": "常用零件",
         "permissionIcon": "",
         "permissionUrl": "/part/draggable",
         "children": []
@@ -162,7 +162,7 @@
       {
         "id": 1,
         "parentId": 0,
-        "permissionName": "后台管理",
+        "permissionName": "常用区块",
         "permissionIcon": "mail",
         "permissionUrl": "/back",
         "children": [

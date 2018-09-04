@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import { Card, Col, Row, Icon, Tooltip, Tabs, Radio, message, Table } from "antd";
 import moment from "moment";
-import BarChart from 'components/charts/barChart';
-import LineChart from '../../components/charts/lineChart';
-import MapChart from '../../components/charts/mapChart';
-import ScatterChart from '../../components/charts/scatterChart';
-import PieChart from '../../components/charts/pieChart';
+import {BarChart,LineChart,PieChart} from 'components/charts';
 import { barOption, lineOption, mapOption, scatterOption, pieOption } from '../../constants/option';
 import './style.scss'
-import http from "../../utils/http";
-import apis from "../../constants/apis";
+import http from "utils/http";
+import apis from "constants/apis";
 moment.locale("zh-cn");
 
 const TabPane = Tabs.TabPane;

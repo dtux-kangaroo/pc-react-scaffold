@@ -81,6 +81,8 @@ module.exports = {
       assets: path.resolve(__dirname, '../src/webapp/assets'),
       components: path.resolve(__dirname, '../src/webapp/components/'),
       pages: path.resolve(__dirname, '../src/webapp/pages/'),
+      utils: path.resolve(__dirname, '../src/webapp/utils/'),
+      constants: path.resolve(__dirname, '../src/webapp/constants/'),
       tpls: path.resolve(__dirname, '../src/webapp/tpls/')
     }
   },
