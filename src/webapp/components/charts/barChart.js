@@ -30,7 +30,7 @@ export default class BarChart extends React.Component {
     }
   }
   componentDidMount() {
-    let chart = echarts.init(this.id, "walden", { renderer: "svg" });
+    let chart = echarts.init(this.id, "walden");
     this.setState({ chart }, () => {
       this.initChart();
     });
