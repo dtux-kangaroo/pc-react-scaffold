@@ -98,7 +98,7 @@
           "parentId": 2,
           "permissionName": "代码编辑器",
           "permissionIcon": "",
-          "permissionUrl": "/part/doc",
+          "permissionUrl": "/part/code",
           "children": []
         },
         {
