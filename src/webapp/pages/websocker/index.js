@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import {Button,message as Message,Row,Col} from 'antd';
-import Stomp from 'stompjs'
-import SockJS from 'sockjs';
+// import Stomp from 'stompjs'
+// import SockJS from 'sockjs';
 import './style.scss';
 class Websocker extends React.PureComponent{
   state={

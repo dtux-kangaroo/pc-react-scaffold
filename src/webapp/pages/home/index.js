@@ -16,6 +16,21 @@ import ScatterChart from '../../components/charts/scatterChart';
 import PieChart from '../../components/charts/pieChart';
 import ReactResizeDetector from 'react-resize-detector'
 import {barOption,lineOption,mapOption,scatterOption,pieOption} from '../../constants/option';
+import {
+  G2,
+  Chart,
+  Geom,
+  Axis,
+  Tooltip,
+  Coord,
+  Label,
+  Legend,
+  View,
+  Guide,
+  Shape,
+  Facet,
+  Util
+} from "bizcharts";
 
 @connect(
   state => ({ ...state.home }),
@@ -36,7 +51,7 @@ export default class Home extends Component {
  setChart=()=>{
   this.setState({barOption,
     config:{
-    height:'300px',
+    height:'301px',
     handle:this.clickBar
   }})
  }
@@ -48,9 +63,60 @@ export default class Home extends Component {
   }
   render() {
     const {barOption,config}=this.state;
+    const data = [
+      {
+        year: "1951 年",
+        sales: 38
+      },
+      {
+        year: "1952 年",
+        sales: 52
+      },
+      {
+        year: "1956 年",
+        sales: 61
+      },
+      {
+        year: "1957 年",
+        sales: 145
+      },
+      {
+        year: "1958 年",
+        sales: 48
+      },
+      {
+        year: "1959 年",
+        sales: 38
+      },
+      {
+        year: "1960 年",
+        sales: 38
+      },
+      {
+        year: "1962 年",
+        sales: 38
+      }
+    ];
+    const cols = {
+      sales: {
+        tickInterval: 20
+      }
+    };
     return (
         <div className="content">
            恭喜，home主页新建成功,DIY YOUE CODE!!!. 
+           <div>
+          <Chart height={400} data={data} scale={cols} forceFit>
+            <Axis name="year" />
+            <Axis name="sales" />
+            <Tooltip
+              crosshairs={{
+                type: "y"
+              }}
+            />
+            <Geom type="interval" position="year*sales" />
+          </Chart>
+        </div>
            <a href="/noauth">noauth</a>&nbsp; <a href="/noexite">noexite</a>
            <BarChart option={barOption} config={config}/>
            <br/>
@@ -61,6 +127,7 @@ export default class Home extends Component {
            <ScatterChart option={scatterOption} conifg={config}/>
            <br/>
            <PieChart option={pieOption} conifg={config}/>
+
        </div>
     );
   }
