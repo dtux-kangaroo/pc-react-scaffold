@@ -1,6 +1,6 @@
-import Loadable from 'react-loadable'
-import Loading from '../components/loading'
-import MainTpl  from '../tpls/mainTpl/index'
+import Loadable from 'react-loadable';
+import Loading from '../components/loading';
+import MainTpl  from '../tpls/mainTpl/index';
 const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
 const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading});
@@ -14,7 +14,6 @@ const List = Loadable({ loader: () => import('../pages/lists'), loading: Loading
 const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
 const Draggable=Loadable({loader:() => import('../pages/draggable'),loading: Loading});
 const TextEditor=Loadable({loader:() => import('../pages/textEditor'),loading: Loading});
-
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});

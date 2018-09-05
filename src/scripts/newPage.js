@@ -2,7 +2,7 @@ const ins = require('./new');
 const serverConfig = require('../../build/server');
 let apis = ins.path.join(__dirname, '../webapp/constants/apis.js');
 let pageDir = ins.path.join(__dirname, '../webapp/pages');
-let routerFile = ins.path.join(__dirname, '../webapp/tpls/globalTpl.js');
+let routerFile = ins.path.join(__dirname, '../webapp/router/routerConf.js');
 
 //追加router
  let routerContent = ins.fs.readFileSync(routerFile).toString();
@@ -10,9 +10,9 @@ if (routerContent.indexOf(ins.smallCamel) > -1) {
   ins.log(ins.chalk.yellow(ins.chalk.bgBlue('命名重复或者传入参数为空')));
   return;
 }
-let routerPath = "<Route path={`${match.path}/" + ins.smallCamel + "`} component={" + ins.bigCamel + "}></Route>";
-routerContent = routerContent.replace(/(import .* from .*;)([\s\n]*const)/, "$1\nimport " + ins.bigCamel + " from \'../pages/" + ins.smallCamel + "\';$2")
-  .replace(/(<Switch>)/g, "$1\n\t\t\t\t\t\t\t"+routerPath);
+let routerPath =`const ${ins.bigCamel} =Loadable({loader:() => import('../pages/${ins.smallCamel}'),loading: Loading})`;
+routerContent = routerContent.replace(/(const routerConf)/g,`${routerPath}\n\n$1`)
+.replace(/(= \[)/g,`$1\n{\npath:"${ins.smallCamel}",\n layout:null,\n component:${ins.bigCamel}\n},\n`);
 ins.fs.writeFileSync(routerFile, routerContent);
 
 //新建页面
@@ -57,7 +57,7 @@ let styleStr =
   font-size:26px;
 }`
 ins.fs.writeFileSync(ins.path.join(pageDir, ins.smallCamel + '/style.scss'), styleStr);
-ins.log(ins.chalk.yellow(ins.chalk.bgBlue(`新建页面成功访问地址:http://${serverConfig.host}:${serverConfig.port}/app/${ins.smallCamel}`)));
+ins.log(ins.chalk.yellow(ins.chalk.bgBlue(`新建页面成功访问地址:http://${serverConfig.host}:${serverConfig.port}/${ins.smallCamel}`)));
 
 
 

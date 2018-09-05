@@ -22,7 +22,7 @@
       {
         "id": 3,
         "parentId": 1,
-        "permissionName": "表单",
+        "permissionName": "常用区块",
         "permissionIcon": "",
         "permissionUrl": "/back/form",
         "children": []
