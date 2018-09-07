@@ -3,28 +3,23 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
-const rootPath = path.resolve(__dirname, '../');
-const buildPath = path.resolve(rootPath, 'dist');
+const buildPath = path.resolve(__dirname, '../dist');
 const serverConfig = require('./server.js');
 const  theme = require('../antd-theme.js');
 module.exports = {
   mode:"development",
   devtool: 'cheap-eval-source-map',
+  context:path.resolve(__dirname, '../src'),
   entry:{
     vendor: ['react', 'react-dom', 'react-router','moment', 'echarts'],
-    app: [path.resolve(__dirname, '../src/webapp/app.js')]
+    app: ['./index.js']
   },
   output: {
     path: buildPath,
     publicPath: "/",
     chunkFilename: "js/[name].[hash].js",
     filename: "js/[name].[hash].js",
-  },
-  externals:{
-    'FRONT_CONF': 'FRONT_CONF',
-    'stompjs':'Stomp',
-    'sockjs':'SockJS'
-  },
+},
   module: {
     rules: [{
         test: /\.js|jsx$/,
@@ -62,7 +57,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, '../src/webapp.ejs'),
+      template: 'index.ejs',
       hash: false,
       chunksSortMode:"none",
       assets: {
@@ -74,28 +69,26 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([ 
-      { from: path.resolve(rootPath, './src/webapp/config'),to:"./conf"},
-      {from: path.resolve(__dirname, '../mock'),to:"./mock"},
-      {from: path.resolve(rootPath, './src/webapp/assets/img'),to:"./images"},
-      {from: path.resolve(rootPath, './src/webapp/assets/libs'),to:"./libs"}
+      { from: './public/config',to:"./conf"},
+      {from: './public/mock',to:"./mock"},
+      {from: './public/assets/libs',to:"./libs"},
+      {from: './public/assets/imgs',to:"./imgs"}
     ]),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.scss', '.css', '.json'], 
     alias: { 
-      assets: path.resolve(__dirname, '../src/webapp/assets'),
-      components: path.resolve(__dirname, '../src/webapp/components/'),
-      pages: path.resolve(__dirname, '../src/webapp/pages/'),
-      utils: path.resolve(__dirname, '../src/webapp/utils/'),
-      constants: path.resolve(__dirname, '../src/webapp/constants/'),
-      tpls: path.resolve(__dirname, '../src/webapp/tpls/'),
-      constants:path.resolve(__dirname, '../src/webapp/constants/'),
-      utils:path.resolve(__dirname, '../src/webapp/utils/'),
+      assets: path.resolve(__dirname, '../src/public/assets'),
+      components: path.resolve(__dirname, '../src/components/'),
+      pages: path.resolve(__dirname, '../src/pages/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
+      constants: path.resolve(__dirname, '../src/constants/'),
+      tpls: path.resolve(__dirname, '../src/tpls/')
     }
   },
   devServer: {
-    host: serverConfig.host,
-    port: serverConfig.port,
+    host: '127.0.0.1',
+    port: '9090',
     contentBase: buildPath,
     publicPath: "/",
     historyApiFallback: true,
@@ -108,5 +101,8 @@ module.exports = {
       target: 'http://log.dev.dtstack.net:81',
       changeOrigin: true
     }]
+  },
+  externals :{
+   'FRONT_CONF': 'FRONT_CONF'
   }
 };

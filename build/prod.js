@@ -2,8 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
-const rootPath = path.resolve(__dirname, '../');
-const buildPath = path.resolve(rootPath, 'dist');
+const buildPath = path.resolve(__dirname, '../dist');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -12,18 +11,14 @@ module.exports = {
   mode: "production",
   entry: {
     vendor: ['react', 'react-dom', 'react-router', 'moment', 'echarts'],
-    app: [path.resolve(__dirname, '../src/webapp/app.js')]
+    app: ['./index']
   },
+  context:path.resolve(__dirname, '../src'),
   output: {
     path: buildPath,
     publicPath: "/",
     chunkFilename: "js/[name].[hash].js",
     filename: "js/[name].[hash].js",
-  },
-  externals:{
-    'FRONT_CONF': 'FRONT_CONF',
-    'stompjs':'Stomp',
-    'sockjs':'SockJS'
   },
   module: {
     rules: [{
@@ -59,7 +54,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)(\?[tv]=[\d.]+)*$/,
-        use: ['file-loader?limit=8192&name=images/[hash:8].[name].[ext]']
+        use: ['file-loader?limit=8192&name=imgs/[hash:8].[name].[ext]']
       },
       {
         test: /\.(js)$/,
@@ -116,30 +111,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "use plugin",
       filename: 'index.html',
-      template: path.resolve(__dirname, '../src/webapp.ejs'),
+      template: 'index.ejs',
       hash: false,
       chunksSortMode: "none",
       assets: {
-        favicon: '/images/favicon.ico',
+        favicon: '/imgs/favicon.ico',
         config_js: '/conf/conf.prod.js'
       }
     }),
-    new CopyWebpackPlugin([{
-        from: path.resolve(rootPath, './src/webapp/config'),
-        to: "./conf"
-      },
-      {
-        from: path.resolve(__dirname, '../mock'),
-        to: "./mock"
-      },
-      {
-        from: path.resolve(rootPath, './src/webapp/assets/img'),
-        to: "./images"
-      },
-      {
-        from: path.resolve(rootPath, './src/webapp/assets/libs'),
-        to: "./libs"
-      }
+    new CopyWebpackPlugin([
+      { from: './public/config',to:"./conf"},
+      {from: './public/mock',to:"./mock"},
+      {from: './public/assets/libs',to:"./libs"},
+      {from: './public/assets/imgs',to:"./imgs"}
     ]),
     new webpack.DefinePlugin({
       __PRODUCTION: JSON.stringify(true)
@@ -148,15 +132,17 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss', '.css', '.json'],
     alias: {
-      assets: path.resolve(__dirname, '../src/webapp/assets'),
-      components: path.resolve(__dirname, '../src/webapp/components/'),
-      pages: path.resolve(__dirname, '../src/webapp/pages/'),
-      tpls: path.resolve(__dirname, '../src/webapp/tpls/'),
-      constants:path.resolve(__dirname, '../src/webapp/constants/'),
-      utils:path.resolve(__dirname, '../src/webapp/utils/'),
+      assets: path.resolve(__dirname, '../src/public/assets'),
+      components: path.resolve(__dirname, '../src/components/'),
+      pages: path.resolve(__dirname, '../src/pages/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
+      constants: path.resolve(__dirname, '../src/constants/'),
+      tpls: path.resolve(__dirname, '../src/tpls/')
     }
   },
-  externals: {
-    'FRONT_CONF': 'FRONT_CONF'
-  }
+  externals:{
+    'FRONT_CONF': 'FRONT_CONF',
+    'stompjs':'Stomp',
+    'sockjs':'SockJS'
+  },
 };
