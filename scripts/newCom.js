@@ -1,5 +1,5 @@
 const ins = require("./new");
-let comDir = ins.path.join(__dirname, "../webapp/components");
+let comDir = ins.path.join(__dirname, "../src/components");
 if (!ins.bigCamel.length) {
   ins.log(ins.chalk.yellow(ins.chalk.bgBlue("命名重复或者传入参数为空")));
   return;

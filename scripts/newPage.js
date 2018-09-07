@@ -1,8 +1,8 @@
 const ins = require('./new');
 const serverConfig = require('../../build/server');
-let apis = ins.path.join(__dirname, '../webapp/constants/apis.js');
-let pageDir = ins.path.join(__dirname, '../webapp/pages');
-let routerFile = ins.path.join(__dirname, '../webapp/router/routerConf.js');
+let apis = ins.path.join(__dirname, '../src/constants/apis.js');
+let pageDir = ins.path.join(__dirname, '../src/pages');
+let routerFile = ins.path.join(__dirname, '../src/router/routerConf.js');
 
 //追加router
  let routerContent = ins.fs.readFileSync(routerFile).toString();
