@@ -29,7 +29,7 @@ export default class MainTpl extends Component {
       <TopNav />
       <Layout>
         <SideNav location={location}  sideData={navData}/>
-        <Layout className="layout" >
+        <Layout className="layout" style={{background:'#000'}} >
           {this.props.children}
         </Layout>
       </Layout>
