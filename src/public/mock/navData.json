@@ -106,7 +106,7 @@
           "parentId": 2,
           "permissionName": "websocket使用",
           "permissionIcon": "",
-          "permissionUrl": "/part/websocket",
+          "permissionUrl": "/part/websocker",
           "children": []
         },
         {

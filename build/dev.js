@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const buildPath = path.resolve(__dirname, '../dist');
-const serverConfig = require('./server.js');
+// const serverConfig = require('./server.js');
 const  theme = require('../antd-theme.js');
 module.exports = {
   mode:"development",
