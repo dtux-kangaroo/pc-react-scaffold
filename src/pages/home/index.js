@@ -9,13 +9,8 @@ import moment from "moment";
 moment.locale("zh-cn");
 import assign from "object-assign";
 import "./style.scss";
-import BarChart from '../../components/charts/barChart';
-import LineChart from '../../components/charts/lineChart';
-import MapChart from '../../components/charts/mapChart';
-import ScatterChart from '../../components/charts/scatterChart';
-import PieChart from '../../components/charts/pieChart';
-import ReactResizeDetector from 'react-resize-detector'
-import {barOption,lineOption,mapOption,scatterOption,pieOption} from '../../constants/option';
+import {WordChart,BarChart,LineChart,ScatterChart,PieChart,MapChart} from 'components/charts'
+import {barOption,lineOption,mapOption,scatterOption,pieOption,wordOption} from 'constants/option';
 import {
   G2,
   Chart,
@@ -117,7 +112,7 @@ export default class Home extends Component {
             <Geom type="interval" position="year*sales" />
           </Chart>
         </div>
-           <a href="/noauth">noauth</a>&nbsp; <a href="/noexite">noexite</a>
+           <WordChart option={wordOption} config={config}/>
            <BarChart option={barOption} config={config}/>
            <br/>
            <LineChart option={lineOption} config={config}/>
