@@ -82,7 +82,7 @@ module.exports = {
       pages: path.resolve(__dirname, '../src/pages/'),
       utils: path.resolve(__dirname, '../src/utils/'),
       constants: path.resolve(__dirname, '../src/constants/'),
-      tpls: path.resolve(__dirname, '../src/tpls/')
+      layout: path.resolve(__dirname, '../src/layout/')
     }
   },
   devServer: {

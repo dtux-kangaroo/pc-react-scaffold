@@ -1,6 +1,6 @@
 import Loadable from 'react-loadable';
 import Loading from 'components/loading';
-import MainTpl  from 'tpls/mainTpl/index';
+import MainLayout  from 'layout/MainLayout';
 const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
 const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading});
@@ -28,131 +28,131 @@ const routerConf = [
   },
   {
     path: '/index',
-    layout: MainTpl,
+    layout: MainLayout,
     component: UserList,
     children: [
       {
         path: '/analysis',
-        layout: MainTpl,
+        layout: MainLayout,
         component: Analysis
       },
       {
         path: '/upload',
-        layout: MainTpl,
+        layout: MainLayout,
         component: UploadAndDown,
       },
       {
         path: '/map',
-        layout: MainTpl,
+        layout: MainLayout,
         component: UploadAndDown,
       },
       {
         path: '/searchTable',
-        layout: MainTpl,
+        layout: MainLayout,
         component: SearchTable,
       },
       {
         path: '/list',
-        layout: MainTpl,
+        layout: MainLayout,
         component: List,
       },
       {
         path: '/workbench',
-        layout: MainTpl,
+        layout: MainLayout,
         component: Home,
       }
     ]
   },
   {
     path: '/back',
-    layout: MainTpl,
+    layout: MainLayout,
     component: UserList,
     children:[
       {
         path: '/form',
-        layout: MainTpl,
+        layout: MainLayout,
         component: NoExist
       },
       {
         path: '/form_common',
-        layout: MainTpl,
+        layout: MainLayout,
         component: NoExist
       },
       {
         path: '/form_search',
-        layout: MainTpl,
+        layout: MainLayout,
         component: FormSearch
       },
       {
         path:'/detail',
-        layout: MainTpl,
+        layout: MainLayout,
         component: Detail,
       },
       {
         path:'/result/success',
-        layout: MainTpl,
+        layout: MainLayout,
         component: ResultSuccess,
       },
       {
         path:'/result/failure',
-        layout: MainTpl,
+        layout: MainLayout,
         component: ResultFailure,
       },
     ]
   },
   {
     path: '/part',
-    layout: MainTpl,
+    layout: MainLayout,
     component: UserList,
     children:[
        {
           path: '/drag',
-          layout: MainTpl,
+          layout: MainLayout,
           component: NoExist
        },
        {
           path: '/code',
-          layout: MainTpl,
+          layout: MainLayout,
           component: CodeEditor
        },
        {
           path: '/websocker',
-          layout: MainTpl,
+          layout: MainLayout,
           component: Websocker
        },
        {
         path:'/draggable',
-        layout: MainTpl,
+        layout: MainLayout,
         component: Draggable,
        },
        {
         path:'/textEditor',
-        layout: MainTpl,
+        layout: MainLayout,
         component: TextEditor,
        },
        {
          path: '/md',
-         layout: MainTpl,
+         layout: MainLayout,
          component: Markdown
        },
        {
         path: '/swiper',
-        layout: MainTpl,
+        layout: MainLayout,
         component: Swiper
        },
        {
          path: '/jsonview',
-         layout: MainTpl,
+         layout: MainLayout,
          component: JsonView
        },
        {
         path: '/code',
-        layout: MainTpl,
+        layout: MainLayout,
         component: CodeEditor
        },
        {
          path: '/video',
-         layout: MainTpl,
+         layout: MainLayout,
          component: Video
        }
     ]
