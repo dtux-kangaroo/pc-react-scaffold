@@ -20,6 +20,7 @@ const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),load
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
 const Websocker=Loadable({loader:() => import('../pages/websocker'),loading: Loading});
+const Form=Loadable({loader:() => import('../pages/form'),loading: Loading});
 const FormSearch=Loadable({loader:() => import('../pages/formSearch'),loading: Loading});
 const Analysis=Loadable({loader:() => import('../pages/analysis'),loading: Loading});
 const Login=Loadable({loader:() => import('../pages/auth/login'),loading: Loading});
@@ -74,7 +75,7 @@ const routerConf = [
       {
         path: '/form',
         layout: MainLayout,
-        component: Page404
+        component: Form
       },
       {
         path: '/form_common',
