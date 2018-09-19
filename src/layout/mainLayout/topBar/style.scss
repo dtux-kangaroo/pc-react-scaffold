@@ -1,6 +1,8 @@
 .top-bar{
   position: relative;
   color:#fff;
+  background:#1A76D2;
+  padding:0 20px;
   .logo{
     img{
       width: 150px;
@@ -28,9 +30,5 @@
       }
     }
   }
-}
-.ant-layout-header{
- background:#1A76D2;
- padding:0 20px;
 }
 
