@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 import { Form, Icon, Input, Button, Checkbox,Layout } from 'antd';
 import { isEmpty } from 'lodash';
 import assign from 'object-assign';
@@ -34,7 +33,7 @@ const { Header, Content, Footer } = Layout;
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values,this.props);
-        this.props.history.push('/app');
+        this.props.history.push('/index');
       }
     });
   }
@@ -59,7 +58,7 @@ const { Header, Content, Footer } = Layout;
         </FormItem>
         <FormItem>
           <Button type="primary" htmlType="submit" className="login-form-button">登陆</Button>
-          <NavLink to="/auth/register">Or 注册!</NavLink>  <NavLink className="login-form-forgot" to="/auth/register">忘记密码</NavLink>
+          <NavLink to="/register">Or 注册!</NavLink>  <NavLink className="login-form-forgot" to="/register">忘记密码</NavLink>
         </FormItem>
       </Form>
       </div>

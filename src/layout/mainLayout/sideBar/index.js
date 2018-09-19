@@ -6,7 +6,7 @@ const { Header, Content, Sider } = Layout;
 import classnames from 'classnames';
 import { Link,NavLink } from "react-router-dom";
 import './style.scss'
-export default class SideNav extends React.Component {
+export default class SideBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

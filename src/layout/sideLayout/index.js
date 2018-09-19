@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { Layout, Icon } from "antd";
 import { connect } from "react-redux";
-import TopNav from "components/topNav";
-import SideNav from "components/sideNav";
+import SideBar from "./sideBar";
+import TopBar from "./topBar";
 import Foot from 'components/footer'
 import * as global from "pages/global/action";
 import { bindActionCreators } from "redux";
 import './style.scss';
+const { Header, Footer, Sider, Content } = Layout;
 @connect(
   state => ({ ...state.global }),
   dispatch => bindActionCreators({ ...global }, dispatch)
 )
-export default class MainTpl extends Component {
+export default class MainLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -26,18 +27,14 @@ export default class MainTpl extends Component {
   render() {
     const {  navData,match, location } = this.props;
     return (
-      <Layout className="g-container">
-        <TopNav location={location}  navData={navData.topNav} />
-        <Layout className="g-body">
-          <SideNav location={location}  navData={navData.sideNav}/>
-          <Layout className="g-main" >
-            <div className="g-content">
-              {this.props.children}
-            </div>
-            <Foot className="g-footer"/>
+        <Layout className="side-layout">
+          <SideBar location={location}  navData={navData.sideNav}/>
+          <Layout>
+            <TopBar location={location}  navData={navData.topNav} />
+            <div className="content">{this.props.children}</div>
+            <Foot/>
           </Layout>
         </Layout>
-      </Layout>
     );
   }
 }

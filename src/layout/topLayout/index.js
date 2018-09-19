@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Icon } from "antd";
 import { connect } from "react-redux";
-import SideBar from "./sideBar";
 import TopBar from "./topBar";
 import Foot from 'components/footer'
 import * as global from "pages/global/action";
@@ -27,16 +26,15 @@ export default class MainLayout extends Component {
   render() {
     const {  navData,match, location } = this.props;
     return (
-       <Layout className="main-layout">
-        <Header><TopBar location={location}  navData={navData.topNav} /></Header>
         <Layout className="top-layout">
-          <SideBar location={location}  navData={navData.sideNav}/>
+          <TopBar location={location}  navData={navData.sideNav}/>
           <Layout>
-            <div className="content">{this.props.children}</div>
+            <div className="content">
+              {this.props.children}
+            </div>
             <Foot/>
           </Layout>
         </Layout>
-      </Layout>
     );
   }
 }

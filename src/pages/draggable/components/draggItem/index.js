@@ -99,7 +99,7 @@ class DraggItem extends Component {
     }
 }
 DraggItem.defaultProps= {
-    icon : '/images/zhibiao_48.png',
+    icon : '/imgs/zhibiao_48.png',
     title:'应用名称',
     content:'应用描述'
 }

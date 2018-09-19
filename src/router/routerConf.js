@@ -1,6 +1,8 @@
 import Loadable from 'react-loadable';
 import Loading from 'components/loading';
-import MainLayout  from 'layout/MainLayout';
+import MainLayout  from 'layout/mainLayout';
+import SideLayout  from 'layout/SideLayout';
+import TopLayout  from 'layout/topLayout';
 const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
 const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading});
@@ -20,7 +22,8 @@ const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: L
 const Websocker=Loadable({loader:() => import('../pages/websocker'),loading: Loading});
 const FormSearch=Loadable({loader:() => import('../pages/formSearch'),loading: Loading});
 const Analysis=Loadable({loader:() => import('../pages/analysis'),loading: Loading});
-
+const Login=Loadable({loader:() => import('../pages/auth/login'),loading: Loading});
+const Register=Loadable({loader:() => import('../pages/auth/register'),loading: Loading});
 const routerConf = [
   {
     path:'/',
@@ -105,6 +108,11 @@ const routerConf = [
     layout: MainLayout,
     component: UserList,
     children:[
+      {
+        path:'/draggable',
+        layout: MainLayout,
+        component: Draggable,
+       },
        {
           path: '/drag',
           layout: MainLayout,
@@ -119,11 +127,6 @@ const routerConf = [
           path: '/websocker',
           layout: MainLayout,
           component: Websocker
-       },
-       {
-        path:'/draggable',
-        layout: MainLayout,
-        component: Draggable,
        },
        {
         path:'/textEditor',
@@ -158,10 +161,23 @@ const routerConf = [
     ]
   },
   {
+   path:'/login',
+   layout: null,
+   component: Login,
+  },
+  {
+    path:'/register',
+    layout: null,
+    component: Register,
+   },
+  {
+
+  },
+  {
     path: '*',
     layout: null,
     component: NoExist,
-  },
+  }
 ];
 
 export default routerConf;

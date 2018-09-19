@@ -60,7 +60,7 @@ module.exports = {
       hash: false,
       chunksSortMode:"none",
       assets: {
-        favicon: '/images/favicon.ico',
+        favicon: '/imgs/favicon.ico',
         config_js: '/conf/conf.dev.js'
       }
     }),
@@ -82,7 +82,8 @@ module.exports = {
       pages: path.resolve(__dirname, '../src/pages/'),
       utils: path.resolve(__dirname, '../src/utils/'),
       constants: path.resolve(__dirname, '../src/constants/'),
-      layout: path.resolve(__dirname, '../src/layout/')
+      layout: path.resolve(__dirname, '../src/layout/'),
+      tpls: path.resolve(__dirname, '../src/tpls/')
     }
   },
   devServer: {

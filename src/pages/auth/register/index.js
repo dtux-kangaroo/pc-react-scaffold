@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router";
+import { NavLink } from "react-router-dom";
 import assign from "object-assign";
 import { bindActionCreators } from "redux";
 import * as register from "./action";
@@ -192,7 +192,7 @@ const { Header, Content, Footer } = Layout;
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">注册</Button>
+          <Button type="primary" htmlType="submit"> <NavLink to="/index">注 册</NavLink></Button>
         </FormItem>
       </Form>
       </div>

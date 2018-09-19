@@ -32,31 +32,31 @@ class DraggableConTent extends Component {
                     id:1,
                     title:'指标管理',
                     content:'指标列表管理',
-                    icon:'/images/self.png',
+                    icon:'/imgs/self.png',
                 },
                 {   
                     id:2,
                     title:'数据管理',
                     content:'包括数据规范管理和数据API管理，数据规范的文本编辑详情页面。',
-                    icon:'/images/self.png',
+                    icon:'/imgs/self.png',
                 },
                 {   
                     id:3,
                     title:'权限管理',
                     content:'数据门户的功能权限管理和数据权限管理',
-                    icon:'/images/self.png',
+                    icon:'/imgs/self.png',
                 },
                 {   
                     id:4,
                     title:'页面管理',
                     content:'对数字门户的首页和应用中心页面的模块配置。',
-                    icon:'/images/self.png',
+                    icon:'/imgs/self.png',
                 },
                 {   
                     id:5,
                     title:'商业智能',
                     content:'通过BI工具，对商业数据进行分析并声称分析看板。',
-                    icon:'/images/self.png',
+                    icon:'/imgs/self.png',
                 },
             ]
         }
