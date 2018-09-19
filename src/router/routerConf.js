@@ -5,7 +5,7 @@ import SideLayout  from 'layout/SideLayout';
 import TopLayout  from 'layout/topLayout';
 const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
-const NoExist = Loadable({loader: () => import('../pages/except/404'),loading: Loading});
+const Page404 = Loadable({loader: () => import('../pages/error/404'),loading: Loading});
 const Markdown = Loadable({loader: () => import('../pages/markdown'),loading: Loading});
 const Swiper = Loadable({loader: () => import('../pages/swiper'),loading: Loading});
 const JsonView = Loadable({loader: () => import('../pages/jsonview'),loading: Loading});
@@ -74,12 +74,12 @@ const routerConf = [
       {
         path: '/form',
         layout: MainLayout,
-        component: NoExist
+        component: Page404
       },
       {
         path: '/form_common',
         layout: MainLayout,
-        component: NoExist
+        component: Page404
       },
       {
         path: '/form_search',
@@ -116,7 +116,7 @@ const routerConf = [
        {
           path: '/drag',
           layout: MainLayout,
-          component: NoExist
+          component: Page404
        },
        {
           path: '/code',
@@ -171,12 +171,9 @@ const routerConf = [
     component: Register,
    },
   {
-
-  },
-  {
     path: '*',
-    layout: null,
-    component: NoExist,
+    layout: MainLayout,
+    component: Page404,
   }
 ];
 
