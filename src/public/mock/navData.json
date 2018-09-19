@@ -183,14 +183,6 @@
             "children": []
           },
           {
-            "id": 4,
-            "parentId": 1,
-            "permissionName": "表格搜索",
-            "permissionIcon": [],
-            "permissionUrl": "/back/form_search",
-            "children": []
-          },
-          {
             "id": 5,
             "parentId": 1,
             "permissionName": "详情",

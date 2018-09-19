@@ -19,6 +19,7 @@ class JsonView extends Component{
                 iconStyle='triangle' 
                 theme='flat'  
                 onEdit={this.edit}
+                style={{fontSize: '14px',width: '90%',margin: 'auto'}}
             />
         )
     }

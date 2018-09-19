@@ -40,6 +40,11 @@ const routerConf = [
         component: Analysis
       },
       {
+        path: '/role',
+        layout: MainLayout,
+        component: FormSearch
+      },
+      {
         path: '/upload',
         layout: MainLayout,
         component: UploadAndDown,
@@ -81,11 +86,11 @@ const routerConf = [
         layout: MainLayout,
         component: Page404
       },
-      {
-        path: '/form_search',
-        layout: MainLayout,
-        component: FormSearch
-      },
+      // {
+      //   path: '/form_search',
+      //   layout: MainLayout,
+      //   component: FormSearch
+      // },
       {
         path:'/detail',
         layout: MainLayout,

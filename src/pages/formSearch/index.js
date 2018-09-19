@@ -95,12 +95,26 @@ class FormSearch extends Component{
         console.log('sorter:' + sorter)
     }
 
-    codeSearch = (e) => {
-        console.log(e)
+    tableSearch = () => {
+        const {number,fruit} = this.refs;
+        const inputNum = number.input.value;
+        const inputName = fruit.input.value;
+        const data = this.state.dataSource;
+        
+        if(inputNum&&inputName){
+            this.setState({dataSource: data.filter(item => item.code == inputNum && item.name == inputName)})
+        }else if(inputNum){
+            this.setState({dataSource: data.filter(item => item.code == inputNum)})
+        }else if(inputName){
+            this.setState({dataSource: data.filter(item => item.name == inputName)})
+        }
+        
     }
-    
-    fruitSearch = (e) => {
-        console.log(e)
+
+    resetSearch = () => {
+        const {number,fruit} = this.refs;
+        number.input.value = '';
+        fruit.input.value = '';
     }
 
     render(){
@@ -145,25 +159,25 @@ class FormSearch extends Component{
                     <Col span={8}>
                         <Row>
                             <Col span={6} style={{fontSize: '14px',lineHeight: '32px'}}>编号搜索：</Col>
-                            <Col span={16}><Input placeholder="请输入编号" onChange={this.codeSearch} /></Col>
+                            <Col span={16}><Input placeholder="请输入编号" ref="number" /></Col>
                         </Row>
                     </Col>
                     <Col span={8}>
                         <Row>
                             <Col span={6} style={{fontSize: '14px',lineHeight: '32px'}}>水果搜索：</Col>
-                            <Col span={16}><Input placeholder="请输入水果名称" onChange={this.fruitSearch} /></Col>
+                            <Col span={16}><Input placeholder="请输入水果名称" ref="fruit" /></Col>
                         </Row>
                     </Col>
                     <Col span={8}>
                         <Row>
                             <Col span={6} style={{fontSize: '14px',lineHeight: '32px'}}>XXX搜索：</Col>
-                            <Col span={16}><Input placeholder="请输入" onChange={this.fruitSearch} /></Col>
+                            <Col span={16}><Input placeholder="请输入" ref="something" /></Col>
                         </Row>
                     </Col>
                 </Row>
                 <Content className="search-button-bg">
-                    <Button type="primary">搜索</Button>
-                    <Button type="primary">重置</Button>
+                    <Button type="primary" onClick={this.tableSearch}>搜索</Button>
+                    <Button type="primary" onClick={this.resetSearch}>重置</Button>
                 </Content>
                 <Table
                     className="search_form"
