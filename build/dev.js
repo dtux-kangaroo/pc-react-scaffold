@@ -47,16 +47,13 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?[tv]=[\d.]+)*$/,
         use: ['file-loader?name=[name].[ext]']
-      },{
-        test: /\.ejs$/,
-        use: ["ejs-loader"]
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.ejs',
+      template: 'index.html',
       hash: false,
       chunksSortMode:"none",
       assets: {
@@ -82,8 +79,7 @@ module.exports = {
       pages: path.resolve(__dirname, '../src/pages/'),
       utils: path.resolve(__dirname, '../src/utils/'),
       constants: path.resolve(__dirname, '../src/constants/'),
-      layout: path.resolve(__dirname, '../src/layout/'),
-      tpls: path.resolve(__dirname, '../src/tpls/')
+      layout: path.resolve(__dirname, '../src/layout/')
     }
   },
   devServer: {

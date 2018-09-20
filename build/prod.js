@@ -45,10 +45,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.ejs$/,
-        use: ["ejs-loader"]
-      },
-      {
         test: /\.(woff|woff2|svg|ttf|eot)$/,
         use: ['file-loader?name=fonts/[hash:8].[name].[ext]']
       },
@@ -111,7 +107,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "use plugin",
       filename: 'index.html',
-      template: 'index.ejs',
+      template: 'index.html',
       hash: false,
       chunksSortMode: "none",
       assets: {
@@ -137,7 +133,7 @@ module.exports = {
       pages: path.resolve(__dirname, '../src/pages/'),
       utils: path.resolve(__dirname, '../src/utils/'),
       constants: path.resolve(__dirname, '../src/constants/'),
-      tpls: path.resolve(__dirname, '../src/tpls/')
+      layout: path.resolve(__dirname, '../src/layout/')
     }
   },
   externals:{
