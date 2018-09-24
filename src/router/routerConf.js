@@ -59,16 +59,6 @@ const routerConf = [
     component: UserList,
     children: [
       {
-        path: '/form',
-        layout: MainTpl,
-        component: NoExist
-      },
-      {
-        path: '/form_common',
-        layout: MainTpl,
-        component: NoExist
-      },
-      {
         path: '/form_search',
         layout: MainTpl,
         component: FormSearch
@@ -95,11 +85,6 @@ const routerConf = [
     layout: MainTpl,
     component: UserList,
     children: [
-      {
-        path: '/drag',
-        layout: MainTpl,
-        component: NoExist
-      },
       {
         path: '/code',
         layout: MainTpl,
@@ -159,7 +144,7 @@ const routerConf = [
   },
   {
     path: '*',
-    layout: null,
+    layout: MainTpl,
     component: NoExist,
   },
 ];
