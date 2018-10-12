@@ -1,7 +1,7 @@
 import 'whatwg-fetch'
 import { reqHeader, authBeforeRes, authAfterRes } from './interceptor';
-import ProgressBar from '../components/progressBar';
-import {history}from '..';
+import ProgressBar from '@/components/progressBar';
+import {history}from '@/main';
 
 class Http {
   get(url, params) { 
@@ -72,7 +72,7 @@ class Http {
       })
       .catch(err => {
         console.error("错误信息：",JSON.stringify(err));
-        this.handleExcept(e);//开发环境可讲此方法注视
+        this.handleExcept(err);//开发环境可讲此方法注视
       });
   }
   handleExcept(e){

@@ -1,23 +1,23 @@
 
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const buildPath = path.resolve(__dirname, '../dist');
 const  theme = require('../antd-theme.js');
 module.exports = {
-  mode:"development",
+  mode:'development',
   devtool: 'cheap-eval-source-map',
   context:path.resolve(__dirname, '../src'),
   entry:{
     vendor: ['react', 'react-dom', 'react-router','moment', 'echarts'],
-    app: ['./index.js']
+    app: ['./main.js']
   },
   output: {
     path: buildPath,
-    publicPath: "/",
-    chunkFilename: "js/[name].[hash].js",
-    filename: "js/[name].[hash].js",
+    publicPath: '/',
+    chunkFilename: 'js/[name].[hash].js',
+    filename: 'js/[name].[hash].js'
 },
   module: {
     rules: [{
@@ -31,17 +31,17 @@ module.exports = {
       {
         test: /\.(less|css)$/,
         use: [
-          "style-loader",
-          "css-loader",
-          "less-loader?{modifyVars:"+JSON.stringify(theme)+"}"
+          'style-loader',
+          'css-loader',
+          'less-loader?{modifyVars:'+JSON.stringify(theme)+'}'
         ],
       },
       {
         test: /\.(scss|sass)$/,
         use: [
-          "style-loader", //上面的简写方式
-          "css-loader",
-          "sass-loader"
+          'style-loader', //上面的简写方式
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -55,7 +55,7 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       hash: false,
-      chunksSortMode:"none",
+      chunksSortMode:'none',
       assets: {
         favicon: '/imgs/favicon.ico',
         config_js: '/conf/conf.dev.js'
@@ -65,28 +65,29 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([ 
-      { from: './public/config',to:"./conf"},
-      {from: './public/mock',to:"./mock"},
-      {from: './public/assets/libs',to:"./libs"},
-      {from: './public/assets/imgs',to:"./imgs"}
+      { from: './public/config',to:'./config'},
+      {from: './public/mock',to:'./mock'},
+      {from: './public/libs',to:'./libs'},
+      {from: './public/images',to:'./images'}
     ]),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.scss', '.css', '.json'], 
     alias: { 
-      assets: path.resolve(__dirname, '../src/public/assets'),
-      components: path.resolve(__dirname, '../src/components/'),
-      pages: path.resolve(__dirname, '../src/pages/'),
-      utils: path.resolve(__dirname, '../src/utils/'),
-      constants: path.resolve(__dirname, '../src/constants/'),
-      layout: path.resolve(__dirname, '../src/layout/')
+      '@':path.resolve(__dirname,'../src'),
+      'assets': path.resolve(__dirname, '../src/public/assets'),
+      'components': path.resolve(__dirname, '../src/components/'),
+      'pages': path.resolve(__dirname, '../src/pages/'),
+      'utils': path.resolve(__dirname, '../src/utils/'),
+      'constants': path.resolve(__dirname, '../src/constants/'),
+      'layout': path.resolve(__dirname, '../src/layout/')
     }
   },
   devServer: {
     host: '127.0.0.1',
     port: '9090',
     contentBase: buildPath,
-    publicPath: "/",
+    publicPath: '/',
     historyApiFallback: true,
     disableHostCheck: true,
     compress: true,

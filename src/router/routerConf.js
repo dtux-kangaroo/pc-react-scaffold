@@ -1,11 +1,11 @@
 import Loadable from 'react-loadable';
-import Loading from 'components/loading';
-import MainLayout  from 'layout/mainLayout';
-import SideLayout  from 'layout/SideLayout';
-import TopLayout  from 'layout/topLayout';
+import Loading from '@/components/Loading';
+import MainLayout  from '@/layouts/BasicLayout';
+import ContentLayout from '@/layouts/ContentLayout';
+import SiderLayout from '@/layouts/SiderLayout';
 const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
-const Page404 = Loadable({loader: () => import('../pages/error/404'),loading: Loading});
+const NotFound = Loadable({loader: () => import('@/pages/Exception/404'),loading: Loading});
 const Markdown = Loadable({loader: () => import('../pages/markdown'),loading: Loading});
 const Swiper = Loadable({loader: () => import('../pages/swiper'),loading: Loading});
 const JsonView = Loadable({loader: () => import('../pages/jsonview'),loading: Loading});
@@ -32,7 +32,7 @@ const routerConf = [
   },
   {
     path: '/index',
-    layout: MainLayout,
+    layout: ContentLayout,
     component: UserList,
     children: [
       {
@@ -69,23 +69,22 @@ const routerConf = [
   },
   {
     path: '/back',
-    layout: MainLayout,
-    component: UserList,
+    redirect:'/form',
     children:[
       {
         path: '/form',
-        layout: MainLayout,
+        layout: SiderLayout,
         component: Form
       },
       {
         path: '/form_common',
         layout: MainLayout,
-        component: Page404
+        component: NotFound
       },
       {
         path: '/form_search',
         layout: MainLayout,
-        component: FormSearch
+        component: Loading
       },
       {
         path:'/detail',
@@ -117,7 +116,7 @@ const routerConf = [
        {
           path: '/drag',
           layout: MainLayout,
-          component: Page404
+          component: NotFound
        },
        {
           path: '/code',
@@ -174,7 +173,7 @@ const routerConf = [
   {
     path: '*',
     layout: MainLayout,
-    component: Page404,
+    component: NotFound,
   }
 ];
 

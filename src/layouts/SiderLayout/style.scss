@@ -1,0 +1,16 @@
+.layout-sider{
+  .sider{
+    background: #fff;
+    border-right: 1px solid #e8e8e8;
+    overflow: auto;
+    .fold-btn{
+      text-align: center;
+    }
+    .ant-menu-vertical{
+      border: none;
+    }
+  }
+  .content{
+    overflow: auto;
+  }
+}

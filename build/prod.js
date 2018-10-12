@@ -1,24 +1,24 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const buildPath = path.resolve(__dirname, '../dist');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const theme = require('../antd-theme.js');
 module.exports = {
-  mode: "production",
+  mode: 'production',
   entry: {
     vendor: ['react', 'react-dom', 'react-router', 'moment', 'echarts'],
-    app: ['./index']
+    app: ['./main.js']
   },
   context:path.resolve(__dirname, '../src'),
   output: {
     path: buildPath,
-    publicPath: "/",
-    chunkFilename: "js/[name].[hash].js",
-    filename: "js/[name].[hash].js",
+    publicPath: '/',
+    chunkFilename: 'js/[name].[hash].js',
+    filename: 'js/[name].[hash].js',
   },
   module: {
     rules: [{
@@ -32,16 +32,16 @@ module.exports = {
         test: /\.(less|css)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "less-loader?{modifyVars:" + JSON.stringify(theme) + "}"
+          'css-loader',
+          'less-loader?{modifyVars:' + JSON.stringify(theme) + '}'
         ],
       },
       {
         test: /\.(scss|sass)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -54,7 +54,7 @@ module.exports = {
       },
       {
         test: /\.(js)$/,
-        use: ["strip-loader?strip[]=debug,strip[]=console.log"],
+        use: ['strip-loader?strip[]=debug,strip[]=console.log'],
         exclude: /node_modules/
       },
     ]
@@ -101,25 +101,25 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new MiniCssExtractPlugin({
-      filename: "css/[name].[hash].css",
-      chunkFilename: "css/[name].[hash].css"
+      filename: 'css/[name].[hash].css',
+      chunkFilename: 'css/[name].[hash].css'
     }),
     new HtmlWebpackPlugin({
-      title: "use plugin",
+      title: 'use plugin',
       filename: 'index.html',
       template: 'index.html',
       hash: false,
-      chunksSortMode: "none",
+      chunksSortMode: 'none',
       assets: {
         favicon: '/imgs/favicon.ico',
         config_js: '/conf/conf.prod.js'
       }
     }),
     new CopyWebpackPlugin([
-      { from: './public/config',to:"./conf"},
-      {from: './public/mock',to:"./mock"},
-      {from: './public/assets/libs',to:"./libs"},
-      {from: './public/assets/imgs',to:"./imgs"}
+      {from: './public/config',to:'./config'},
+      {from: './public/mock',to:'./mock'},
+      {from: './public/libs',to:'./libs'},
+      {from: './public/images',to:'./images'}
     ]),
     new webpack.DefinePlugin({
       __PRODUCTION: JSON.stringify(true)
@@ -128,12 +128,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss', '.css', '.json'],
     alias: {
-      assets: path.resolve(__dirname, '../src/public/assets'),
-      components: path.resolve(__dirname, '../src/components/'),
-      pages: path.resolve(__dirname, '../src/pages/'),
-      utils: path.resolve(__dirname, '../src/utils/'),
-      constants: path.resolve(__dirname, '../src/constants/'),
-      layout: path.resolve(__dirname, '../src/layout/')
+      '@':path.resolve(__dirname,'../src'),
+      'assets': path.resolve(__dirname, '../src/public/assets'),
+      'components': path.resolve(__dirname, '../src/components/'),
+      'pages': path.resolve(__dirname, '../src/pages/'),
+      'utils': path.resolve(__dirname, '../src/utils/'),
+      'constants': path.resolve(__dirname, '../src/constants/'),
+      'layout': path.resolve(__dirname, '../src/layout/')
     }
   },
   externals:{
