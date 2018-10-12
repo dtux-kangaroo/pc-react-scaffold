@@ -8,19 +8,12 @@ import API from '@/api';
 
 
 import global from './reducer';
-import home from '@/pages/home/reducer';
-import auth from '@/pages/auth/reducer';
-import userList from  '@/pages/user/list/reducer';
-import detail from '@/pages/detail/reducer';
-import draggable from '@/pages/draggable/reducer';
+import userList from  '@/pages/User/reducer';
+
 
 const appReducer = {
   global,
-  home,
-  auth,
-  userList,
-  detail,
-  draggable
+  userList
 };
 
 

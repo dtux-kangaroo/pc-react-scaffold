@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import http from '../utils/http';
+import http from '@/utils/http';
 
 
 const API_URL={
@@ -10,7 +10,11 @@ const API_URL={
   getNavData:{
     method:'GET',
     url:'/mock/navData.json'
-  }
+  },
+  getUserList:{
+    method:'GET',
+    url:'/mock/userList.json'
+  },
 }
 
 

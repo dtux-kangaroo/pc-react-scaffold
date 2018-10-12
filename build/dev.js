@@ -7,7 +7,7 @@ const buildPath = path.resolve(__dirname, '../dist');
 const  theme = require('../antd-theme.js');
 module.exports = {
   mode:'development',
-  devtool: 'cheap-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   context:path.resolve(__dirname, '../src'),
   entry:{
     vendor: ['react', 'react-dom', 'react-router','moment', 'echarts'],
@@ -18,11 +18,27 @@ module.exports = {
     publicPath: '/',
     chunkFilename: 'js/[name].[hash].js',
     filename: 'js/[name].[hash].js'
-},
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '.json'], 
+    alias: { 
+      '@':path.resolve(__dirname,'../src'),
+      'assets': path.resolve(__dirname, '../src/public/assets'),
+      'components': path.resolve(__dirname, '../src/components/'),
+      'pages': path.resolve(__dirname, '../src/pages/'),
+      'utils': path.resolve(__dirname, '../src/utils/'),
+      'constants': path.resolve(__dirname, '../src/constants/'),
+      'layout': path.resolve(__dirname, '../src/layout/')
+    }
+  },
+  externals :{
+    'FRONT_CONF': 'FRONT_CONF',
+    'lodash': '_'
+  },
   module: {
     rules: [{
         test: /\.js|jsx$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader?cacheDirectory',
           options: {}
@@ -56,33 +72,23 @@ module.exports = {
       template: 'index.html',
       hash: false,
       chunksSortMode:'none',
+      title:'基于react的项目',
       assets: {
         favicon: '/imgs/favicon.ico',
-        config_js: '/conf/conf.dev.js'
+        config_js: '/config/conf.dev.js',
+        lodash:'/libs/lodash/lodash.js'
       }
     }),
     new webpack.DefinePlugin({__PRODUCTION: JSON.stringify(false)}),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([ 
-      { from: './public/config',to:'./config'},
-      {from: './public/mock',to:'./mock'},
-      {from: './public/libs',to:'./libs'},
-      {from: './public/images',to:'./images'}
+      {from: path.resolve(__dirname,'../public/config'),to:'config'},
+      {from: path.resolve(__dirname,'../public/mock'),to:'mock'},
+      {from: path.resolve(__dirname,'../public/libs'),to:'libs'},
+      {from: path.resolve(__dirname,'../public/images'),to:'images'}
     ]),
   ],
-  resolve: {
-    extensions: ['.js', '.jsx', '.scss', '.css', '.json'], 
-    alias: { 
-      '@':path.resolve(__dirname,'../src'),
-      'assets': path.resolve(__dirname, '../src/public/assets'),
-      'components': path.resolve(__dirname, '../src/components/'),
-      'pages': path.resolve(__dirname, '../src/pages/'),
-      'utils': path.resolve(__dirname, '../src/utils/'),
-      'constants': path.resolve(__dirname, '../src/constants/'),
-      'layout': path.resolve(__dirname, '../src/layout/')
-    }
-  },
   devServer: {
     host: '127.0.0.1',
     port: '9090',
@@ -98,8 +104,5 @@ module.exports = {
       target: 'http://log.dev.dtstack.net:81',
       changeOrigin: true
     }]
-  },
-  externals :{
-   'FRONT_CONF': 'FRONT_CONF'
   }
 };

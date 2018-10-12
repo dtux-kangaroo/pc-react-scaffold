@@ -20,6 +20,22 @@ module.exports = {
     chunkFilename: 'js/[name].[hash].js',
     filename: 'js/[name].[hash].js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '.json'],
+    alias: {
+      '@':path.resolve(__dirname,'../src'),
+      'assets': path.resolve(__dirname, '../src/public/assets'),
+      'components': path.resolve(__dirname, '../src/components/'),
+      'pages': path.resolve(__dirname, '../src/pages/'),
+      'utils': path.resolve(__dirname, '../src/utils/'),
+      'constants': path.resolve(__dirname, '../src/constants/'),
+      'layout': path.resolve(__dirname, '../src/layout/')
+    }
+  },
+  externals:{
+    'FRONT_CONF': 'FRONT_CONF',
+    'lodash': '_'
+  },
   module: {
     rules: [{
         test: /\.js|jsx$/,
@@ -110,36 +126,20 @@ module.exports = {
       template: 'index.html',
       hash: false,
       chunksSortMode: 'none',
+      title:'基于react的项目',
       assets: {
-        favicon: '/imgs/favicon.ico',
-        config_js: '/conf/conf.prod.js'
+        favicon: '/images/favicon.ico',
+        config_js: '/config/conf.prod.js'
       }
     }),
     new CopyWebpackPlugin([
-      {from: './public/config',to:'./config'},
-      {from: './public/mock',to:'./mock'},
-      {from: './public/libs',to:'./libs'},
-      {from: './public/images',to:'./images'}
+      {from: path.resolve(__dirname,'../public/config'),to:'config'},
+      {from: path.resolve(__dirname,'../public/mock'),to:'mock'},
+      {from: path.resolve(__dirname,'../public/libs'),to:'libs'},
+      {from: path.resolve(__dirname,'../public/images'),to:'images'}
     ]),
     new webpack.DefinePlugin({
       __PRODUCTION: JSON.stringify(true)
     }),
-  ],
-  resolve: {
-    extensions: ['.js', '.jsx', '.scss', '.css', '.json'],
-    alias: {
-      '@':path.resolve(__dirname,'../src'),
-      'assets': path.resolve(__dirname, '../src/public/assets'),
-      'components': path.resolve(__dirname, '../src/components/'),
-      'pages': path.resolve(__dirname, '../src/pages/'),
-      'utils': path.resolve(__dirname, '../src/utils/'),
-      'constants': path.resolve(__dirname, '../src/constants/'),
-      'layout': path.resolve(__dirname, '../src/layout/')
-    }
-  },
-  externals:{
-    'FRONT_CONF': 'FRONT_CONF',
-    'stompjs':'Stomp',
-    'sockjs':'SockJS'
-  },
+  ]
 };

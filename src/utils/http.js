@@ -1,6 +1,6 @@
 import 'whatwg-fetch'
 import { reqHeader, authBeforeRes, authAfterRes } from './interceptor';
-import ProgressBar from '@/components/progressBar';
+import ProgressBar from '@/components/ProgressBar';
 import {history}from '@/main';
 
 class Http {

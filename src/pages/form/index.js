@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
-import PageHeader from '../../components/pageHeader';
+import PageHeader from './components/pageHeader';
 import './style.scss';
 
 
@@ -32,7 +32,7 @@ const residences = [{
   }],
 }];
 
-class RegistrationForm extends React.Component {
+class RegistrationForm extends React.PureComponent {
   state = {
     confirmDirty: false,
     autoCompleteResult: [],

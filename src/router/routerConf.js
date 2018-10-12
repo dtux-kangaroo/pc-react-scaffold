@@ -3,28 +3,10 @@ import Loading from '@/components/Loading';
 import MainLayout  from '@/layouts/BasicLayout';
 import ContentLayout from '@/layouts/ContentLayout';
 import SiderLayout from '@/layouts/SiderLayout';
-const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
-const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
+const UserList = Loadable({loader: () => import('@/pages/User'),loading: Loading});
 const NotFound = Loadable({loader: () => import('@/pages/Exception/404'),loading: Loading});
-const Markdown = Loadable({loader: () => import('../pages/markdown'),loading: Loading});
-const Swiper = Loadable({loader: () => import('../pages/swiper'),loading: Loading});
-const JsonView = Loadable({loader: () => import('../pages/jsonview'),loading: Loading});
-const Video = Loadable({loader:() => import('../pages/video'),loading: Loading});
-const UploadAndDown = Loadable({ loader: () => import('../pages/uploadAndDown'), loading: Loading })
-const SearchTable = Loadable({ loader: () => import('../pages/searchTable'), loading: Loading });
-const List = Loadable({ loader: () => import('../pages/lists'), loading: Loading });
-const Detail=Loadable({loader:() => import('../pages/detail'),loading: Loading});
-const Draggable=Loadable({loader:() => import('../pages/draggable'),loading: Loading});
-const TextEditor=Loadable({loader:() => import('../pages/textEditor'),loading: Loading});
-const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
-const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
-const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
-const Websocker=Loadable({loader:() => import('../pages/websocker'),loading: Loading});
-const Form=Loadable({loader:() => import('../pages/form'),loading: Loading});
-const FormSearch=Loadable({loader:() => import('../pages/formSearch'),loading: Loading});
-const Analysis=Loadable({loader:() => import('../pages/analysis'),loading: Loading});
-const Login=Loadable({loader:() => import('../pages/auth/login'),loading: Loading});
-const Register=Loadable({loader:() => import('../pages/auth/register'),loading: Loading});
+const Form=Loadable({loader:() => import('@/pages/Form'),loading: Loading});
+
 const routerConf = [
   {
     path:'/',
@@ -33,143 +15,18 @@ const routerConf = [
   {
     path: '/index',
     layout: ContentLayout,
-    component: UserList,
-    children: [
-      {
-        path: '/analysis',
-        layout: MainLayout,
-        component: Analysis
-      },
-      {
-        path: '/upload',
-        layout: MainLayout,
-        component: UploadAndDown,
-      },
-      {
-        path: '/map',
-        layout: MainLayout,
-        component: UploadAndDown,
-      },
-      {
-        path: '/searchTable',
-        layout: MainLayout,
-        component: SearchTable,
-      },
-      {
-        path: '/list',
-        layout: MainLayout,
-        component: List,
-      },
-      {
-        path: '/workbench',
-        layout: MainLayout,
-        component: Home,
-      }
-    ]
+    component: UserList
   },
   {
     path: '/back',
-    redirect:'/form',
     children:[
       {
         path: '/form',
         layout: SiderLayout,
         component: Form
-      },
-      {
-        path: '/form_common',
-        layout: MainLayout,
-        component: NotFound
-      },
-      {
-        path: '/form_search',
-        layout: MainLayout,
-        component: Loading
-      },
-      {
-        path:'/detail',
-        layout: MainLayout,
-        component: Detail,
-      },
-      {
-        path:'/result/success',
-        layout: MainLayout,
-        component: ResultSuccess,
-      },
-      {
-        path:'/result/failure',
-        layout: MainLayout,
-        component: ResultFailure,
-      },
+      }
     ]
   },
-  {
-    path: '/part',
-    layout: MainLayout,
-    component: UserList,
-    children:[
-      {
-        path:'/draggable',
-        layout: MainLayout,
-        component: Draggable,
-       },
-       {
-          path: '/drag',
-          layout: MainLayout,
-          component: NotFound
-       },
-       {
-          path: '/code',
-          layout: MainLayout,
-          component: CodeEditor
-       },
-       {
-          path: '/websocker',
-          layout: MainLayout,
-          component: Websocker
-       },
-       {
-        path:'/textEditor',
-        layout: MainLayout,
-        component: TextEditor,
-       },
-       {
-         path: '/md',
-         layout: MainLayout,
-         component: Markdown
-       },
-       {
-        path: '/swiper',
-        layout: MainLayout,
-        component: Swiper
-       },
-       {
-         path: '/jsonview',
-         layout: MainLayout,
-         component: JsonView
-       },
-       {
-        path: '/code',
-        layout: MainLayout,
-        component: CodeEditor
-       },
-       {
-         path: '/video',
-         layout: MainLayout,
-         component: Video
-       }
-    ]
-  },
-  {
-   path:'/login',
-   layout: null,
-   component: Login,
-  },
-  {
-    path:'/register',
-    layout: null,
-    component: Register,
-   },
   {
     path: '*',
     layout: MainLayout,

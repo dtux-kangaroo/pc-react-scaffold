@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 const initialState = {
-  userData: {name:''},
+  userData: {name:'kangaroo'},
   navData: {
     topNav:[],
     sideNav:[]
