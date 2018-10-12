@@ -129,7 +129,8 @@ module.exports = {
       title:'基于react的项目',
       assets: {
         favicon: '/images/favicon.ico',
-        config_js: '/config/conf.prod.js'
+        config_js: '/config/conf.prod.js',
+        lodash:'/libs/lodash/lodash.js'
       }
     }),
     new CopyWebpackPlugin([
