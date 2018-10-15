@@ -33,10 +33,12 @@ class Http {
     if (data) options.body = flag ? this.buildFormData(data) : new FormData(data);
     return this.request(url, options)
   }
+
   head(url) {
     let options = { method: 'Head' }
     return this.request(url, options)
   }
+  
   buildUrl(url, params) {
     const ps = []
     if (params) {

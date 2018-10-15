@@ -14,7 +14,7 @@ const API_URL={
   getUserList:{
     method:'GET',
     url:'/mock/userList.json'
-  },
+  }
 }
 
 
@@ -35,6 +35,21 @@ _.keys(API_URL).forEach(key=>{
     case 'DELETE':
       API[key]=function(params){
         return http.delete(item.url,params)
+      }
+      break;
+    case 'PUT':
+      API[key]=function(params){
+        return http.put(item.url,params)
+      }
+      break;
+    case 'POSTFORM':
+      API[key]=function(params){
+        return http.postForm(item.url,params)
+      }
+      break;
+    case 'HEAD':
+      API[key]=function(params){
+        return http.head(item.url,params)
       }
       break;
     default:

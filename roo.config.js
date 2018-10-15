@@ -1,44 +1,35 @@
 const path=require('path')
 module.exports={
   bid:{
-    pages:[
-      {
-        name:'pageSample',
-        dest:'/Users/charlesyang/space/workspace/frontcode/product/pc-react-ant.design/src/webapp/pages',
-        path:path.join(__dirname,'src/template/pages/pageSample'),
-        prompts:[
-          {
-            type:'input',
-            name:'pageSample',
-            message:'确定创建 pageSample'
-          }
-        ]
-      },
-      {
-        name:'pageReduce',
-        path:path.join(__dirname,'src/template/pages/pageReduce'),
-        prompts:[
-          {
-            type:'input',
-            name:'pageReduce',
-            message:'确定创建 pageReduce'
-          }
-        ]
+    helpers:{
+      "test"(){
+        return '长卿无敌帅'
       }
-    ],
-    components:[
-      {
-        name:'comSample',
-        dest:"/Users/charlesyang/space/workspace/frontcode/product/pc-react-ant.design/src/webapp/components",
-        path:path.join(__dirname,'src/template/components/comSample'),
-        prompts:[
-          {
-            type:'input',
-            name:'comSample',
-            message:'确定创建 comSample'
-          }
-        ]
-      }
-    ]
+    },
+    page: {
+      output:path.join(__dirname,'src/pages'),
+      templates:[
+        {
+          name:'PageSample',
+          src:path.join(__dirname,'templates/pages/PageSample'),
+          prompts:[]
+        },
+        {
+          name:'PageReducer',
+          src:path.join(__dirname,'templates/pages/PageReducer'),
+          prompts:[]
+        }
+      ]
+    },
+    component:{
+      output:path.join(__dirname,'src/components'),
+      templates:[
+        {
+          name:'ComSample',
+          src:path.join(__dirname,'templates/components/ComSample'),
+          prompts:[]
+        }
+      ]
+    }
   }
 }

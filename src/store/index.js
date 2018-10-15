@@ -8,7 +8,7 @@ import API from '@/api';
 
 
 import global from './reducer';
-import userList from  '@/pages/User/reducer';
+import userList from  '@/pages/UserList/reducer';
 
 
 const appReducer = {
