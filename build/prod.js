@@ -10,7 +10,7 @@ const theme = require('../antd-theme.js');
 module.exports = {
   mode: 'production',
   entry: {
-    vendor: ['react', 'react-dom', 'react-router', 'moment', 'echarts'],
+    vendor: ['react', 'react-dom', 'react-router', 'moment'],
     app: ['./main.js']
   },
   context:path.resolve(__dirname, '../src'),

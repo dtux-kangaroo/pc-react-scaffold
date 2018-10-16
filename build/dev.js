@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   context:path.resolve(__dirname, '../src'),
   entry:{
-    vendor: ['react', 'react-dom', 'react-router','moment', 'echarts'],
+    vendor: ['react', 'react-dom', 'react-router','moment'],
     app: ['./main.js']
   },
   output: {
