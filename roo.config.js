@@ -2,9 +2,7 @@ const path=require('path')
 module.exports={
   bid:{
     helpers:{
-      "test"(){
-        return '长卿无敌帅'
-      }
+      toLowercase:(str)=>str.toLocaleLowerCase()
     },
     page: {
       output:path.join(__dirname,'src/pages'),

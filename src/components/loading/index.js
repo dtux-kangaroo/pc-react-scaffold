@@ -1,8 +1,15 @@
 import React from 'react';
-import { Spin } from 'antd';
 import './style.scss';
-export default function Loading() {
-  return <div className="component-loading">
-    <Spin size="large" tip="努力加载中..."/>
-  </div>
+
+export default function loading() {
+  return (
+    <div className="container">
+      <div className="item-1"></div>
+      <div className="item-2"></div>
+      <div className="item-3"></div>
+      <div className="item-4"></div>
+      <div className="item-5"></div>
+    </div>
+  )
+    
 }
