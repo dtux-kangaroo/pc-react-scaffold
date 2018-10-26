@@ -24,11 +24,6 @@ export default class {{name}} extends React.PureComponent {
   componentDidMount() {
     this.initData(true);
   }
-  //异常捕获
-  componentDidCatch(err, info) {
-    this.setState({ ifError: true })
-    console.log(err);
-  }
   //删除
   handleDelete=(row)=>{
     const {userList} = this.state;
@@ -79,7 +74,7 @@ export default class {{name}} extends React.PureComponent {
     });
   }
   render() {
-    const {pageNo,pageSize,ifError,userList} = this.state;
+    const {pageNo,pageSize,userList} = this.state;
     const { global } = this.props;
     const {name} = global.userData;
     const columns = [

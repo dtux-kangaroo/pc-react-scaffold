@@ -1,8 +1,8 @@
 import mirror from 'mirror-creator';
 export const actionTypes = mirror([
   'CHANGE_DATA',
-  'CHANGE_LOADING_STATUS',
-],'pageReducer/');
+  'CHANGE_LOADING_STATUS'
+],'{{firstLettertoLowercase name}}/');
 
 export const sexs = [
   {

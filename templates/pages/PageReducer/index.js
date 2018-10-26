@@ -62,7 +62,7 @@ export default class {{name}} extends React.PureComponent {
     }); 
   }
   render() {
-    const {pageNo,pageSize,ifError} = this.state;
+    const {pageNo,pageSize} = this.state;
     const { global,{{firstLettertoLowercase name}} } = this.props;
     const dataSource = {{firstLettertoLowercase name}}.data;
     const {name} = global.userData;
