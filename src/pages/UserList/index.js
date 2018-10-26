@@ -1,10 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux'
-
+import { bindActionCreators } from 'redux';
 import {Table,Modal} from "antd";
 import * as actions  from "./acitons"; 
-import Error from '@/pages/Exception/500';
 import Filter from './components/Filter'
 import "./style.scss";
 import {sexs} from './constant';
@@ -21,16 +19,10 @@ const sexMapper = (sex)=>{
 export default class pageReducer extends React.PureComponent {
   state={
     pageNo:1,
-    pageSize:20,
-    ifError:false
+    pageSize:20
   }
   componentDidMount() {
     this.initData(true);
-  }
-  //异常捕获
-  componentDidCatch(err, info) {
-    this.setState({ ifError: true })
-    console.log(err);
   }
   //删除
   handleDelete=(row)=>{
@@ -113,7 +105,7 @@ export default class pageReducer extends React.PureComponent {
       }
     ]
     return (
-      ifError?<Error/>:<div className="page-pageReducer" >
+      <div className="page-pageReducer" >
           <div className="user">Hello,{name}</div>
           <Filter onSearch={this.handleSearch}/>     
           <Table style={{marginTop:20}} rowKey={row=>row.id} columns={columns} dataSource={userList.data} pagination={{current:pageNo,pageSize,onChange:this.handlePageChange}}/>  

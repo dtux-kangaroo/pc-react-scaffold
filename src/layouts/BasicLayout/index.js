@@ -7,6 +7,7 @@ import * as global from "@/store/actions";
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { bindActionCreators } from "redux";
+import ErrorBoundary from '@/components/ErrorBoundary'
 import './style.scss';
 const { Header } = Layout;
 
@@ -48,7 +49,8 @@ class BasicLayout extends React.PureComponent {
       </Menu>
     )
     return (
-       <Layout className={classNames("layout-basic",className)}>
+      <Layout className={classNames("layout-basic",className)}>
+        <ErrorBoundary>
         <Header className="header">
           <div className="logo">
             <Link to="/index">
@@ -70,6 +72,7 @@ class BasicLayout extends React.PureComponent {
           </div>
         </Header>
         <Layout className="main">{children}</Layout>
+        </ErrorBoundary>
       </Layout>
     );
   }

@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import {Table,Modal,message as Message} from "antd";
 import API from '@/api';
-import Error from '@/pages/Exception/500';
 import Filter from './components/Filter';
 import "./style.scss";
 import {sexs} from './constant';
@@ -20,8 +19,7 @@ export default class {{name}} extends React.PureComponent {
   state={
     pageNo:1,
     pageSize:20,
-    userList:[],
-    ifError:false
+    userList:[]
   }
   componentDidMount() {
     this.initData(true);
@@ -125,7 +123,7 @@ export default class {{name}} extends React.PureComponent {
       }
     ]
     return (
-      ifError?<Error/>:<div className="page-{{firstLettertoLowercase name}}" >
+      <div className="page-{{firstLettertoLowercase name}}" >
           <div className="user">Hello,{name}</div>
           <Filter onSearch={this.handleSearch}/>     
           <Table style=\{{marginTop:20}} rowKey={row=>row.id} columns={columns} dataSource={userList} pagination=\{{current:pageNo,pageSize,onChange:this.handlePageChange}}/>  
