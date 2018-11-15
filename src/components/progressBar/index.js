@@ -2,7 +2,7 @@ import './style.scss'
 
 class ProcessBar {
     constructor() {
-        this.className = 'progress-bar'
+        this.className = 'comp-progress-bar'
         this.hodor = document.createElement('div')
         this.hodor.className = this.className
 

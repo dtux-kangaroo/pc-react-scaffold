@@ -1,13 +1,11 @@
 
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    animation-delay: 1s;
-  }
-  
+.comp-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  animation-delay: 1s;
   .item-1 {
     width: 20px;
     height: 20px;
@@ -187,3 +185,6 @@
     transition: 0.5s all ease;
     transform: scale(1);
   }
+}
+  
+  

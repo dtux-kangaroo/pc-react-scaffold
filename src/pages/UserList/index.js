@@ -105,7 +105,7 @@ export default class pageReducer extends React.PureComponent {
       }
     ]
     return (
-      <div className="page-pageReducer" >
+      <div className="page-user-list" >
           <div className="user">Hello,{name}</div>
           <Filter onSearch={this.handleSearch}/>     
           <Table style={{marginTop:20}} rowKey={row=>row.id} columns={columns} dataSource={userList.data} pagination={{current:pageNo,pageSize,onChange:this.handlePageChange}}/>  

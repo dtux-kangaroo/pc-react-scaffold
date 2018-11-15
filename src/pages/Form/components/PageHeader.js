@@ -10,8 +10,8 @@ class PageHeader extends Component {
     render() {
         const {title,content,extra,breadcrumb,crumbItem}=this.props;
         return (
-            <div className="pageHeader">
-                <div className="pg_main">
+            <div className="comp-page-header">
+                <div className="pg-main">
                     {
                         breadcrumb&&(<Breadcrumb className="breadcrumb">
                             {
@@ -28,14 +28,14 @@ class PageHeader extends Component {
                         </Breadcrumb>)
                     }
                     
-                    <div className="pg_detail">
-                        <div className="pg_title">{title}</div>
-                        <div className="pg_content">{content}</div>
+                    <div className="pg-detail">
+                        <div className="pg-title">{title}</div>
+                        <div className="pg-content">{content}</div>
                     </div>
                 </div>
                 {
                     extra&&(
-                        <div className="pg_btn_wrap">
+                        <div className="pg-btn-wrap">
                         {
                             extra
                         }

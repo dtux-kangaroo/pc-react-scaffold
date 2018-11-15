@@ -1,15 +1,9 @@
-.form{
-    .content{
-        background: #ffffff;
-        margin-top: 20px;
-    }
-}
-.pageHeader{
+.comp-page-header{
     background: #fff;
     padding: 16px 32px 0;
     border-bottom: 1px solid #e8e8e8;
     position: relative;
-    .pg_btn_wrap{
+    .pg-btn-wrap{
         position: absolute;
         right: 24px;
         top: 50%;
@@ -18,15 +12,15 @@
     .breadcrumb{
         margin-bottom:16px;
     }
-    .pg_detail{
-        .pg_title{
+    .pg-detail{
+        .pg-title{
             height:28px;
             font-size:20px;
             color:rgba(0,0,0,0.85);
             line-height:28px;
             margin-bottom:16px;
         }
-        .pg_content{
+        .pg-content{
             height:22px;
             font-size:14px;
             color:rgba(0,0,0,0.65);
