@@ -4,7 +4,7 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import API from '@/api';
+import {API} from '@/api';
 
 
 import global from './reducer';

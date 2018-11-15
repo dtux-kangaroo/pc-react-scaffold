@@ -7,6 +7,8 @@
     "dev": "webpack-dev-server --progress --colors --config ./build/dev.js",
     "test-watch": "karma start --auto-watch --no-single-run",
     "start": "npm run dev",
+    "newPage": "roo-bid new page",
+    "newComp": "roo-bid new component",
     "preview": "pushstate-server ./dist 1234"
   },
   "license": "MIT",
