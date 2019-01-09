@@ -23,46 +23,46 @@ const cardTarget = {
 	connectDropTarget: connect.dropTarget(),
 }))
 class DraggableConTent extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            addVisible:false,
-            cards : [
-                {   
-                    id:1,
-                    title:'指标管理',
-                    content:'指标列表管理',
-                    icon:'/imgs/self.png',
-                },
-                {   
-                    id:2,
-                    title:'数据管理',
-                    content:'包括数据规范管理和数据API管理，数据规范的文本编辑详情页面。',
-                    icon:'/imgs/self.png',
-                },
-                {   
-                    id:3,
-                    title:'权限管理',
-                    content:'数据门户的功能权限管理和数据权限管理',
-                    icon:'/imgs/self.png',
-                },
-                {   
-                    id:4,
-                    title:'页面管理',
-                    content:'对数字门户的首页和应用中心页面的模块配置。',
-                    icon:'/imgs/self.png',
-                },
-                {   
-                    id:5,
-                    title:'商业智能',
-                    content:'通过BI工具，对商业数据进行分析并声称分析看板。',
-                    icon:'/imgs/self.png',
-                },
-            ]
-        }
-
+  constructor(props) {
+    super(props);
+    this.state={
+      addVisible:false,
+      cards : [
+        {   
+          id:1,
+          title:'指标管理',
+          content:'指标列表管理',
+          icon:'/imgs/self.png',
+        },
+        {   
+          id:2,
+          title:'数据管理',
+          content:'包括数据规范管理和数据API管理，数据规范的文本编辑详情页面。',
+          icon:'/imgs/self.png',
+        },
+        {   
+          id:3,
+          title:'权限管理',
+          content:'数据门户的功能权限管理和数据权限管理',
+          icon:'/imgs/self.png',
+        },
+        {   
+          id:4,
+          title:'页面管理',
+          content:'对数字门户的首页和应用中心页面的模块配置。',
+          icon:'/imgs/self.png',
+        },
+        {   
+          id:5,
+          title:'商业智能',
+          content:'通过BI工具，对商业数据进行分析并声称分析看板。',
+          icon:'/imgs/self.png',
+        },
+      ]
     }
-    moveCard = (id, atIndex) => {
+
+  }
+  moveCard = (id, atIndex) => {
 		const { card, index } = this.findCard(id)
 		this.setState(
 			update(this.state, {
@@ -81,52 +81,52 @@ class DraggableConTent extends Component {
 			card,
 			index: cards.indexOf(card),
 		}
-    }
-    onAddApp = () => {
-        this.setState({
-            addVisible:true,
-        }) 
-    }
-    onAddAppOk = () => {
-        this.setState({
-            addVisible:false,
-        })
-    }
-    onCancelApp = () => {
-        this.setState({
-            addVisible:false,
-        })
-    }
-    render() {
-        const { connectDropTarget } = this.props;
-        const {cards,addVisible}=this.state;
-        return (
-            <div className="draggableContent">
-            {
-                connectDropTarget &&
-                    connectDropTarget(<div>
-                    <div className="draggItem add_section" onClick={this.onAddApp}>
-                        <div className="text" ><Icon type="plus" />添加应用</div>
-                    </div>
-                    {
-                        cards.map(item=>(
-                            <DraggItem 
-                                moveCard={this.moveCard}
-                                findCard={this.findCard} 
-                                key={item.id}
-                                id={item.id}
-                                title={item.title} 
-                                content={item.content} 
-                                icon={item.icon}
-                            />)
-                        )
-                    }
-                     </div>)
-            }
-            <AddApp visible={addVisible} onOk={this.onAddAppOk} onCancel={this.onCancelApp}/>
-            </div>
-        )
-    }
+  }
+  onAddApp = () => {
+    this.setState({
+      addVisible:true,
+    }) 
+  }
+  onAddAppOk = () => {
+    this.setState({
+      addVisible:false,
+    })
+  }
+  onCancelApp = () => {
+    this.setState({
+      addVisible:false,
+    })
+  }
+  render() {
+    const { connectDropTarget } = this.props;
+    const {cards,addVisible}=this.state;
+    return (
+      <div className="draggableContent">
+      {
+        connectDropTarget &&
+          connectDropTarget(<div>
+          <div className="draggItem add_section" onClick={this.onAddApp}>
+            <div className="text" ><Icon type="plus" />添加应用</div>
+          </div>
+          {
+            cards.map(item=>(
+              <DraggItem 
+                moveCard={this.moveCard}
+                findCard={this.findCard} 
+                key={item.id}
+                id={item.id}
+                title={item.title} 
+                content={item.content} 
+                icon={item.icon}
+              />)
+            )
+          }
+           </div>)
+      }
+      <AddApp visible={addVisible} onOk={this.onAddAppOk} onCancel={this.onCancelApp}/>
+      </div>
+    )
+  }
 }
 
 DraggableConTent.propTypes = {

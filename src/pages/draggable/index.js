@@ -20,24 +20,27 @@ export default class Draggable extends Component {
   }
   componentDidMount() {
   }
+
   componentWillReceiveProps(nextProps) {
   }
+
   shouldComponentUpdate(nextProps, nextState) {
     return this.props != nextProps || this.state != nextState;
   }
+  
   render() {
     return (  
       <div>
-      <div>
+        <div>
           <PageHeader 
             title="拖拽排序" 
             content="基于react-dnd实现的拖拽排序功能，可在此基础上扩展" 
             extra={<div></div>}
-              />
-              <div className="content">
-                <DraggableContent />
-              </div>
+          />
+          <div className="content">
+            <DraggableContent />
           </div>
+        </div>
       </div>     
     )
   }

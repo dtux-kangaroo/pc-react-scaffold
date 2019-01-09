@@ -9,17 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="dt-stack">
     <title><%= htmlWebpackPlugin.options.assets.title %></title>
-    <!-- <link href="<%= htmlWebpackPlugin.options.assets.favicon %>" type="image/x-icon" rel="shortcut icon"> -->
     <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/x-icon">
     <script src="/libs/sock/sockjs.min.js"></script>
     <script src="/libs/stomp/stomp.min.js"></script>
-    <script src="<%= htmlWebpackPlugin.options.assets.config_js %>"></script>
-</head>
+    <%= htmlWebpackPlugin.options.assets.config %> 
+</head> 
 
 <body>
-  <!--[if lt IE 10]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
   <div id="root">
     <style>
       @keyframes landing {
@@ -124,6 +120,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="dll">
+    <%= htmlWebpackPlugin.options.assets.scripts %>
   </div>
 </body>
 

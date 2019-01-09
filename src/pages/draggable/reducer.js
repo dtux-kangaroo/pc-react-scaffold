@@ -7,7 +7,7 @@ const initialState = {
 const applicationConfigReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-      case applicationConfigType.GET_APPLICATIONCONFIG_DATA:
+    case applicationConfigType.GET_APPLICATIONCONFIG_DATA:
       return Object.assign({}, state, {
         applicationConfigData: payload,
       });

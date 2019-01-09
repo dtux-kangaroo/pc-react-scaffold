@@ -8,7 +8,7 @@ const initialState = {
 const loginReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-      case loginType.GET_LOGIN_DATA:
+    case loginType.GET_LOGIN_DATA:
       return Object.assign({}, state, {
         loginData: payload,
       });

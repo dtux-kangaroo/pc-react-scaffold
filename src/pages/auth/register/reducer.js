@@ -7,7 +7,7 @@ const initialState = {
 const registerReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-      case registerType.GET_REGISTER_DATA:
+    case registerType.GET_REGISTER_DATA:
       return Object.assign({}, state, {
         regiserData: payload,
       });

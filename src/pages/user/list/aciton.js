@@ -1,5 +1,4 @@
 import {listType} from './constant';
-import { message } from 'antd';
 import http from '../../../utils/http'
 import apiUrl from '../../../constants/apis';
 

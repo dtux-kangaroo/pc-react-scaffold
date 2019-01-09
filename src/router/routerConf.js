@@ -1,14 +1,12 @@
 import Loadable from 'react-loadable';
 import Loading from 'components/loading';
 import MainLayout  from 'layout/mainLayout';
-import SideLayout  from 'layout/SideLayout';
-import TopLayout  from 'layout/topLayout';
 const Home = Loadable({loader: () => import('../pages/home'),loading: Loading});
 const UserList = Loadable({loader: () => import('../pages/user/list'),loading: Loading});
 const Page404 = Loadable({loader: () => import('../pages/error/404'),loading: Loading});
 const Markdown = Loadable({loader: () => import('../pages/markdown'),loading: Loading});
 const Swiper = Loadable({loader: () => import('../pages/swiper'),loading: Loading});
-const JsonView = Loadable({loader: () => import('../pages/jsonview'),loading: Loading});
+const JsonView = Loadable({loader: () => import('../pages/jsonView'),loading: Loading});
 const Video = Loadable({loader:() => import('../pages/video'),loading: Loading});
 const UploadAndDown = Loadable({ loader: () => import('../pages/uploadAndDown'), loading: Loading })
 const SearchTable = Loadable({ loader: () => import('../pages/searchTable'), loading: Loading });
@@ -19,7 +17,7 @@ const TextEditor=Loadable({loader:() => import('../pages/textEditor'),loading: L
 const ResultSuccess=Loadable({loader:() => import('../pages/resultSuccess'),loading: Loading});
 const ResultFailure=Loadable({loader:() => import('../pages/resultFailure'),loading: Loading});
 const CodeEditor=Loadable({loader:() => import('../pages/codeEditor'),loading: Loading});
-const Websocker=Loadable({loader:() => import('../pages/websocker'),loading: Loading});
+const WebSocker=Loadable({loader:() => import('../pages/webSocker'),loading: Loading});
 const Form=Loadable({loader:() => import('../pages/form'),loading: Loading});
 const FormSearch=Loadable({loader:() => import('../pages/formSearch'),loading: Loading});
 const Analysis=Loadable({loader:() => import('../pages/analysis'),loading: Loading});
@@ -127,7 +125,7 @@ const routerConf = [
        {
           path: '/websocker',
           layout: MainLayout,
-          component: Websocker
+          component: WebSocker
        },
        {
         path:'/textEditor',

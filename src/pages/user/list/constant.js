@@ -1,5 +1,5 @@
 import mirror from 'mirror-creator';
-import React, { Component, PropTypes } from "react";
+import React from "react";
 export const listType= mirror([
   'GET_DATA',
 ],'user/');

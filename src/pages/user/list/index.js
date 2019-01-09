@@ -1,17 +1,13 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux'
-import { Link } from "react-router";
-import { Layout, Menu, Breadcrumb,Table,Row, Col } from "antd";
-import * as list  from "./aciton"; 
-import { isEmpty } from "lodash";
+import { bindActionCreators } from 'redux';
+import { Table,Row, Col } from "antd";
+import * as list  from "./aciton";
 import moment from "moment";
 moment.locale("zh-cn");
-import {usercln} from './constant'
-import assign from "object-assign";
+import {usercln} from './constant';
 import "./style.scss";
 
-const { Header, Content, Footer } = Layout;
 @connect(
   state => ({ ...state.userList }),
   dispatch => bindActionCreators({ ...list}, dispatch)

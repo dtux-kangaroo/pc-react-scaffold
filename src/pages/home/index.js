@@ -1,31 +1,13 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux'
-import { Link } from "react-router-dom";
-import { Layout, Menu, Breadcrumb,Row,Col } from "antd";
+import { bindActionCreators } from 'redux';
 import * as home  from "./aciton"; 
-import { isEmpty } from "lodash";
 import moment from "moment";
 moment.locale("zh-cn");
-import assign from "object-assign";
 import "./style.scss";
-import {WordChart,BarChart,LineChart,ScatterChart,PieChart,MapChart} from 'components/charts'
-import {barOption,lineOption,mapOption,scatterOption,pieOption,wordOption} from 'constants/option';
-import {
-  G2,
-  Chart,
-  Geom,
-  Axis,
-  Tooltip,
-  Coord,
-  Label,
-  Legend,
-  View,
-  Guide,
-  Shape,
-  Facet,
-  Util
-} from "bizcharts";
+import { WordChart, BarChart, LineChart, ScatterChart, PieChart, MapChart } from 'components/charts';
+import { barOption, lineOption, mapOption, scatterOption, pieOption, wordOption } from 'constants/option';
+import { Chart, Geom, Axis, Tooltip } from "bizcharts";
 
 @connect(
   state => ({ ...state.home }),
@@ -98,32 +80,31 @@ export default class Home extends Component {
       }
     };
     return (
-        <div className="content">
-           恭喜，home主页新建成功,DIY YOUE CODE!!!. 
-           <div>
-          <Chart height={400} data={data} scale={cols} forceFit>
-            <Axis name="year" />
-            <Axis name="sales" />
-            <Tooltip
-              crosshairs={{
-                type: "y"
-              }}
-            />
-            <Geom type="interval" position="year*sales" />
-          </Chart>
-        </div>
-           <WordChart option={wordOption} config={config}/>
-           <BarChart option={barOption} config={config}/>
-           <br/>
-           <LineChart option={lineOption} config={config}/>
-           <br/>
-           <MapChart option={mapOption} conifg={config}/>
-           <br/>
-           <ScatterChart option={scatterOption} conifg={config}/>
-           <br/>
-           <PieChart option={pieOption} conifg={config}/>
-
-       </div>
+      <div className="content">
+        恭喜，home主页新建成功,DIY YOUE CODE!!!. 
+      <div>
+      <Chart height={400} data={data} scale={cols} forceFit>
+        <Axis name="year" />
+        <Axis name="sales" />
+        <Tooltip
+          crosshairs={{
+            type: "y"
+          }}
+        />
+        <Geom type="interval" position="year*sales" />
+      </Chart>
+      </div>
+        <WordChart option={wordOption} config={config}/>
+        <BarChart option={barOption} config={config}/>
+        <br/>
+        <LineChart option={lineOption} config={config}/>
+        <br/>
+        <MapChart option={mapOption} conifg={config}/>
+        <br/>
+        <ScatterChart option={scatterOption} conifg={config}/>
+        <br/>
+        <PieChart option={pieOption} conifg={config}/>
+      </div>
     );
   }
 }

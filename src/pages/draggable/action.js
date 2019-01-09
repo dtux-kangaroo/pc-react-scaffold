@@ -10,13 +10,13 @@ const applicationConfigData = (data) => ({
 })
 export const getApplicationConfigData = (params) => async (dispatch, getState) => {
   try {
-      let response = await http.get(apiUrl.getUserData, params);
-      if (response.success) {
-          await dispatch(applicationConfigData(response.data));
-      } else {
-          //返回失败
-      }
+    let response = await http.get(apiUrl.getUserData, params);
+    if (response.success) {
+      await dispatch(applicationConfigData(response.data));
+    } else {
+      //返回失败
+    }
   } catch (error) {
-      console.log('error: ', error)
+    console.log('error: ', error)
   }
 }

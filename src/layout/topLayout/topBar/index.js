@@ -35,7 +35,7 @@ export default class TopBar extends React.Component {
         {navData.length?
           navData.map((item,idx)=>(
             <Menu.Item key={item.permissionUrl.match(/\/\w*/g)[0]}>  
-                        <NavLink to={item.permissionUrl}>{item.permissionName}</NavLink>
+              <NavLink to={item.permissionUrl}>{item.permissionName}</NavLink>
             </Menu.Item>
           )):<Menu.Item></Menu.Item>
         }
@@ -43,9 +43,9 @@ export default class TopBar extends React.Component {
     );
     const selfMenu=(
       <Menu onClick={this.logout}>
-              <Menu.Item key="1">
-                  <NavLink to='/login'>退出</NavLink>
-              </Menu.Item>
+        <Menu.Item key="1">
+          <NavLink to='/login'>退出</NavLink>
+        </Menu.Item>
       </Menu>
     )
     return <Header className="top-bar">
@@ -59,12 +59,12 @@ export default class TopBar extends React.Component {
       </div>
       <div className="fr">
         <Dropdown overlay={selfMenu}>
-              <div className="right user-moudle" style={{height:52}}>
-                  <Link to={{ pathname: '/login' }}>
-                      <Avatar icon="user" />
-                      <span className="name"> kangaroo</span>
-                  </Link>
-              </div> 
+          <div className="right user-moudle" style={{height:52}}>
+            <Link to={{ pathname: '/login' }}>
+              <Avatar icon="user" />
+              <span className="name"> kangaroo</span>
+            </Link>
+          </div> 
         </Dropdown>
       </div>
     </Header>

@@ -7,19 +7,17 @@ import MapDrap from '../../components/mapDrap'
 import './style.scss'
 import apis from "../../constants/apis";
 
-// import { ChinaMap2d } from 'easyv-components/src/components/chinaMap2d/index.jsx';
-// import { config } from 'easyv-components/src/components/chinaMap2d/js/config';
-// import childrenConfig from 'easyv-components/src/components/chinaMap2d/js/children';
-
 moment.locale("zh-cn");
 
 export default class UploadAndDown extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			
 		};
 	}
 	componentDidMount() {
+
 	}
 	componentWillReceiveProps(nextProps) {
 
@@ -30,10 +28,6 @@ export default class UploadAndDown extends Component {
 	render() {
 		return (
 			<div className="content uploadAndDown">
-				{/* <ChinaMap2d
-					configuration={config.configuration}
-					childrenConfig={childrenConfig}
-				/> */}
 				<Divider orientation="left">普通上传</Divider>
 					<Uploader 
 						name="file"
