@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "dtux",
   "scripts": {
-    "build": "rimraf dist && webpack --bail --progress --profile --config ./build/prod.js",
-    "dev": "webpack-dev-server --progress --colors --config ./build/dev.js",
-    "test-watch": "karma start --auto-watch --no-single-run",
     "start": "npm run dev",
+    "dll": "ko dll",
+    "dev": "ko dev",
+    "build": "ko build",
+    "preview": "ko preview",
     "newPage": "node ./src/scripts/newPage.js",
-    "newCom": "node ./src/scripts/newCom.js",
-    "preview": "pushstate-server ./dist 1234"
+    "newCom": "node ./src/scripts/newCom.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -47,6 +47,7 @@
   "devDependencies": {
     "copy-webpack-plugin": "^4.2.1",
     "core-js": "^2.4.1",
+    "ko-script": "^1.3.18",
     "monaco-editor": "^0.14.3",
     "redux-devtools-extension": "^2.13.2"
   }

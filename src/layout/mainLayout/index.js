@@ -7,6 +7,7 @@ import Foot from 'components/footer'
 import * as global from "pages/global/action";
 import { bindActionCreators } from "redux";
 import './style.scss';
+import 'antd/dist/antd.css'
 const { Header, Footer, Sider, Content } = Layout;
 @connect(
   state => ({ ...state.global }),

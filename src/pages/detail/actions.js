@@ -1,16 +1,17 @@
 import {detailType} from './constant';
 import { message as Message } from 'antd';
-import http from '../../utils/http';
-import apiUrl from '../../constants/apis'
+
+import { API } from "@/api/index.js";
 export const getDetailData = (params) => async (dispatch, getState) => {
   try {
     dispatch({
       type:detailType.SWITCH_LOADING_STATUS,
       payload:true
     });
-    const  response = await http.get(apiUrl.getDetailData, params);
-    const {data,success,message} =response
-    if (success) {
+    
+    API.getDetailData(params).then(response =>{ 
+      const {data,success,message} = response;
+      if (success) {
         dispatch({
           type:detailType.SWITCH_LOADING_STATUS,
           payload:false
@@ -19,9 +20,11 @@ export const getDetailData = (params) => async (dispatch, getState) => {
           type: detailType.GET_DETAIL_DATA,
           payload: data
         });
-    } else {
-      Message.error(message);
-    }
+      } else {
+        Message.error(message);
+      }
+    });
+
   } catch (error) {
     console.log('error: ', error)
   }

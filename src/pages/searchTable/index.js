@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Card, Select, message, Button, Input, Table, Modal } from "antd";
 import moment from "moment";
-import http from "../../utils/http";
-import apis from "../../constants/apis";
+import { API } from "@/api/index.js";
 import { cloneDeep } from 'lodash'
 import './style.scss';
 const Option = Select.Option;
@@ -92,7 +91,7 @@ export default class SearchTable extends Component {
     this.setState({
       tableLoading: true,
     });
-    http.get(apis.saveTabelData, editRecord).then((res) => {
+    API.saveTabelData(editRecord).then((res) => {
       if (res.result) {
         message.success("编辑成功！");
         tableData = tableData.map((item) => {
@@ -168,7 +167,7 @@ export default class SearchTable extends Component {
         let params = {
           id: record.id
         }
-        http.get(apis.saveTabelData, params).then((res) => {
+        API.saveTabelData(params).then((res) => {
           if (res.result) {
             message.success("删除成功！");
             _this.setState({
@@ -238,7 +237,7 @@ export default class SearchTable extends Component {
       name,
       age,
     }
-    http.get(apis.getSearchTableData, params).then((res) => {
+    API.getSearchTableData(params).then((res) => {
       if (res.result) {
         this.setState({
           tableData: res.data.data,
@@ -256,15 +255,15 @@ export default class SearchTable extends Component {
   }
   /* 获取select数据 */
   getOptionData = () => {
-    http.get(apis.getOptionData).then((res) => {
-      if (res.result) {
-        this.setState({
-          optionData: res.data
-        })
-      } else {
-        message.warning(res.message);
-      }
-    })
+    // API.getOptionData().then((res) => {
+    //   if (res.result) {
+    //     this.setState({
+    //       optionData: res.data
+    //     })
+    //   } else {
+    //     message.warning(res.message);
+    //   }
+    // })
   }
   /* 渲染编辑单元格 */
   renderColumns = (text, record, columns) => {
