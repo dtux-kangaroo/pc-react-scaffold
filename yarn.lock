@@ -4666,9 +4666,9 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-ko-script@^2.0.0:
-  version "2.0.0"
-  resolved "http://registry.npm.taobao.org/ko-script/download/ko-script-2.0.0.tgz#bced861fbef6c48c8ed459632f706bfc31c9ead9"
+ko-script@^2.1.6:
+  version "2.1.6"
+  resolved "http://registry.npm.taobao.org/ko-script/download/ko-script-2.1.6.tgz#c6eded2e5dd5e342233a79a7cbcf06119ff4bf49"
   dependencies:
     "@babel/core" "^7.2.0"
     "@babel/plugin-proposal-class-properties" "7.2.1"

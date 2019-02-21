@@ -44,7 +44,12 @@
     "copy-webpack-plugin": "^4.2.1",
     "core-js": "^2.4.1",
     "cz-conventional-changelog": "^2.1.0",
-    "ko-script": "^2.0.0",
+    "ko-script": "^2.1.6",
     "redux-devtools-extension": "^2.13.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
