@@ -1,19 +1,15 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
-import { bindActionCreators } from 'redux'
-import { Layout, Menu, Breadcrumb } from "antd";
-import { isEmpty } from 'lodash';
-import assign from 'object-assign';
-import './style.scss';
+import { bindActionCreators } from 'redux';
 import * as smallCamel  from "./action"; 
-const { Header, Content, Footer } = Layout;
+import { message as Message } from "antd";
+import './style.scss';
 
 @connect(
   state => ({ ...state.smallCamel }),
   dispatch => bindActionCreators({ ...smallCamel}, dispatch)
 )
-export default class bigCamel extends Component {
+export default class bigCamel extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,9 +18,6 @@ export default class bigCamel extends Component {
   componentDidMount() {
   }
   componentWillReceiveProps(nextProps) {
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.props != nextProps || this.state != nextState;
   }
   render() {
     return (  

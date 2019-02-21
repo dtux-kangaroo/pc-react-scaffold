@@ -1,5 +1,6 @@
 import Restful from './restful';
 import http from '@/utils/http';
+import Swagger from './swagger';
 const { keys }=Object;
 function mapUrlObjToFuncObj(urlObj){
   const API = {};
@@ -20,6 +21,6 @@ function mapUrlObjToStrObj(urlObj){
   return Url;
 }
 
-export const API = mapUrlObjToFuncObj(Restful);
-export const URL = mapUrlObjToStrObj(Restful);
+export const API = mapUrlObjToFuncObj(Object.assign({},Swagger,Restful));
+export const URL = mapUrlObjToStrObj(Object.assign({},Swagger,Restful));
    

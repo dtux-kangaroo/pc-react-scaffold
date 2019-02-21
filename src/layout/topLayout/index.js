@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import TopBar from "./topBar";
 import Foot from 'components/footer'
 import * as global from "pages/global/action";
+import ErrorBoundary from '@/components/ErrorBoundary';
 import { bindActionCreators } from "redux";
 import './style.scss';
-const { Header, Footer, Sider, Content } = Layout;
 @connect(
   state => ({ ...state.global }),
   dispatch => bindActionCreators({ ...global }, dispatch)
@@ -27,6 +27,7 @@ export default class MainLayout extends Component {
     const {  navData,match, location } = this.props;
     return (
         <Layout className="top-layout">
+          <ErrorBoundary>
           <TopBar location={location}  navData={navData.sideNav}/>
           <Layout>
             <div className="content">
@@ -34,6 +35,7 @@ export default class MainLayout extends Component {
             </div>
             <Foot/>
           </Layout>
+          </ErrorBoundary>
         </Layout>
     );
   }

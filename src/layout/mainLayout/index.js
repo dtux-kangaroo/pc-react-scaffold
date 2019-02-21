@@ -5,9 +5,10 @@ import SideBar from "./sideBar";
 import TopBar from "./topBar";
 import Foot from 'components/footer'
 import * as global from "pages/global/action";
+import ErrorBoundary from '@/components/ErrorBoundary';
+
 import { bindActionCreators } from "redux";
 import './style.scss';
-import 'antd/dist/antd.css'
 const { Header, Footer, Sider, Content } = Layout;
 @connect(
   state => ({ ...state.global }),
@@ -29,6 +30,7 @@ export default class MainLayout extends Component {
     const {  navData,match, location } = this.props;
     return (
        <Layout className="main-layout">
+       <ErrorBoundary>
         <Header><TopBar location={location}  navData={navData.topNav} /></Header>
         <Layout className="top-layout">
           <SideBar location={location}  navData={navData.sideNav}/>
@@ -37,6 +39,7 @@ export default class MainLayout extends Component {
             <Foot/>
           </Layout>
         </Layout>
+        </ErrorBoundary>
       </Layout>
     );
   }

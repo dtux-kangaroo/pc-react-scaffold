@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Dropdown, Menu,Avatar } from 'antd';
+import { Layout, Dropdown, Menu,Avatar,Icon } from 'antd';
 import { Link,NavLink } from "react-router-dom";
 const { Header } = Layout;
 import './style.scss';
@@ -28,13 +28,13 @@ export default class TopBar extends React.Component {
     const topMenu=(
       <Menu  mode="horizontal"
         selectedKeys={[menuKeys[0]]}
-        style={{ verticalAlign: 'middle',lineHeight: '60px', background:'#1A76D2'}} >
+        style={{ verticalAlign: 'middle',lineHeight: '62px', background:'#1A76D2'}} >
         {navData.length?
           navData.map((item,idx)=>(
             <Menu.Item key={item.permissionUrl.match(/\/\w*/g)[0]}>  
               <NavLink to={item.permissionUrl}>{item.permissionName}</NavLink>
             </Menu.Item>
-          )):<Menu.Item></Menu.Item>
+          )):<Icon type="appstore" />
         }
     </Menu>
     );

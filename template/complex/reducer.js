@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import assign from 'object-assign';
 import { smallCamelType } from './constant';
 const initialState = {

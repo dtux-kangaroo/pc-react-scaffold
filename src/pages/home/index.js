@@ -80,8 +80,6 @@ export default class Home extends Component {
       }
     };
     return (
-      <div className="content">
-        恭喜，home主页新建成功,DIY YOUE CODE!!!. 
       <div>
       <Chart height={400} data={data} scale={cols} forceFit>
         <Axis name="year" />
@@ -93,7 +91,6 @@ export default class Home extends Component {
         />
         <Geom type="interval" position="year*sales" />
       </Chart>
-      </div>
         <WordChart option={wordOption} config={config}/>
         <BarChart option={barOption} config={config}/>
         <br/>

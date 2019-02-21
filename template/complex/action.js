@@ -1,6 +1,8 @@
 
 import {smallCamelType} from './constant';
-import { API } from "@/api/index.js";
+import { message as Message } from 'antd';
+import http from 'utils/http'
+import {API,URL} from 'api';
 
 const smallCamelData = (data) => ({
   type: smallCamelType.GET_TYPE_DATA,
@@ -8,13 +10,12 @@ const smallCamelData = (data) => ({
 })
 export const getbigCamelData = (params) => async (dispatch, getState) => {
   try {
-    API.getUserData(params).then(response =>{ 
+      let response = await http.get(API.getUserData, params);
       if (response.success) {
-        dispatch(smallCamelData(response.data));
+          await dispatch(smallCamelData(response.data));
       } else {
-        //返回失败
+          //返回失败
       }
-    });
   } catch (error) {
       console.log('error: ', error)
   }
