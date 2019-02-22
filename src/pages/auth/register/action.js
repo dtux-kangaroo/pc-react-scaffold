@@ -1,5 +1,5 @@
 import {registerType} from './constant';
-import { API } from "@/api/index.js";
+import { API } from "@/api/index";
 
 const registerData = (data) => ({
   type: registerType.GET_REGISTER_DATA,

@@ -1,5 +1,5 @@
 import Restful from './restful';
-import http from '@/utils/http';
+import http from '../utils/http';
 import Swagger from './swagger';
 const { keys }=Object;
 function mapUrlObjToFuncObj(urlObj){

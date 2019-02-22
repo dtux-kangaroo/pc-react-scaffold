@@ -1,5 +1,5 @@
 import {globalType} from './constant';
-import { API } from "@/api/index.js";
+import { API } from "@/api/index";
 
 const userData = (data) => ({
   type: globalType.GET_USER_DATA,

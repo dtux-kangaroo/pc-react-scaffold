@@ -1,5 +1,5 @@
 import {homeType} from './constant';
-import { API } from "@/api/index.js";
+import { API } from "@/api/index";
 
 const homeData = (data) => ({
   type: homeType.GET_HOME_DATA,

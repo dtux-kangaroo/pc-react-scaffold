@@ -1,5 +1,5 @@
 import {loginType} from './constant';
-import { API } from "@/api/index.js";
+import { API } from "@/api/index";
 
 const loginData = (data) => ({
   type: loginType.GET_LOGIN_DATA,
