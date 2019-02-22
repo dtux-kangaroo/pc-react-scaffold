@@ -11,6 +11,6 @@ const middlewares = [thunk, middleware];
 
 const store = createStore(
   combineReducers({ routing: routerReducer, ...appReducer }),
-  __PRODUCTION ? applyMiddleware(...middlewares): composeWithDevTools(applyMiddleware(...middlewares))
+  process.env.NODE_ENV=='production' ? applyMiddleware(...middlewares): composeWithDevTools(applyMiddleware(...middlewares))
 )
 export default   store;
