@@ -1,7 +1,6 @@
 import 'whatwg-fetch'
-import { reqHeader, authBeforeRes, authAfterRes } from './interceptor';
-import ProgressBar from '../components/progressBar';
-import {history}from '..';
+import { reqHeader, authBeforeRes } from './interceptor';
+import ProgressBar from '../components/progressBar/index';
 
 class Http {
   get(url, params) { 
@@ -11,7 +10,7 @@ class Http {
   }
 
   post(url, data) { 
-    let options = { method: 'POST', headers: { "content-type": "application/json;charset=UTF-8" } }
+    let options = { method: 'POST', headers: { "content-type": "application/json;charset=UTF-8" },body:{} }
     if (data) options.body = JSON.stringify(data)
     return this.request(url, options)
   }
@@ -23,13 +22,13 @@ class Http {
   }
 
   put(url, data) {
-    let options = { method: 'PUT' }
+    let options = { method: 'PUT',body:{}  }
     if (data) options.body = JSON.stringify(data)
     return this.request(url, options)
   }
 
   postForm(url, data, flag) {
-    let options = { method: 'POST' }
+    let options = { method: 'POST',body:{}  }
     if (data) options.body = flag ? this.buildFormData(data) : new FormData(data);
     return this.request(url, options)
   }
@@ -72,26 +71,27 @@ class Http {
       })
       .catch(err => {
         console.error("错误信息：",JSON.stringify(err));
-        this.handleExcept(e);//开发环境可讲此方法注视
+        this.handleExcept(err);//开发环境可讲此方法注视
       });
   }
   handleExcept(e){
     const status = e.name;
-    if (status === 401) {
-     window.location.href='/auth/login';
-      return;
-    }
-    if (status === 403) {
-      history.push('/auth/login');
-      return;
-    }
-    if (status <= 504 && status >= 500) {
-      history.push('/auth/login');
-      return;
-    }
-    if (status >= 404 && status < 422) {
-      history.push('/auth/login');
-    }
+    console.log(status);
+    // if (status === 401) {
+    //  window.location.href='/auth/login';
+    //   return;
+    // }
+    // if (status === 403) {
+    //   history.push('/auth/login');
+    //   return;
+    // }
+    // if (status <= 504 && status >= 500) {
+    //   history.push('/auth/login');
+    //   return;
+    // }
+    // if (status >= 404 && status < 422) {
+    //   history.push('/auth/login');
+    // }
   }
 }
 export default new Http()

@@ -30,18 +30,18 @@ module.exports = (context) => {
             {from: path.resolve(__dirname,'public/assets'),to:'assets'},
           ]),
       ],
-      resolve: {
-            alias: {
-            "@": path.resolve(__dirname, 'src'),
-            assets: path.resolve(__dirname, 'public/assets'),
-            components: path.resolve(__dirname, 'src/components'),
-            pages: path.resolve(__dirname, 'src/pages'),
-            api: path.resolve(__dirname, 'src/api'),
-            utils: path.resolve(__dirname, 'src/utils'),
-            constants: path.resolve(__dirname, 'src/constants'),
-            layout: path.resolve(__dirname, 'src/layout')
-          }
-      },
+      // resolve: {
+      //       alias: {
+      //       "@": path.resolve(__dirname, 'src'),
+      //       assets: path.resolve(__dirname, 'public/assets'),
+      //       components: path.resolve(__dirname, 'src/components'),
+      //       pages: path.resolve(__dirname, 'src/pages'),
+      //       api: path.resolve(__dirname, 'src/api'),
+      //       utils: path.resolve(__dirname, 'src/utils'),
+      //       constants: path.resolve(__dirname, 'src/constants'),
+      //       layout: path.resolve(__dirname, 'src/layout')
+      //     }
+      // },
       externals :{
         'FRONT_CONF': 'FRONT_CONF',
       }

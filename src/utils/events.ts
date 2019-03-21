@@ -5,10 +5,12 @@ export default class EventEmitter {
    * @memberof EventEmitter
    */
   constructor(symbol) {
-    this.eventList = [];
+    //this.eventList = [];
     this._symbol = symbol || Symbol('EventEmitter');
   }
+  eventList=[]
 
+  _symbol =Symbol('EventEmitter');
   /**
    * @description 注册事件
    * @param {string} eventName

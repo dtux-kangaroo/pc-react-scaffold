@@ -1,15 +1,20 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Layout, Icon, Dropdown, Menu,Avatar } from 'antd';
-import classnames from 'classnames';
+import * as React from 'react';
+import { Layout, Dropdown, Menu,Avatar,Icon } from 'antd';
 import { Link,NavLink } from "react-router-dom";
 const { Header } = Layout;
-import './style.scss'
-import pic from 'assets/imgs/self.png'
-
-export default class TopBar extends React.Component {
-  constructor(props) {
-    super(props);
+const SubMenu = Menu.SubMenu;
+declare var  frontConf
+import './style.scss';
+interface IProps {
+  topNav:any,
+  location:any
+}
+interface IState{
+  loading:boolean
+}
+export default class TopBar extends React.Component<IProps,IState> {
+  constructor(IProps:any) {
+    super(IProps);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -26,18 +31,28 @@ export default class TopBar extends React.Component {
 
 
   render() {
-    const { navData, location, userData } = this.props;
+    const { topNav, location } = this.props;
     let menuKeys=location.pathname.match(/\/\w*/g);
     const topMenu=(
       <Menu  mode="horizontal"
+        theme="dark"
         selectedKeys={[menuKeys[0]]}
-        style={{ verticalAlign: 'middle',lineHeight: '62px', background:'#1A76D2'}} >
-        {navData.length?
-          navData.map((item,idx)=>(
+        style={{ verticalAlign: 'middle',lineHeight: '62px'}} >
+        {topNav.length?
+          topNav.map((item,idx)=>(
+            item.children.length?
+          <SubMenu title={<span>{item.permissionName}</span>}>
+           { item.children.map((child,kc)=>(
+              <Menu.Item key={child.permissionUrl.match(/\/\w*/g)[0]}>  
+                <NavLink to={child.permissionUrl}>{child.permissionName}</NavLink>
+              </Menu.Item>
+            ))}
+            </SubMenu>
+            :
             <Menu.Item key={item.permissionUrl.match(/\/\w*/g)[0]}>  
               <NavLink to={item.permissionUrl}>{item.permissionName}</NavLink>
             </Menu.Item>
-          )):<Menu.Item></Menu.Item>
+          )):<Icon type="appstore" />
         }
     </Menu>
     );
@@ -51,7 +66,8 @@ export default class TopBar extends React.Component {
     return <Header className="top-bar">
       <div className="logo">
         <Link to="/index">
-          <img src={ FRONT_CONF.COMPANY_LOGO } alt="logo"/>
+          <img src={ frontConf.COMPANY_LOGO } alt="logo"/>
+          {frontConf.LAYOUT}
         </Link>
       </div>
       <div className="fl top-bar-nav">

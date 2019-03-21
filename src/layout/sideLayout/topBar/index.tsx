@@ -1,15 +1,19 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Layout, Icon, Dropdown, Menu,Avatar } from 'antd';
-import classnames from 'classnames';
+import * as React from 'react';
+import { Layout, Dropdown, Menu,Avatar } from 'antd';
 import { Link,NavLink } from "react-router-dom";
 const { Header } = Layout;
 import './style.scss'
-import pic from 'assets/imgs/self.png'
 
-export default class TopBar extends React.Component {
-  constructor(props) {
-    super(props);
+interface IProps {
+  location:any
+}
+interface IState{
+  loading:boolean
+}
+
+export default class TopBar extends React.Component<IProps,IState> {
+  constructor(IProps:any) {
+    super(IProps);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -26,8 +30,8 @@ export default class TopBar extends React.Component {
 
 
   render() {
-    const { navData, location, userData } = this.props;
-    let menuKeys=location.pathname.match(/\/\w*/g);
+    //const { location } = this.props;
+    //let menuKeys=location.pathname.match(/\/\w*/g);
     const selfMenu=(
       <Menu onClick={this.logout}>
               <Menu.Item key="1">

@@ -1,12 +1,20 @@
-import React from 'react';
-import { Layout, Dropdown, Menu,Avatar,Icon } from 'antd';
+import * as React from 'react';
+import { Layout, Icon, Dropdown, Menu,Avatar } from 'antd';
 import { Link,NavLink } from "react-router-dom";
 const { Header } = Layout;
-import './style.scss';
+declare var  frontConf
+import './style.scss'
 
-export default class TopBar extends React.Component {
-  constructor(props) {
-    super(props);
+interface IProps {
+  location:any
+}
+interface IState{
+  loading:boolean
+}
+
+export default class TopBar extends React.Component<IProps,IState> {
+  constructor(IProps) {
+    super(IProps);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -23,21 +31,6 @@ export default class TopBar extends React.Component {
 
 
   render() {
-    const { navData, location, userData } = this.props;
-    let menuKeys=location.pathname.match(/\/\w*/g);
-    const topMenu=(
-      <Menu  mode="horizontal"
-        selectedKeys={[menuKeys[0]]}
-        style={{ verticalAlign: 'middle',lineHeight: '62px', background:'#1A76D2'}} >
-        {navData.length?
-          navData.map((item,idx)=>(
-            <Menu.Item key={item.permissionUrl.match(/\/\w*/g)[0]}>  
-              <NavLink to={item.permissionUrl}>{item.permissionName}</NavLink>
-            </Menu.Item>
-          )):<Icon type="appstore" />
-        }
-    </Menu>
-    );
     const selfMenu=(
       <Menu onClick={this.logout}>
         <Menu.Item key="1">
@@ -48,11 +41,20 @@ export default class TopBar extends React.Component {
     return <Header className="top-bar">
       <div className="logo">
         <Link to="/index">
-          <img src={ FRONT_CONF.COMPANY_LOGO } alt="logo"/>
+          <img src={ frontConf.COMPANY_LOGO } alt="logo"/>
         </Link>
       </div>
       <div className="fl top-bar-nav">
-       {topMenu}
+       <Menu  mode="horizontal"
+         selectedKeys={["mail"]}
+       >
+         <Menu.Item key="mail" >
+          <Icon type="mail" />Navigation One
+        </Menu.Item>
+        <Menu.Item key="app">
+          <Icon type="mail" />Navigation 
+        </Menu.Item>
+       </Menu>
       </div>
       <div className="fr">
         <Dropdown overlay={selfMenu}>

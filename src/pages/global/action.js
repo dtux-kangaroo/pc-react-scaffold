@@ -11,7 +11,6 @@ export const getUserData = (params) => async (dispatch, getState) => {
       if (response.success) {
         dispatch(userData(response.data));
       } else {
-        //返回失败
       }
     });
   } catch (error) {

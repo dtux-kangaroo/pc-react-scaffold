@@ -1,20 +1,31 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import * as React from 'react';
+import { Layout, Menu, Icon } from 'antd';
 const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
-import classnames from 'classnames';
-import { Link,NavLink } from "react-router-dom";
+const { Sider } = Layout;
+import { NavLink } from "react-router-dom";
 import './style.scss'
-export default class SideBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: false,
-      selectedKeys:[],
-      openKeys:[],
-      sideData:[]
-    };
+
+declare var  frontConf
+interface IProps {
+  navData:any,
+  location:any,
+  history:any
+}
+interface IState{
+  collapsed:boolean,
+  openKeys:Array<any>,
+  selectedKeys:Array<any>,
+  sideData:Array<any>
+}
+export default class SideBar extends React.Component<IProps,IState> {
+  constructor(IProps:any) {
+    super(IProps);
+  }
+  state:IState={
+    collapsed: false,
+    selectedKeys:[],
+    openKeys:[],
+    sideData:[]
   }
 
   componentDidMount() {
@@ -37,7 +48,7 @@ export default class SideBar extends React.Component {
           collapsed={this.state.collapsed}
       >
       {
-        FRONT_CONF.NAV_STRETCH && <div className="fold-btn"> 
+        frontConf.NAV_STRETCH && <div className="fold-btn"> 
         <Icon className="trigger" type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}onClick={this.toggle.bind(this)}/>
        </div>
       }
