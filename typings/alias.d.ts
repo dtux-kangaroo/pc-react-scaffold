@@ -1,6 +1,1 @@
-// declare module 'layout'
-// declare module 'pages'
-// declare module 'components'
-// declare module 'constants'
-// declare module 'utils'
-// declare module 'api'
+declare module 'mirror-creator';

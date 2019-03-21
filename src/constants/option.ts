@@ -1,4 +1,4 @@
-export const pieOption :any = {
+export const pieOption:any = {
   tooltip: {
     trigger: "item",
     formatter: "{a} <br/>{b}: {c} ({d}%)"

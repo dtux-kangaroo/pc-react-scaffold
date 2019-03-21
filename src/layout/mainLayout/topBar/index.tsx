@@ -67,7 +67,6 @@ export default class TopBar extends React.Component<IProps,IState> {
       <div className="logo">
         <Link to="/index">
           <img src={ frontConf.COMPANY_LOGO } alt="logo"/>
-          {frontConf.LAYOUT}
         </Link>
       </div>
       <div className="fl top-bar-nav">

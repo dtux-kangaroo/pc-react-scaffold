@@ -21,6 +21,6 @@ function mapUrlObjToStrObj(urlObj){
   return Url;
 }
 
-export const API = mapUrlObjToFuncObj(Object.assign({},Swagger,Restful));
-export const URL = mapUrlObjToStrObj(Object.assign({},Swagger,Restful));
+export const API:any = mapUrlObjToFuncObj(Object.assign({},Swagger,Restful));
+export const URL:any = mapUrlObjToStrObj(Object.assign({},Swagger,Restful));
    

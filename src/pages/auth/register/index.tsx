@@ -1,42 +1,36 @@
-import React, { Component, PropTypes } from "react";
-import { connect } from "react-redux";
+import * as React from "react";
 import { NavLink } from "react-router-dom";
-import assign from "object-assign";
-import { bindActionCreators } from "redux";
-import * as register from "./action";
 import "./style.scss";
 import {
   Form,
   Input,
-  Tooltip,
-  Icon,
-  Cascader,
   Select,
-  Row,
-  Col,
   Checkbox,
   Button,
-  AutoComplete,
-  Layout
 } from "antd";
 const FormItem = Form.Item;
 const Option = Select.Option;
-const AutoCompleteOption = AutoComplete.Option;
 
-const { Header, Content, Footer } = Layout;
-@connect(
-  state => ({ ...state.auth.register }),
-  dispatch => bindActionCreators({ ...register }, dispatch)
-)
- class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.state =  { confirmDirty: false,
-    autoCompleteResult: []};
+interface IProps {
+  history:any,
+  form:any
+}
+interface IState{
+  confirmDirty:boolean,
+  autoCompleteResult:any
+}
+
+ class Register extends React.Component<IProps,IState> {
+  constructor(IProps:any) {
+    super(IProps);
+  }
+  state:IState={
+    confirmDirty: false,
+    autoCompleteResult:[]
   }
   componentDidMount() {
     console.log(this.props);
-    this.props.submitRegisterData();
+    //this.props.submitRegisterData();
   }
   componentWillReceiveProps(nextProps) {}
   shouldComponentUpdate(nextProps, nextState) {
@@ -84,7 +78,6 @@ const { Header, Content, Footer } = Layout;
   };
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { autoCompleteResult } = this.state;
 
     const formItemLayout = {
       labelCol: {
@@ -117,9 +110,6 @@ const { Header, Content, Footer } = Layout;
       </Select>
     );
 
-    const websiteOptions = autoCompleteResult.map(website => (
-      <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-    ));
 
     return (
       <div style={{ minHeight: "1200px"}} className="login-bg">

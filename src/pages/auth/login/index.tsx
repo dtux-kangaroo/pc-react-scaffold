@@ -1,27 +1,23 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux';
-import { Form, Icon, Input, Button, Checkbox,Layout } from 'antd';
-import { isEmpty } from 'lodash';
-import assign from 'object-assign';
-import { bindActionCreators } from 'redux'
-import * as login  from "./action";
+import * as React from 'react'
+import { Form, Icon, Input, Button } from 'antd';
 import { NavLink } from "react-router-dom"; 
 import './style.scss';
 const FormItem = Form.Item;
 
-const { Header, Content, Footer } = Layout;
-@connect(
-  state => ({ ...state.login }),
-  dispatch => bindActionCreators({ ...login}, dispatch)
-)
- class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
+interface IProps {
+  history:any,
+  form:any
+}
+interface IState{
+  confirmDirty:boolean,
+  autoCompleteResult:any
+}
+ class Login extends React.Component <IProps,IState>{
+  constructor(IProps:any) {
+    super(IProps);
+  
   }
   componentDidMount() {
-    this.props.getLoginData();
   }
   componentWillReceiveProps(nextProps) {
   }

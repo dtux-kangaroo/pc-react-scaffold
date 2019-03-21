@@ -1,12 +1,4 @@
 
-// import Loadable from 'react-loadable';
-// import Loading from 'components/loading';
-// const Home =  Loadable({loader: () => import('../pages/home/index'),loading: Loading});
-// const Page404 = Loadable({loader: () => import('../pages/error/404'),loading: Loading});
-// const Login=Loadable({loader:() => import('../pages/auth/register/index'),loading:Loading});
-// const Register=Loadable({loader:() => import('../pages/auth/register/index'),loading: Loading});
-//import Home from 'pages/home/index';
-//import TopLayout  from 'layout/topLayout';
 import MainLayout  from 'layout/mainLayout';
 import DepartmentAssets from 'pages/dataPanoramic/departmentAssets'
 import CategoryAssets from 'pages/dataPanoramic/categoryAssets'

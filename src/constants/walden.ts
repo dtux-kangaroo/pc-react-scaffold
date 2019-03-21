@@ -1,8 +1,9 @@
 
 
 
-  const walden={
+  const walden:any={
       "color":[
+          
           "#3fb1e3",
           "#6be6c1",
           "#626c91",

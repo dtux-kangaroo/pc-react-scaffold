@@ -48,7 +48,7 @@
     "@types/redux-thunk": "^2.1.0",
     "copy-webpack-plugin": "^4.6.0",
     "cz-conventional-changelog": "^2.1.0",
-    "ko-script": "^2.1.2",
+    "ko-script": "^2.2.8",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
     "typescript": "^3.3.3"

@@ -1,6 +1,5 @@
-import { combineReducers } from 'redux';
-import assign from 'object-assign';
 import {globalType} from './constant';
+
 const initialState = {
   userData: {name:''},
   navData: {

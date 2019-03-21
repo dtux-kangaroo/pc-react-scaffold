@@ -24,6 +24,7 @@ const navData = (data) => ({
 })
 export const getNavData = (params) => async (dispatch, getState) => {
   try {
+    console.log(globalType,'globalType');
     API.getNavData(params).then(response =>{ 
       if (response.success) {
         dispatch(navData(response.data));
