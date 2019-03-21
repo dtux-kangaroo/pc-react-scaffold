@@ -19,13 +19,15 @@ interface IProps {
 interface IState{
   loading:boolean
 }
+
+
 @connect(
   state => ({ ...state.global }),
   dispatch => bindActionCreators({ ...global }, dispatch)
 )
 export default class MainLayout extends React.Component<IProps,IState> {
-  constructor(IProps:any) {
-    super(IProps);
+  constructor(props:IProps) {
+    super(props);
   }
   state:IState={
     loading:false
