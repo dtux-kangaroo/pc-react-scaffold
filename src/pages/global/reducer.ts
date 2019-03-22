@@ -9,6 +9,7 @@ const initialState = {
 };
  const globalReducer = (state = initialState, action) => {
   const { type, payload } = action;
+  console.log();
   switch (type) {
     case globalType.GET_USER_DATA:
       return Object.assign({}, state, {

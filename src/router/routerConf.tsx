@@ -1,37 +1,22 @@
 
 import MainLayout  from 'layout/mainLayout';
-import DepartmentAssets from 'pages/dataPanoramic/departmentAssets'
-import CategoryAssets from 'pages/dataPanoramic/categoryAssets'
-import PersonalAssets from 'pages/dataPanoramic/personalAssets'
 import Page404 from 'pages/error/404';
 import Login from 'pages/auth/login/index';
 import Register from 'pages/auth/register/index';
+import Home from 'pages/home'
+import User from 'pages/user'
 
 
 const routerConf = [
   {
-    path:'/',
-    redirect:'/index'
+    path: '/',
+    layout: MainLayout,
+    component: Home,
   },
   {
-    path: '/index',
+    path:'/user',
     layout: MainLayout,
-    component: DepartmentAssets,
-    children:[
-        {
-          path: '/category',
-          layout: MainLayout,
-          component: CategoryAssets,
-          children:[]
-        },
-        {
-          path: '/persional',
-          layout: MainLayout,
-          component: PersonalAssets,
-          children:[]
-        }
-
-    ]
+    component: User,
   },
   {
    path:'/login',

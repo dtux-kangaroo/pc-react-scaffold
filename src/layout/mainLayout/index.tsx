@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Layout } from "antd";
 import { connect } from "react-redux";
 import TopBar from "./topBar/index";
-import Foot from 'components/footer'
+//import Foot from 'components/footer'
 import * as global from "pages/global/action";
 import ErrorBoundary from '@/components/ErrorBoundary';
 
@@ -33,12 +33,12 @@ export default class MainLayout extends React.Component<IProps,IState> {
     loading:false
   }
   componentDidMount() {
+    //console.log($('#sdff').text());
     this.props.getNavData({});
   }
   componentWillReceiveProps(nextProps) {}
   render() {
     const {  navData, location } = this.props;
-    const {loading}=this.state;
     return (
        <Layout className="main-layout">
        <ErrorBoundary>
@@ -46,8 +46,7 @@ export default class MainLayout extends React.Component<IProps,IState> {
         <Layout className="top-layout">
           <Layout>
             <div className="content">{this.props.children}</div>
-            {loading?'state':'nostate'}
-            <Foot/>
+            {/* <Foot/> */}
           </Layout>
         </Layout>
         </ErrorBoundary>

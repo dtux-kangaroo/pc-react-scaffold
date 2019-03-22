@@ -10,8 +10,6 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 import store from './store';
 import  '@babel/polyfill'
 export const history = createHistory();
-// interface AppProps{}
-// interface AppStates{}
 
 class App extends React.Component{
     

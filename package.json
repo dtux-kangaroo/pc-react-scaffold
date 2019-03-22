@@ -37,9 +37,9 @@
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
     "roo-tool": "^0.1.2"
-    
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.29",
     "@types/node": "^11.9.4",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.1",
@@ -48,7 +48,7 @@
     "@types/redux-thunk": "^2.1.0",
     "copy-webpack-plugin": "^4.6.0",
     "cz-conventional-changelog": "^2.1.0",
-    "ko-script": "^2.2.8",
+    "ko-script": "^2.3.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
     "typescript": "^3.3.3"

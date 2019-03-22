@@ -40,9 +40,29 @@ export default {
     }, 
 
     /* -------- 智慧门店 - 热力动线 Hot Area Controller -------- */
-    queryHotLineUsingPost: { // 热力动线
+    queryCADHotLineUsingPost: { // 热力动线-6家CAD
         method: 'post',
-        url: `/api/v1/hotArea/hot-line` 
+        url: `/api/v1/hotArea/cad-hotline` 
+    }, 
+    getShopInfoUsingPost: { // 获取店铺信息-CAD图
+        method: 'post',
+        url: `/api/v1/hotArea/getShopInfo` 
+    }, 
+    queryHotLineUsingPost: { // 热力图
+        method: 'post',
+        url: `/api/v1/hotArea/hot-map` 
+    }, 
+    queryProductAnalysisUsingPost: { // 商品购买分析
+        method: 'post',
+        url: `/api/v1/hotArea/product-analysis` 
+    }, 
+    queryShanghaiHotLineUsingPost: { // 热力动线-上海
+        method: 'post',
+        url: `/api/v1/hotArea/shanghai-hotline` 
+    }, 
+    testUsingGet: { // 测试
+        method: 'get',
+        url: `/api/v1/hotArea/test` 
     }, 
 
     /* -------- 智慧门店 - 逛店分析 In Store Analysis Controller -------- */
@@ -74,6 +94,14 @@ export default {
         method: 'get',
         url: `/api/v1/cust/get-area-tree` 
     }, 
+    getCompAreaOptionsUsingGet: { // 获取对比分析中下拉区域选项
+        method: 'get',
+        url: `/api/v1/cust/get-comp-area-options` 
+    }, 
+    getCompTagDataBetweenAreasUsingGet: { // 获取不同区域的标签对比数据
+        method: 'get',
+        url: `/api/v1/cust/get-comp-tag-datas` 
+    }, 
     getTagClassUsingGet: { // 获取用户标签类别
         method: 'get',
         url: `/api/v1/cust/get-tags-class` 
@@ -83,10 +111,10 @@ export default {
         url: `/api/v1/cust/get-usertag-ratio` 
     }, 
 
-    /* -------- 用户登录 User Login Controller -------- */
-    userLoginUsingPost: { // 用户登录
-        method: 'post',
-        url: `/api/v1/user/login` 
+    /* -------- 用户登录 Login Controller -------- */
+    loginUrlUsingGet: { // 用户登录（新）
+        method: 'get',
+        url: `/api/v1/login/get-url` 
     }, 
     userLoginOutUsingGet: { // 用户登出
         method: 'get',
