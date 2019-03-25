@@ -3,17 +3,16 @@ import { Form, Icon, Input, Button,message,Row,Col } from 'antd';
 const FormItem = Form.Item;
 
 interface IProps {
-  history:any,
-  form:any
+  form:any,
+  cancel:()=>void
 }
 interface IState{
   confirmDirty:boolean,
   autoCompleteResult:any
 }
- class SetPwdModel extends React.Component <IProps,IState>{
+ class ResetPwd extends React.Component <IProps,IState>{
   constructor(IProps:any) {
     super(IProps);
-  
   }
   componentDidMount() {
   }
@@ -29,7 +28,8 @@ interface IState{
         let flag:boolean=  (values.userName||'').length
                  &&(values.password||'').length;
           if(flag){
-              this.props.history.push('/');
+              //this.props.history.push('/');
+              this.props.cancel();
               //API.Login()
           }else{
             message.warning("账号密码输入有误，请重新输入")
@@ -40,6 +40,7 @@ interface IState{
     });
   }
   render() {
+    const {cancel}=this.props
     const { getFieldDecorator } = this.props.form;
     const formItemLayout:any = {
         labelCol: {
@@ -80,7 +81,7 @@ interface IState{
         </Row>
         <Row style={{marginTop:"5px"}}>
              <Col span={24} style={{ textAlign: 'right' }}>
-                <Button style={{ marginLeft: 8 }}>取消</Button>&nbsp;&nbsp;
+                <Button onClick={cancel} style={{ marginLeft: 8 }}>取消</Button>&nbsp;&nbsp;
                 <Button type="primary" htmlType="submit">确定</Button>
              </Col>
         </Row>
@@ -89,4 +90,4 @@ interface IState{
     );
   }
 }
-export default  Form.create()(SetPwdModel);
+export default  Form.create()(ResetPwd);
