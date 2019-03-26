@@ -1,11 +1,11 @@
 .home-page{
     width:1124px;
     margin:120px auto;
-    border:1px solid #fff;
     min-height: 680px;
     .app-box{
-        background:blue;
         height:186px;
+        display: block;
+        background-size: 100% 100%;
         cursor: pointer;
         padding:70px 50px;
         color:#fff;

@@ -10,7 +10,7 @@ module.exports = (context) => {
     },
     proxy: [{
       "path": '/api/v1/**',
-      "target": 'http://172.16.8.194:8891',
+      "target": 'http://172.16.8.194:9999', //http://172.16.8.194:9999/
       "changeOrigin": true
     }],
     dll:[],

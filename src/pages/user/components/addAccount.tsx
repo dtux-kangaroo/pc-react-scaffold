@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { Form, Icon, Input, Button,message,Row,Col } from 'antd';
+import { Form, Input, Button,message,Row,Col } from 'antd';
 const FormItem = Form.Item;
+import {API} from 'api/index'
 
 interface IProps {
   form:any,
-  cancel:()=>void
+  cancel:(param:any)=>void
 }
 interface IState{
   confirmDirty:boolean,
@@ -27,18 +28,23 @@ interface IState{
     this.props.form.validateFields((err, values) => {
       if (!err) {
         let flag:boolean=  (values.userName||'').length
-                 &&(values.password||'').length;
+                 &&(values.userAccount||'').length;
           if(flag){
-              //this.props.history.push('/');
-              this.props.cancel();
-              //API.Login()
+              this.addUsingPost(values);
           }else{
-            message.warning("账号密码输入有误，请重新输入")
+            message.warning("格式输入有误，请重新输入")
           }
         console.log('Received values of form: ', values,this.props);
       
       }
     });
+  }
+  addUsingPost=(params:any)=>{
+    API.addUsingPost(params)
+    .then(ret=>{
+      console.log(ret,'121');
+      this.props.cancel(true);
+    })
   }
   render() {
     const {cancel}=this.props
@@ -61,16 +67,16 @@ interface IState{
              <Col span={24}>
               <FormItem {...formItemLayout} label="用户名称:">
                 {getFieldDecorator('userName', {
-                    rules: [{ required: true, message: '请输入登陆账号!' }],
+                    rules: [{ required: true, message: '请输入用户名称!' }],
                 })(
-                    <Input  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="请输入登录账号" />
+                    <Input  placeholder="请输入用户名称" />
                 )}
                 </FormItem>
                 <FormItem {...formItemLayout} label="创建账号：">
-                {getFieldDecorator('password', {
-                    rules: [{ required: true, message: '请输入登陆密码!' }],
+                {getFieldDecorator('userAccount', {
+                    rules: [{ required: true, message: '请输入用户账号' }],
                 })(
-                    <Input   prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="请输入登录密码" />
+                    <Input placeholder="请输入用户账号" />
                 )}
              </FormItem>
             </Col>

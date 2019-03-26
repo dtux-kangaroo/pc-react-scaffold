@@ -1,38 +1,58 @@
 import * as React from 'react';
-import { Layout, Dropdown, Menu,Icon } from 'antd';
+import { Layout, Dropdown, Menu,Icon,Modal } from 'antd';
 import { Link,NavLink } from "react-router-dom";
 const { Header } = Layout;
 //sconst SubMenu = Menu.SubMenu;
 const person=require('assets/imgs/yonghutouxiang.png')
 declare var  frontConf
+import ModifyPwd from './components/modifyPwd'
+import {API} from 'api/index'
 import './style.scss';
 interface IProps {
   topNav:any,
-  location:any
+  userData:any,
+  history:any
 }
 interface IState{
-  loading:boolean
+  loading:boolean,
+  visible:boolean
 }
 export default class TopBar extends React.Component<IProps,IState> {
   constructor(IProps:any) {
     super(IProps);
   }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.props !== nextProps;
+  state:IState={
+    visible:false,
+    loading:false
   }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return this.props !== nextProps;
+  // }
   componentWillReceiveProps(nextProps) {
      console.log(nextProps);
   }
   componentDidMount() {}
 
-  logout() {
-    //
+  logout=()=>{
+    API.logoutUsingGet()
+    .then(ret=>{
+      this.props.history.push('/login');
+    })
+  }
+  openModel=()=>{
+    this.setState({visible:true});
+  }
+  closeModel=(flag:any)=>{
+    if(flag!=1){
+      this.logout();
+    }
+    this.setState({visible:false});
   }
 
-
   render() {
-    //const { location } = this.props;
+    const { userData } = this.props;
+    const {visible}=this.state;
+    //console.log();
     //let menuKeys=location.pathname.match(/\/\w*/g);
     // const topMenu=(
     //   <Menu  mode="horizontal"
@@ -58,15 +78,15 @@ export default class TopBar extends React.Component<IProps,IState> {
     // </Menu>
     // );
     const selfMenu=(
-      <Menu onClick={this.logout}>
+      <Menu >
         <Menu.Item key="1">
           <NavLink to='/user'>用户管理</NavLink>
         </Menu.Item>
         <Menu.Item key="2">
-          <span>修改密码</span>
+          <span onClick={this.openModel}>修改密码</span>
         </Menu.Item>
         <Menu.Item key="3">
-          <NavLink to='/login'>退出</NavLink>
+          <span onClick={this.logout}>退出</span>
         </Menu.Item>
       </Menu>
     )
@@ -87,12 +107,15 @@ export default class TopBar extends React.Component<IProps,IState> {
         <Dropdown overlay={selfMenu}>
           <div className="right user-moudle" style={{height:52}}>
               <img src={person}></img>
-              <span className="name">白蛇  </span> 
+              <span className="name">{userData.userAccount}  </span> 
               <Icon type="down" />
           </div> 
         </Dropdown>
       </div>
       </div>
+      <Modal visible={visible} footer={null} onCancel={this.closeModel.bind(this,1)}>
+       <ModifyPwd userData={userData} cancel={this.closeModel}></ModifyPwd>
+      </Modal>
      </Header>
     )
   }

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Form, Icon, Input, Button,message } from 'antd';
 //import { NavLink } from "react-router-dom"; 
 import './style.scss';
-//import {API} from 'api/index'
+import {API} from 'api/index'
 const FormItem = Form.Item;
 const xihubiaozhi =require('assets/imgs/xihubiaozhi.png');
 
@@ -30,11 +30,18 @@ interface IState{
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        let flag:boolean=  (values.userName||'').length
+        let flag:boolean=  (values.username||'').length
                  &&(values.password||'').length;
           if(flag){
-              this.props.history.push('/');
-              //API.Login()
+             
+              API.loginUsingPost(values)
+              .then(ret=>{
+                if(ret.success){
+                  this.props.history.push('/');
+                }else{
+                  message.warning(ret.message)
+                }
+              })
           }else{
             message.warning("账号密码输入有误，请重新输入")
           }
@@ -56,7 +63,7 @@ interface IState{
           </div>
         </FormItem>
         <FormItem>
-          {getFieldDecorator('userName', {
+          {getFieldDecorator('username', {
             rules: [{ required: true, message: '请输入登陆账号!' }],
           })(
             <Input size='large'  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="请输入登录账号" />

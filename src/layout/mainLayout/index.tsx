@@ -10,11 +10,12 @@ import { bindActionCreators } from "redux";
 import './style.scss';
 const { Header } = Layout;
 interface IProps {
-  getNavData:(params:any) => void,
+  getUserData:(params:any) => void,
   navData:{
     topNav:Array<string>
   },
-  location:any
+  userData:any,
+  history:any
 }
 interface IState{
   loading:boolean
@@ -33,16 +34,15 @@ export default class MainLayout extends React.Component<IProps,IState> {
     loading:false
   }
   componentDidMount() {
-    //console.log($('#sdff').text());
-    this.props.getNavData({});
+    this.props.getUserData({});
   }
   componentWillReceiveProps(nextProps) {}
   render() {
-    const {  navData, location } = this.props;
+    const {  navData, history,userData } = this.props;
     return (
        <Layout className="main-layout">
        <ErrorBoundary>
-        <Header><TopBar location={location}  topNav={navData.topNav} /></Header>
+        <Header><TopBar history={history}  topNav={navData.topNav}  userData={userData}/></Header>
         <Layout className="top-layout">
           <Layout>
             <div className="content">{this.props.children}</div>

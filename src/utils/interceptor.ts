@@ -11,6 +11,10 @@ export function authBeforeRes(response) {
             return response;
         case 302:
             message.info('登录超时, 请重新登录！')
+            break;
+        case 401:
+            window.location.href='/login';
+            break;
         default:
             if (process.env.NODE_ENV !== 'production') {
                 console.error('Request error: ', response.code, response.message)

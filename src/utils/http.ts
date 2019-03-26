@@ -77,21 +77,21 @@ class Http {
   handleExcept(e){
     const status = e.name;
     console.log(status);
-    // if (status === 401) {
-    //  window.location.href='/auth/login';
-    //   return;
-    // }
-    // if (status === 403) {
-    //   history.push('/auth/login');
-    //   return;
-    // }
-    // if (status <= 504 && status >= 500) {
-    //   history.push('/auth/login');
-    //   return;
-    // }
-    // if (status >= 404 && status < 422) {
-    //   history.push('/auth/login');
-    // }
+    if (status === 401) {
+     window.location.href='/login';
+      return;
+    }
+    if (status === 403) {
+      window.location.href='/login';
+      return;
+    }
+    if (status <= 504 && status >= 500) {
+      window.location.href='/login';
+      return;
+    }
+    if (status >= 404 && status < 422) {
+      window.location.href='/login';
+    }
   }
 }
 export default new Http()

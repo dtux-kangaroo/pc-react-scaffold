@@ -1,7 +1,7 @@
 import {globalType} from './constant';
 
 const initialState = {
-  userData: {name:''},
+  userData: {},
   navData: {
     topNav:[],
     sideNav:[]

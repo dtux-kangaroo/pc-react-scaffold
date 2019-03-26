@@ -7,7 +7,7 @@ const userData = (data) => ({
 })
 export const getUserData = (params) => async (dispatch, getState) => {
   try {
-    API.getUserData(params).then(response =>{ 
+    API.getUserUsingGet(params).then(response =>{ 
       if (response.success) {
         dispatch(userData(response.data));
       } else {
