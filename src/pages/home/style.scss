@@ -1,4 +1,20 @@
-
-.layout{
-  color:red;
+.home-page{
+    width:1124px;
+    margin:120px auto;
+    min-height: 680px;
+    .app-box{
+        height:186px;
+        display: block;
+        background-size: 100% 100%;
+        cursor: pointer;
+        padding:70px 50px;
+        color:#fff;
+        :first-child{  
+            font-size:18px;
+            margin-bottom:10px;
+        }
+        :last-child{
+            font-size:12px;
+        }
+    }
 }
