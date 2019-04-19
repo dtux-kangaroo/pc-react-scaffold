@@ -7,8 +7,9 @@
     "dll": "ko dll",
     "dev": "ko dev -t",
     "build": "ko build -t",
-    "swagger": "ko swagger",
-    "commit": "git cz",
+    "swagger": "ko swagger -t",
+    "ct": "git add . && git cz",
+    "tslint": "tslint --project . src/**/*.ts src/**/*.tsx",
     "preview": "ko preview",
     "newPage": "node ./src/scripts/newPage.js",
     "newCom": "node ./src/scripts/newCom.js"
@@ -36,21 +37,25 @@
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
-    "roo-tool": "^0.1.2"
+    "roo-tool": "^0.1.2",
+    "throttle-debounce": "^2.1.0"
   },
   "devDependencies": {
-    "@types/jquery": "^3.3.29",
+    "@types/lodash": "^4.14.123",
     "@types/node": "^11.9.4",
+    "@types/prop-types": "^15.7.0",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.1",
     "@types/react-router-redux": "^5.0.18",
     "@types/redux-actions": "^2.3.2",
     "@types/redux-thunk": "^2.1.0",
+    "@types/throttle-debounce": "^1.1.1",
     "copy-webpack-plugin": "^4.6.0",
     "cz-conventional-changelog": "^2.1.0",
     "ko-script": "^2.3.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
+    "tslint": "^5.15.0",
     "typescript": "^3.3.3"
   },
   "config": {

@@ -21,7 +21,7 @@
             //"frontConf":["./public/config/conf.dev.js"]
         },
         "jsx": "react",
-        "alwaysStrict": true,
+        // "alwaysStrict": true,
         "noUnusedLocals": true,
         "importHelpers": true,
         "experimentalDecorators": true,
