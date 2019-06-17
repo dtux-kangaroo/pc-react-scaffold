@@ -1,11 +1,10 @@
 import {registerType} from './constant';
-import { API } from "@/api/index.js";
 
 const registerData = (data) => ({
   type: registerType.GET_REGISTER_DATA,
   payload: data
 })
-export const submitRegisterData = (params) => async (dispatch, getState) => {
+export const submitRegisterData = (params) => async (dispatch, getState,{API}) => {
   try {
     API.getHomeData(params).then(response =>{ 
       if (response.success) {

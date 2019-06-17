@@ -1,11 +1,10 @@
 import {homeType} from './constant';
-import { API } from "@/api/index.js";
 
 const homeData = (data) => ({
   type: homeType.GET_HOME_DATA,
   payload: data
 })
-export const getHomeData = (params) => async (dispatch, getState) => {
+export const getHomeData = (params) => async (dispatch, getState,{ API }) => {
   try {
     API.getHomeData(params).then(response =>{ 
       if (response.success) {

@@ -2,12 +2,13 @@
 import { createStore, applyMiddleware, combineReducers,compose } from 'redux'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import appReducer from 'pages/global';
-import createHistory from 'history/createBrowserHistory'
+import { API } from "@/api/index"
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-export const history = createHistory();
+import { createBrowserHistory } from 'history';
+export const history = createBrowserHistory();
 const middleware = routerMiddleware(history);
-const middlewares = [thunk, middleware];
+const middlewares = [thunk.withExtraArgument({API}), middleware];
 
 const store = createStore(
   combineReducers({ routing: routerReducer, ...appReducer }),

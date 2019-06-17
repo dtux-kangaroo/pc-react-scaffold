@@ -1,8 +1,8 @@
 import React from 'react';
 import routerConf from './routerConf';
 import {  Router, Switch, Route,Redirect } from 'react-router-dom';
- import createHistory from "history/createBrowserHistory";
-const history = createHistory();
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
 
 function renderRouteConf(container, router, contextPath) {
   const routeChildren = [];

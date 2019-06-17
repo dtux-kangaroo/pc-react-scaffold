@@ -1,7 +1,7 @@
 import 'whatwg-fetch'
 import { reqHeader, authBeforeRes, authAfterRes } from './interceptor';
 import ProgressBar from '../components/progressBar';
-import {history}from '..';
+
 
 class Http {
   get(url, params) { 
@@ -81,17 +81,17 @@ class Http {
      window.location.href='/auth/login';
       return;
     }
-    if (status === 403) {
-      history.push('/auth/login');
-      return;
-    }
-    if (status <= 504 && status >= 500) {
-      history.push('/auth/login');
-      return;
-    }
-    if (status >= 404 && status < 422) {
-      history.push('/auth/login');
-    }
+    // if (status === 403) {
+    //   history.push('/auth/login');
+    //   return;
+    // }
+    // if (status <= 504 && status >= 500) {
+    //   history.push('/auth/login');
+    //   return;
+    // }
+    // if (status >= 404 && status < 422) {
+    //   history.push('/auth/login');
+    // }
   }
 }
 export default new Http()

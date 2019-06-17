@@ -1,11 +1,10 @@
 import {globalType} from './constant';
-import { API } from "@/api/index.js";
 
 const userData = (data) => ({
   type: globalType.GET_USER_DATA,
   payload: data
 })
-export const getUserData = (params) => async (dispatch, getState) => {
+export const getUserData = (params) => async (dispatch, getState,{API}) => {
   try {
     API.getUserData(params).then(response =>{ 
       if (response.success) {

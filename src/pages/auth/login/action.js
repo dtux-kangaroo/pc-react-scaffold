@@ -1,11 +1,10 @@
 import {loginType} from './constant';
-import { API } from "@/api/index.js";
 
 const loginData = (data) => ({
   type: loginType.GET_LOGIN_DATA,
   payload: data
 })
-export const getLoginData = (params) => async (dispatch, getState) => {
+export const getLoginData = (params) => async (dispatch, getState,{API}) => {
   try {
     API.getUserData(params).then(response =>{ 
       if (response.success) {
