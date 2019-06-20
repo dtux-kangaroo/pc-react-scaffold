@@ -40,7 +40,6 @@ const { Header, Content, Footer } = Layout;
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <div style={{ minHeight: "1200px"}} className="login-bg">
       <Form onSubmit={this.handleSubmit} className="login-form">
         <FormItem>
           {getFieldDecorator('userName', {
@@ -61,7 +60,6 @@ const { Header, Content, Footer } = Layout;
           <NavLink to="/register">Or 注册!</NavLink>  <NavLink className="login-form-forgot" to="/register">忘记密码</NavLink>
         </FormItem>
       </Form>
-      </div>
     );
   }
 }

@@ -33,7 +33,7 @@ export default class MainLayout extends Component {
        <ErrorBoundary>
         <Header><TopBar location={location}  navData={navData.topNav} /></Header>
         <Layout className="top-layout">
-          <SideBar location={location}  navData={navData.sideNav}/>
+          {/* <SideBar location={location}  navData={navData.sideNav}/> */}
           <Layout>
             <div className="content">{this.props.children}</div>
             <Foot/>

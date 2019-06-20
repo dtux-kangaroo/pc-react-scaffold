@@ -122,7 +122,6 @@ const { Header, Content, Footer } = Layout;
     ));
 
     return (
-      <div style={{ minHeight: "1200px"}} className="login-bg">
       <Form onSubmit={this.handleSubmit} className="register-form">
         <FormItem {...formItemLayout} label="用户邮箱">
           {getFieldDecorator("email", {
@@ -192,10 +191,11 @@ const { Header, Content, Footer } = Layout;
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit"> <NavLink to="/index">注 册</NavLink></Button>
+          <Button type="primary" htmlType="submit"> 
+           <a href="/index" style={{color: "#FFFFFF"}}>注 册</a>
+          </Button>
         </FormItem>
       </Form>
-      </div>
     );
   }
 }

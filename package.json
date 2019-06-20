@@ -38,6 +38,11 @@
     "roo-tool": "^1.0.2"
   },
   "devDependencies": {
+    "@types/immutable": "^3.8.7",
+    "@types/lodash": "^4.14.134",
+    "@types/object-assign": "^4.0.30",
+    "@types/prop-types": "^15.7.1",
+    "@types/react-resize-detector": "^4.0.1",
     "copy-webpack-plugin": "^5.0.3",
     "cz-conventional-changelog": "^2.1.0",
     "ko-script": "^2.3.2",

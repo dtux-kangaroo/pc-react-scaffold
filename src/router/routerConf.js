@@ -1,7 +1,7 @@
-import Loadable from 'react-loadable';
-import Loading from 'components/loading';
+
 import TopLayout  from 'layout/topLayout';
 import MainLayout  from 'layout/mainLayout';
+import UserLayout  from 'layout/userLayout';
 import Home from 'pages/home';
 import Page404 from 'pages/error/404';
 import Login from 'pages/auth/login';
@@ -20,17 +20,17 @@ const routerConf = [
   },
   {
    path:'/login',
-   layout: null,
+   layout: UserLayout,
    component: Login,
   },
   {
     path:'/register',
-    layout: null,
+    layout: UserLayout,
     component: Register,
    },
 		{
 		path: '*',
-    layout: TopLayout,
+    layout: MainLayout,
     component: Page404,
   }
 ];

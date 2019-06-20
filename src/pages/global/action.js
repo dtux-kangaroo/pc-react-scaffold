@@ -22,7 +22,7 @@ const navData = (data) => ({
   type: globalType.GET_NAV_DATA,
   payload: data
 })
-export const getNavData = (params) => async (dispatch, getState) => {
+export const getNavData = (params) => async (dispatch, getState,{API}) => {
   try {
     API.getNavData(params).then(response =>{ 
       if (response.success) {
