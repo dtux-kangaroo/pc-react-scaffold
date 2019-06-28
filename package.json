@@ -34,10 +34,10 @@
     "react-router-dom": "^5.0.1",
     "react-router-redux": "^4.0.8",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "roo-tool": "^1.0.2"
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "roo-tool": "^1.0.2",
     "@types/immutable": "^3.8.7",
     "@types/lodash": "^4.14.134",
     "@types/object-assign": "^4.0.30",
@@ -52,5 +52,11 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
 }
