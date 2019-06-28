@@ -8,7 +8,6 @@ import "./style.scss";
 import { WordChart, BarChart, LineChart, ScatterChart, PieChart, MapChart } from 'components/charts';
 import { barOption, lineOption, mapOption, scatterOption, pieOption, wordOption } from 'constants/option';
 import { Chart, Geom, Axis, Tooltip } from "bizcharts";
-
 @connect(
   state => ({ ...state.home }),
   dispatch => bindActionCreators({ ...home}, dispatch)
