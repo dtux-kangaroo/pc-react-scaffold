@@ -5,6 +5,8 @@ import Login from 'pages/auth/login/index';
 import Register from 'pages/auth/register/index';
 import Home from 'pages/home'
 import User from 'pages/user'
+import Traffic from 'pages/traffic';
+import Trade from 'pages/trade';
 
 
 const routerConf = [
@@ -20,6 +22,16 @@ const routerConf = [
     path: '/parking-special/data-overview',
     layout: MainLayout,
     component: Home,
+  },
+  {
+    path: '/parking-special/traffic-flow',
+    layout: MainLayout,
+    component: Traffic,
+  },
+  {
+    path: '/parking-special/trade-data',
+    layout: MainLayout,
+    component: Trade,
   },
   {
     path:'/user',

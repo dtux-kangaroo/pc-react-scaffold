@@ -56,7 +56,7 @@ export default class MainLayout extends React.Component<IProps, IState> {
           <Layout className="top-layout">
             <SideBar location={location} history={history} navData={navData.sideNav} />
             <Layout>
-              <div className="content">{this.props.children}</div>
+              <div className="yux-content">{this.props.children}</div>
               {/* <Foot/> */}
             </Layout>
           </Layout>

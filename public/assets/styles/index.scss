@@ -2,3 +2,21 @@
 @import './custom.scss';
 @import '../fonts/iconfont/iconfont.css';
 
+$fontSize: 12px;
+$dark: #2E2E34;
+
+body {
+  font-size: $fontSize;
+  font-family: PingFangSC-Semibold, PingFangSC;
+}
+
+.ant-card-head {
+  border-bottom: none !important;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: $dark;
+  line-height: 24px;
+}

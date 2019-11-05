@@ -2,6 +2,8 @@ import * as React from 'react'
 import {render} from 'react-dom'
 import { Provider } from 'react-redux';
 import Routers from './router/index'
+import { LocaleProvider } from 'antd';
+import zh_CN from 'antd/es/locale-provider/zh_CN';
 import "assets/styles/index.scss";
 import "assets/styles/antd.less";
 import store from './store';
@@ -20,5 +22,5 @@ class App extends React.Component{
         )
     }
 }
-render(<App/>,document.getElementById('root'))
+render(<LocaleProvider locale={zh_CN}><App/></LocaleProvider>,document.getElementById('root'))
 
