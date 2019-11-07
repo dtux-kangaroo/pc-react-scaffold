@@ -45,7 +45,6 @@ export default class AreaChart extends React.Component {
   }
   chartResize = throttle((width) => {
     const { chart } = this.state;
-    console.log(width)
     if (chart) chart.resize();
   }, 1000)
 

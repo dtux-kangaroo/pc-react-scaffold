@@ -38,4 +38,9 @@ export const getNavData = (params) => async (dispatch, getState,{API}) => {
   }
 }
 
-
+export const updateTimeFilter = value => {
+  return {
+    type: globalType.UPDATE_TIMEFILTER,
+    payload: value
+  }
+}

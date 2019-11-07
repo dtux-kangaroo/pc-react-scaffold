@@ -1,32 +1,40 @@
-.pageHeader{
-	background: #fff;
-	padding: 16px 32px 0;
-	border-bottom: 1px solid #e8e8e8;
-	position: relative;
-	margin: -20px -20px 0;
-	.pg_btn_wrap{
-		position: absolute;
-		right: 24px;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	.breadcrumb{
-		margin-bottom:16px;
-	}
-	.pg_detail{
-		.pg_title{
-			height:28px;
-			font-size:20px;
-			color:rgba(0,0,0,0.85);
-			line-height:28px;
-			margin-bottom:16px;
-		}
-		.pg_content{
-			height:22px;
-			font-size:14px;
-			color:rgba(0,0,0,0.65);
-			line-height:22px;
-			margin-bottom:16px;
-		}
-	}
+.page-title {
+  position: fixed;
+  top: 64px;
+  width: calc(100% - 200px);
+  height: 70px;
+  line-height: 70px;
+  z-index: 888;
+  margin-left: -20px;
+  background: #fff;
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+
+  .title-txt {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e2e34;
+    line-height: 70px;
+  }
+
+  .ant-radio-button-wrapper {
+    margin: 0 8px;
+    border-radius: 4px !important;
+  }
+}
+
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  position: relative;
+  background: #fff;
+  color: #1890ff;
+}
+
+.J_headfix {
+  height: 70px;
+
+  &.fixed {
+    position: fixed;
+    top: 64px;
+  }
 }

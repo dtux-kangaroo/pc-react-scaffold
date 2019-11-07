@@ -14,7 +14,7 @@ const colorArr = ['#FFB822', '#08BB87', '#1DC9B7', '#98AAFF', '#A2B2FF', '#ADBBF
 interface IProps {
   option: {
     title: string,
-    type: string | undefined
+    type: string
   },
   data: any // Array<IObject>
 }
@@ -22,8 +22,8 @@ interface IProps {
 interface IState {
 }
 
-export default class Traffic extends React.Component<IProps, IState> {
-  constructor(props) {
+export default class MapList extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
   }
 

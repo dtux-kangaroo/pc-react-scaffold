@@ -1,0 +1,15 @@
+.block {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-right: 9px solid #5D78FF;
+  border-bottom: 9px solid #5D78FF;
+  border-left: 9px solid transparent;
+}
+
+.f-fr {
+  float: right
+}

@@ -1,0 +1,11 @@
+{
+  "data": [
+    { "label": "名称1", "count": 100, "description": "总车位：100" },
+    { "label": "名称2", "count": 88, "description": "总车位：88"},
+    { "label": "名称3", "count": 78, "description": "总车位：78"},
+    { "label": "名称4", "count": 28, "description": "总车位：28"}
+  ],
+  "result": true,
+  "result_code": 1,
+  "result_message": "执行成功"
+}
