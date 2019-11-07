@@ -18,7 +18,7 @@ interface IProps {
 
 const StatisticPanel: React.FC<IProps> = (props) => {
 
-  const { gutter = 20, statistics, background = '#fff', style = {}, calssName } = props;
+  const { gutter = 20, statistics, background = '#fff', style = {}, calssName  = ''} = props;
   const mergedStyle = Object.assign(style, { background });
   const span = Math.floor(24 / statistics.length);
   return (
