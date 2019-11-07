@@ -31,7 +31,7 @@ const SortedBarChart: React.FC<IProps> = (props) => {
   return (
     <div className="sorted-bar-chart">
       {
-        data && data.length && data.map((item, index) => (
+        data && data.length > 0 && data.map((item, index) => (
           <Row key={index}>
             <div className="bar-row">
               <div className="bar-row-left">
@@ -95,7 +95,7 @@ const BarBlock = (props) => {
   return (
     <div className="bar-block" style={{ height: barHeight }}>
       <div className="bar-wrapper">
-        <div style={Object.assign({}, defaultStyle, item.barStyle ? item.barStyle : {}, { width: `${item.count / maxValue * 100}%`, background: item.color })}></div>
+        <div style={Object.assign({}, defaultStyle, { width: `${item.count / maxValue * 100}%`, background: item.color }, item.barStyle ? item.barStyle : {})}></div>
       </div>
     </div>
   )

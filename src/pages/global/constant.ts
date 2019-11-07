@@ -16,7 +16,8 @@ const createType=(keys:any)=>{
 export const globalType:any= createType(
   [
   'GET_USER_DATA',
-  'GET_NAV_DATA'
+  'GET_NAV_DATA',
+  'UPDATE_TIMEFILTER'
  ]
 );
 
