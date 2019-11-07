@@ -17,7 +17,8 @@ export const globalType:any= createType(
   [
   'GET_USER_DATA',
   'GET_NAV_DATA',
-  'UPDATE_TIMEFILTER'
+  'UPDATE_TIMEFILTER_NAME',
+  'UPDATE_TIMEFILTER_TYPE'
  ]
 );
 

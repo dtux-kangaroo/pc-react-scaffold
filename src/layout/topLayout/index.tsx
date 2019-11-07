@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import TopBar from "./topBar";
 import Foot from 'components/footer'
 import * as global from "pages/global/action";
-import ErrorBoundary from '@/components/ErrorBoundary';
+import ErrorBoundary from '@/components/errorBoundary';
 import { bindActionCreators } from "redux";
 import './style.scss';
 

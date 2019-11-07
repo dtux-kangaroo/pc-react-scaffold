@@ -18,6 +18,7 @@ interface IProps {
 }
 
 interface IState {
+  sum: number,
   changeRate: number,
   trend: {
     option: any,
@@ -43,6 +44,7 @@ export default class Trade extends React.Component<IProps, IState> {
     super(props);
   }
   state: IState = {
+    sum: 0,
     changeRate: 0,
     channel: {
       option: {
@@ -106,6 +108,11 @@ export default class Trade extends React.Component<IProps, IState> {
           type: 'line',
           smooth: true,
           // symbol: 'none',
+          markLine: {
+            data: [
+              { type: 'average', name: '平均值' }
+            ]
+          },
           markPoint: {
             data: [
               { type: 'max', name: '最大值' },
@@ -145,26 +152,47 @@ export default class Trade extends React.Component<IProps, IState> {
   }
 
   updateAllData(params) {
+    this.updateSum(params);
     this.updateTrendData(params);
     this.updateChannelData(params);
   }
 
+  updateSum(params) {
+    API.getTrafficTrendData().then(res => {
+      if (res && res.result) {
+        this.setState({
+          sum: res.data.parkingTotalProfit,
+          changeRate: res.data.parkingTotalProfitGrowthRate
+        });
+      }
+    })
+  }
+
   updateTrendData(params) {
     API.getTradeTrendData().then(res => {
-      const { trend } = this.state;
-      trend.option.xAxis.data = [];
-      trend.option.series[0].data = [];
-      this.setState({
-        trend
-      })
-    })
+      if (res && res.result) {
+        const { trend } = this.state;
+        trend.option.xAxis.data = res.data.x;
+        trend.option.series[0].data = res.data.y;
+        this.setState({
+          trend
+        });
+      }
+    });
   }
 
   updateChannelData(params) {
     API.getTradeTrendData().then(res => {
       if (res && res.result) {
         const { channel } = this.state;
-        channel.option.series[0].data = [];
+        let data = res.data, arr = [];
+        data.foreach(item => {
+          arr.push({
+            name: item.channelName,
+            value: item.channelNum
+          });
+        });
+        channel.option.series[0].data = arr;
         this.setState({
           channel
         })
@@ -199,13 +227,13 @@ export default class Trade extends React.Component<IProps, IState> {
   }
 
   render() {
-    const { changeRate, trend, channel, rankList } = this.state;
+    const { sum, changeRate, trend, channel, rankList } = this.state;
     return (
       <div className="comp-trade">
         <PageHeader title="交易数据" hasTimeSelect={true} />
         <Card title={<span className="card-title">收益趋势分析</span>}>
           <div style={{ margin: '10px 0 20px' }}>
-            总车流量<span style={{ fontSize: '18px', margin: '0 30px 0 15px' }}>2000</span>较前一时段
+            总车流量<span style={{ fontSize: '18px', margin: '0 30px 0 15px' }}>{sum}</span>较前一时段
             {
               changeRate >= 0
                 ? <img src="assets/imgs/arrow-up.png" style={{ margin: '-5px 5px 0 10px' }} alt="上升" />

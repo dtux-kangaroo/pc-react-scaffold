@@ -20,6 +20,7 @@ interface IProps {
 }
 
 interface IState {
+  sum: number,
   changeRate: number,
   trend: {
     option: any,
@@ -52,6 +53,7 @@ export default class Traffic extends React.Component<IProps, IState> {
     super(props);
   }
   state: IState = {
+    sum: 0,
     changeRate: 0,
     trend: {
       option: {
@@ -76,6 +78,11 @@ export default class Traffic extends React.Component<IProps, IState> {
           type: 'line',
           smooth: true,
           // symbol: 'none',
+          markLine: {
+            data: [
+              { type: 'average', name: '平均值' }
+            ]
+          },
           markPoint: {
             data: [
               { type: 'max', name: '最大值' },
@@ -134,15 +141,26 @@ export default class Traffic extends React.Component<IProps, IState> {
     this.updateRegionData();
   }
 
+  updateSum(params) {
+    API.getTrafficTrendData().then(res => {
+      if (res && res.result) {
+        this.setState({
+          sum: res.data.parkingTotalFlow,
+          changeRate: res.data.parkingTotalFlowGrowthRate
+        });
+      }
+    })
+  }
+
   updateTrendData(params) {
     API.getTrafficTrendData().then(res => {
       if (res && res.result) {
         const { trend } = this.state;
-        trend.option.xAxis.data = [];
-        trend.option.series[0].data = [];
+        trend.option.xAxis.data = res.data.x;
+        trend.option.series[0].data =  res.data.y;
         this.setState({
           trend
-        })
+        });
       }
     })
   }
@@ -190,13 +208,13 @@ export default class Traffic extends React.Component<IProps, IState> {
   }
 
   render() {
-    const { changeRate, trend, region, rankList } = this.state;
+    const { sum, changeRate, trend, region, rankList } = this.state;
     return (
       <div className="comp-traffic">
         <PageHeader title="车流数据" hasTimeSelect={true} />
         <Card title={<span className="card-title">车流量趋势分析</span>}>
           <div style={{ margin: '10px 0 20px' }}>
-            总车流量<span style={{ fontSize: '18px', margin: '0 30px 0 15px' }}>2000</span>较前一时段
+            总车流量<span style={{ fontSize: '18px', margin: '0 30px 0 15px' }}>{sum}</span>较前一时段
             {
               changeRate >= 0
                 ? <img src="assets/imgs/arrow-up.png" style={{ margin: '-5px 5px 0 10px' }} alt="上升" />

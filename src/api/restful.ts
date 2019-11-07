@@ -35,6 +35,10 @@ export default {
     method:'get',
     url:'/mock/userData.json'
   },
+  getTrafficSumData:{
+    method:'get',
+    url:'/log/api/v2/parking/vehicleFlow/findParkingTotalFlowAndGrowthRate'
+  },
   getTrafficTrendData:{
     method:'get',
     url:'/mock/trafficTrendData.json'
@@ -47,13 +51,17 @@ export default {
     method:'get',
     url:'/mock/trafficRankData.json'
   },
+  getTradeSumData:{
+    method:'get',
+    url:'/log/api/v2/parking/tradeData/findTotalProfitAndGrowthRate'
+  },
   getTradeTrendData:{
     method:'get',
     url:'/mock/tradeTrendData.json'
   },
   getTradeChannelData:{
     method:'get',
-    url:'/mock/tradeChannelData.json'
+    url:'/mock/tradeChannelData.json' // /log/api/v2/parking/tradeData/findProfitChannel
   },
   getTradeRankData:{
     method:'get',
