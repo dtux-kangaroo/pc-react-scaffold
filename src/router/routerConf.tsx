@@ -3,11 +3,14 @@ import MainLayout  from 'layout/mainLayout';
 import Page404 from 'pages/error/404';
 import Login from 'pages/auth/login/index';
 import Register from 'pages/auth/register/index';
-import Home from 'pages/home'
+// import Home from 'pages/home'
 import User from 'pages/user'
+
 import Traffic from 'pages/traffic';
 import Trade from 'pages/trade';
-
+import Overview from 'pages/overview';
+import HolidayData from 'pages/holidayData';
+import CurrentData from 'pages/currentData/index';
 
 const routerConf = [
   {
@@ -21,7 +24,17 @@ const routerConf = [
   {
     path: '/parking-special/data-overview',
     layout: MainLayout,
-    component: Home,
+    component: Overview,
+  },
+  {
+    path: '/parking-special/holiday-data',
+    layout: MainLayout,
+    component: HolidayData,
+  },
+  {
+    path: '/parking-special/cur-data',
+    layout: MainLayout,
+    component: CurrentData,
   },
   {
     path: '/parking-special/traffic-flow',

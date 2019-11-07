@@ -1,0 +1,58 @@
+
+.sorted-bar-chart {
+  width: 100%;
+  height: auto;
+  padding: 0 60px;
+  .bar-row {
+    height: auto;
+    .bar-row-left {
+      width: 80%;
+      height: auto;
+      float: left;
+      .label-block {
+        float: left;
+        width: 15%;
+        .label-wrapper {
+          position: absolute;
+          height: auto;
+          top: 50%;
+          transform: translateY(-50%);
+          .square {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 8px;
+            color: #fff;
+          }
+        }
+      }
+      .bar-block {
+        position: relative;
+        float: left;
+        width: 85%;
+        .bar-wrapper {
+          position: absolute;
+          width: 100%;
+          height: auto;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .bar-row-right {
+      position: relative;
+      width: 20%;
+      float: left;
+      .desc-wrapper {
+        position: absolute;
+        padding: 0 10px;
+        top: 50%;
+        width: 100%;
+        height: 20px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
