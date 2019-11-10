@@ -68,6 +68,9 @@ export default class SideBar extends React.Component<IProps,IState> {
                       {
                         dataItem.children.map((childItem) => (
                           <Menu.Item key={childItem.permissionUrl}>
+                            {
+                              console.log(item.permissionUrl)
+                            }
                              <span><NavLink to={childItem.permissionUrl}>{childItem.permissionName}</NavLink></span>
                           </Menu.Item>
                         ))

@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "permissionCode": "menu-analyse"
+    },
+
+    {
+      "parentPermissionCode": "menu-analyse",
+      "permissionCode": "menu-analyse-tourist-structure"
+    },
+    {
+      "parentPermissionCode": "menu-analyse",
+      "permissionCode": "menu-analyse-tourist-sentiment"
+    },
+    {
+      "parentPermissionCode": "menu-analyse",
+      "permissionCode": "menu-analyse-consumption"
+    },
+    {
+      "parentPermissionCode": "menu-analyse-tourist-sentiment",
+      "permissionCode": "menu-analyse-consum-ticket"
+    },
+    {
+      "parentPermissionCode": "menu-analyse-tourist-sentiment",
+      "permissionCode": "menu-analyse-consum-car"
+    },
+    {
+      "permissionCode": "menu-system-management"
+    },
+    {
+      "parentPermissionCode": "menu-system-management",
+      "permissionCode": "menu-management-permission"
+    },
+    {
+      "parentPermissionCode": "menu-management-permission",
+      "permissionCode": "menu-management-role"
+    },
+    {
+      "parentPermissionCode": "menu-management-permission",
+      "permissionCode": "menu-management-account"
+    },
+    {
+      "parentPermissionCode": "menu-analyse-tourist-structure",
+      "permissionCode": "menu-user-portrait"
+    },
+    {
+      "parentPermissionCode": "menu-analyse-tourist-structure",
+      "permissionCode": "menu-regional-structur"
+    }
+  ],
+  "success": true,
+  "message": "执行成功"
+}

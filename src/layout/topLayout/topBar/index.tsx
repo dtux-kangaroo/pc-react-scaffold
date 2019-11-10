@@ -20,9 +20,7 @@ export default class TopBar extends React.Component<IProps,IState> {
   shouldComponentUpdate(nextProps, nextState) {
     return this.props !== nextProps;
   }
-  componentWillReceiveProps(nextProps) {
-     console.log(nextProps);
-  }
+  
   componentDidMount() {}
 
   logout() {

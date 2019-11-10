@@ -8,7 +8,7 @@ export default class Page404 extends React.Component {
       textAlign: 'center',background:"#fff",height:"750px"
     }}>
       <img src={tip404} alt="404"/>
-      <p>访问出错，<NavLink to="/index" style={{color:"blue"}}>返回</NavLink> </p>
+      <p>访问出错，<NavLink to="/" style={{color:"blue"}}>返回</NavLink> </p>
     </div>
   }
 }

@@ -8,19 +8,25 @@ import "assets/styles/index.scss";
 import "assets/styles/antd.less";
 import store from './store';
 import  '@babel/polyfill'
+// import { API } from './api/index';
 
 class App extends React.Component{
-    
-    constructor(props) {
-        super(props)
-    }
-    render():JSX.Element{
-        return(
-          <Provider store={store}>
-            <Routers />
-        </Provider>
-        )
-    }
+	
+	constructor(props) {
+		super(props)
+	}
+
+	componentDidMount() {
+
+	}
+
+	render():JSX.Element{
+		return(
+			<Provider store={store}>
+				<Routers />
+			</Provider>
+		)
+	}
 }
 render(<LocaleProvider locale={zh_CN}><App/></LocaleProvider>,document.getElementById('root'))
 

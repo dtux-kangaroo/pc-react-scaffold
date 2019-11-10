@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Layout, Menu, Icon, Avatar,Dropdown } from "antd";
 import { Link} from "react-router-dom";
-//import { getCookie,delAllCookies } from '@/utils/cookieUtils';
 import './style.scss';
 declare var  frontConf
 const { Header } = Layout;
@@ -16,20 +15,16 @@ interface IProps {
   }
 export default class TopBar extends  React.Component<IProps,IState>{
     constructor(IProps:any) {
-        super(IProps);
+      super(IProps);
     }
     state:IState={
-        username:'admin'
+      username:'admin'
     }
-  componentDidMount(){
-    // const username = getCookie('dt_username');
-    // this.setState({
-    //   username
-    // })
-  }
+  componentDidMount(){}
+
   handleItem=(item)=>{
     if(item.key==2){
-        //window.location.href=PARAMSCONF.UIC_HOST;
+
     }else if(item.key==3){
       this.logout();
     }
@@ -43,26 +38,22 @@ export default class TopBar extends  React.Component<IProps,IState>{
       }
     })
   }
-  redirectTop=(item, key)=>{
-    // const { navData, authCode } = this.props;
-    // navData.forEach(nav=>{
-    //   if(item.key==nav.permissionUrl){
-    //     redirectTop(nav.children,authCode);
-    //     return;
-    //   }
-    // })
+
+  handleSelect = (event) => {
+    console.log(event.key)
   }
   render() {
-    const { navData,location } = this.props;
+    const { navData, location } = this.props;
     let menuKeys = location.pathname.split("/");
+    console.log(navData)
     const topMenu = (
       <Menu
         mode="horizontal"
         theme="dark"
         selectedKeys={[`/${menuKeys[1]}`, menuKeys.join("/")]}
-        onClick={this.redirectTop.bind(this)}
+        onSelect = {(event) => this.handleSelect(event)}
       >
-        {navData.map((item, idx) =>
+        {navData && navData.map((item, idx) =>
             (
              <Menu.Item  key={item.permissionUrl}>
                 <Link to={item.permissionUrl}>{item.permissionName}</Link>
@@ -80,7 +71,7 @@ export default class TopBar extends  React.Component<IProps,IState>{
     return (
       <Header className="top-bar">
         <div className="logo fl">
-            <Link to="/analyse/visitor">
+            <Link to="/">
                 <img src={frontConf.COMPANY_LOGO} alt="logo" />
                 <h1>{frontConf.TITLE}</h1>
             </Link>

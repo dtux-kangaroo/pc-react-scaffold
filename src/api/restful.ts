@@ -7,37 +7,30 @@ export default {
     method: 'delete',
     url: '/westLake/user/logout',
   },
-  deleteRecordById: {
-    method: 'delete',
-    url: '/westLake/data/deleteDataById',
-  },
-  getRecordById: {
-    method: 'get',
-    url: '/westLake/data/findDataById',
-  },
-  getRecordList: {
-    method: 'get',
-    url: '/westLake/data/findDataList',
-  },
-  updateRecord: {
-    method: 'put',
-    url: '/westLake/data/updateData',
-  },
-  saveRecord: {
-    method: 'post',
-    url: '/westLake/data/saveData',
-  },
+
   getNavData:{
     method:'get',
     url:'/mock/navData.json'
   },
+
+  findPermissionByRoleId: {
+    method: 'get',
+    url: '/mock/findPermissionByRoleId.json',
+  },
+
+  findUserPermissionCodes: {
+    method: 'get',
+    url: '/mock/findUserPermissionCodes.json',
+  },
+
+  findMenuTreeData: {
+    method: 'get',
+    url: '/mock/findMenuTreeData.json',
+  },
+
   getUserData:{
     method:'get',
     url:'/mock/userData.json'
-  },
-  getTrafficSumData:{
-    method:'get',
-    url:'/log/api/v2/parking/vehicleFlow/findParkingTotalFlowAndGrowthRate'
   },
   getTrafficTrendData:{
     method:'get',
@@ -50,10 +43,6 @@ export default {
   getTrafficRankData:{
     method:'get',
     url:'/mock/trafficRankData.json'
-  },
-  getTradeSumData:{
-    method:'get',
-    url:'/log/api/v2/parking/tradeData/findTotalProfitAndGrowthRate'
   },
   getTradeTrendData:{
     method:'get',

@@ -10,12 +10,13 @@ interface IProps {
     location:any,
     history:any
   }
-  interface IState{
-    collapsed:boolean,
-    openKeys:Array<any>,
-    selectedKeys:Array<any>,
-    sideData:Array<any>
-  }
+interface IState{
+  collapsed:boolean,
+  openKeys:Array<any>,
+  selectedKeys:Array<any>,
+  sideData:Array<any>
+}
+
 export default class SideBar extends React.Component<IProps,IState>{
   constructor(props) {
     super(props);
@@ -25,9 +26,6 @@ export default class SideBar extends React.Component<IProps,IState>{
     selectedKeys:[],
     openKeys:["/parking-special"],
     sideData:[]
-  }
-
-  componentDidMount() {
   }
 
   logout() {
@@ -42,8 +40,8 @@ export default class SideBar extends React.Component<IProps,IState>{
     });
   }
   openKeys=(keys)=>{
-      this.setState({openKeys:keys})
-      //setOpenKeys(keys);
+    console.log(keys);
+    this.setState({openKeys:keys})
   }
   renderMenu=(data)=>{
     if (data.children.length) { 
@@ -80,7 +78,7 @@ export default class SideBar extends React.Component<IProps,IState>{
           theme="dark"
           className='side-menu'
         >
-          { navData.map((menu) => (this.renderMenu(menu)))}
+          { navData && navData.children && navData.children.map((menu) => (this.renderMenu(menu)))}
         </Menu>
   </Sider>
   }

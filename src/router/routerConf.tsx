@@ -11,6 +11,7 @@ import Trade from 'pages/trade';
 import Overview from 'pages/overview';
 import HolidayData from 'pages/holidayData';
 import CurrentData from 'pages/currentData/index';
+import Home from '@/pages/home';
 
 const routerConf = [
   {
@@ -20,6 +21,11 @@ const routerConf = [
   {
     path:"/parking-special",
     redirect:"/parking-special/data-overview"
+  },
+  {
+    path: '/home',
+    layout: MainLayout,
+    component: Home,
   },
   {
     path: '/parking-special/data-overview',

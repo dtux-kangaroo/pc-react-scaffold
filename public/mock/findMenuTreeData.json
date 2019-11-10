@@ -1,0 +1,135 @@
+{
+  "data": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [],
+              "gmtCreate": "2019-10-26 14:05:51",
+              "id": 3,
+              "isMenu": 1,
+              "level": 2,
+              "parentId": 2,
+              "permissionCode": "menu-analyse-tourist-traffic",
+              "permissionIcon": "youkeliuliang",
+              "permissionName": "数据概览",
+              "permissionUrl": "/parking-special/data-overview",
+              "sort": 9
+            },
+            {
+              "children": [],
+              "gmtCreate": "2019-10-29 22:38:05",
+              "id": 19,
+              "isMenu": 1,
+              "level": 3,
+              "parentId": 6,
+              "permissionCode": "menu-user-portrait",
+              "permissionName": "当日数据",
+              "permissionUrl": "/parking-special/cur-data",
+              "sort": 8
+            },
+            {
+              "children": [],
+              "gmtCreate": "2019-10-29 22:45:37",
+              "id": 20,
+              "isMenu": 1,
+              "level": 3,
+              "parentId": 6,
+              "permissionCode": "menu-regional-structur",
+              "permissionName": "车流数据",
+              "permissionUrl": "/parking-special/traffic-flow",
+              "sort": 8
+            },
+            {
+              "children": [],
+              "gmtCreate": "2019-10-26 14:45:58",
+              "id": 11,
+              "isMenu": 1,
+              "level": 3,
+              "parentId": 7,
+              "permissionCode": "menu-analyse-consum-ticket",
+              "permissionName": "交易数据",
+              "permissionUrl": "/parking-special/trade-data",
+              "sort": 8
+            }
+          ],
+          "gmtCreate": "2019-10-26 14:23:58",
+          "id": 6,
+          "isMenu": 1,
+          "level": 2,
+          "parentId": 2,
+          "permissionCode": "menu-analyse-tourist-structure",
+          "permissionIcon": "youkejiegou",
+          "permissionName": "停车场专题",
+          "permissionUrl": "/parking-spacial",
+          "sort": 9
+        }
+      ],
+      "gmtCreate": "2019-10-26 14:02:52",
+      "id": 2,
+      "isMenu": 1,
+      "level": 1,
+      "parentId": 0,
+      "permissionCode": "menu-analyse",
+      "permissionIcon": "",
+      "permissionName": "数据统计分析",
+      "permissionUrl": "/parking-special",
+      "sort": 10
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [],
+              "gmtCreate": "2019-10-26 14:52:18",
+              "id": 15,
+              "isMenu": 1,
+              "level": 3,
+              "parentId": 14,
+              "permissionCode": "menu-management-role",
+              "permissionName": "角色管理",
+              "permissionUrl": "/setting/authority/role",
+              "sort": 8
+            },
+            {
+              "children": [],
+              "gmtCreate": "2019-10-26 14:53:31",
+              "id": 16,
+              "isMenu": 1,
+              "level": 3,
+              "parentId": 14,
+              "permissionCode": "menu-management-account",
+              "permissionName": "账户管理",
+              "permissionUrl": "/setting/authority/account",
+              "sort": 8
+            }
+          ],
+          "gmtCreate": "2019-10-26 14:51:20",
+          "id": 14,
+          "isMenu": 1,
+          "level": 3,
+          "parentId": 13,
+          "permissionCode": "menu-management-permission",
+          "permissionIcon": "quanxianguanli",
+          "permissionName": "权限管理",
+          "permissionUrl": "/setting/authority",
+          "sort": 8
+        }
+      ],
+      "gmtCreate": "2019-10-26 14:49:13",
+      "id": 13,
+      "isMenu": 1,
+      "level": 2,
+      "parentId": 0,
+      "permissionCode": "menu-system-management",
+      "permissionIcon": "",
+      "permissionName": "系统管理",
+      "permissionUrl": "/setting",
+      "sort": 9
+    }
+  ],
+  "success": true,
+  "message": "执行成功"
+}

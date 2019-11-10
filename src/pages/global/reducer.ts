@@ -13,10 +13,7 @@ const defaultDate = type => {
 
 const initialState = {
   userData: {},
-  navData: {
-    topNav: [],
-    sideNav: []
-  },
+  navData: [],
   timeFilter: {
     type: "0",
     name: defaultDate("0")
@@ -30,6 +27,7 @@ const globalReducer = (state = initialState, action) => {
         userData: payload,
       });
     case globalType.GET_NAV_DATA:
+      console.log(payload)
       return Object.assign({}, state, {
         navData: payload,
       });

@@ -11,12 +11,9 @@ import './style.scss';
 
 interface IProps {
   getNavData:(params:any) => void,
-  navData:{
-    topNav:Array<string>,
-    sideNav:Array<string>,
-  },
-  location:any,
-  history:any
+  navData: any;
+  location:any;
+  history:any;
 }
 interface IState{
   loading:boolean
@@ -35,15 +32,14 @@ export default class SideLayout extends React.Component<IProps,IState> {
   componentDidMount() {
     this.props.getNavData({});
   }
-  componentWillReceiveProps(nextProps) {}
-
 
   render() {
     const {  navData, location,history } = this.props;
+    console.log(navData)
     return (
         <Layout className="side-layout">
         <ErrorBoundary>
-          <SideBar location={location} history={history} navData={navData.sideNav}/>
+          <SideBar location={location} history={history} navData={navData[0]}/>
           <Layout>
             <TopBar location={location}  />
             <div className="content">{this.props.children}</div>
