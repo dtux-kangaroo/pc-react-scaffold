@@ -1,6 +1,10 @@
 {
   "data": [
     {
+      "permissionCode": "overview",
+      "parentPermissionCode": "menu-analyse"
+    },
+    {
       "permissionCode": "menu-analyse"
     },
 

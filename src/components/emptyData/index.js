@@ -1,7 +1,7 @@
 import React from 'react';
 import { Empty } from 'antd';
 
-function EmptyData (props) {
+const EmptyData = (props) => {
   const { height = '60px', marginTop = 0 } = props;
   return (
     <Empty className="empty"

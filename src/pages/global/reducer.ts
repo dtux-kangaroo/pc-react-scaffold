@@ -18,6 +18,8 @@ const initialState = {
     type: "0",
     name: defaultDate("0")
   },
+  permissionCode: [],
+  openKeys: ['/parking'],
 };
 const globalReducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -45,8 +47,15 @@ const globalReducer = (state = initialState, action) => {
           name: defaultDate(payload)
         }
       });
+    case globalType.GET_PERMISSION_CODE:
+      return Object.assign({}, state, {
+        permissionCode: payload,
+      })
+    case globalType.UPDATE_OPEN_KEYS:
+      return Object.assign({}, state, { openKeys: payload });  
     default:
       return state;
   }
 };
+
 export default globalReducer;

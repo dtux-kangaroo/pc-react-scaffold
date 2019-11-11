@@ -1,25 +1,25 @@
+import AreaChart from './areaChart';
+import BarChart from './barChart';
+import DoubleChart from './doubleChart';
+import GuageChart from './guageChart';
+import LineChart from './lineChart';
+import MapChart from './mapChart';
+import PieChart from './pieChart';
+import RadarChart from './radarChart';
+import RingChart from './ringChart';
+import ScatterChart from './scatterChart';
+import WordChart from './wordChart';
 
-import BarChart from './barChart'
-import LineChart from './lineChart'
-import DoubleChart from './doubleChart'
-import MapChart from './mapChart'
-import PieChart from './pieChart'
-import ScatterChart from './scatterChart'
-import WordChart from './wordChart'
-import GaugeChart from './gaugeChart'
-import RadarChart from './radarChart'
-import AreaChart from './areaChart'
 export {
+  AreaChart,
   BarChart,
-  LineChart,
   DoubleChart,
+  GuageChart,
+  LineChart,
   MapChart,
   PieChart,
+  RadarChart,
+  RingChart,
   ScatterChart,
   WordChart,
-  GaugeChart,
-  RadarChart,
-  AreaChart,
 }
-
-

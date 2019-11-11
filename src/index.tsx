@@ -7,26 +7,33 @@ import zh_CN from 'antd/es/locale-provider/zh_CN';
 import "assets/styles/index.scss";
 import "assets/styles/antd.less";
 import store from './store';
-import  '@babel/polyfill'
-// import { API } from './api/index';
+import  '@babel/polyfill';
+import { getNavData } from '@/pages/global/action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getPermissionCode } from './pages/global/action';
 
-class App extends React.Component{
+@connect(state => ({...state}), dispatch => bindActionCreators({ getNavData, getPermissionCode }, dispatch))
+class App extends React.Component<any, any>{
 	
 	constructor(props) {
 		super(props)
 	}
 
 	componentDidMount() {
-
+		this.props.getNavData({});
+		this.props.getPermissionCode({});
 	}
 
 	render():JSX.Element{
 		return(
-			<Provider store={store}>
-				<Routers />
-			</Provider>
+			<LocaleProvider  locale={zh_CN}>
+				<Provider store={store}>
+					<Routers />
+				</Provider>
+			</LocaleProvider>
 		)
 	}
 }
-render(<LocaleProvider locale={zh_CN}><App/></LocaleProvider>,document.getElementById('root'))
+render(<App store={store} />,document.getElementById('root'))
 

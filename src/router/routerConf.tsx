@@ -6,21 +6,17 @@ import Register from 'pages/auth/register/index';
 // import Home from 'pages/home'
 import User from 'pages/user'
 
-import Traffic from 'pages/traffic';
-import Trade from 'pages/trade';
 import Overview from 'pages/overview';
-import HolidayData from 'pages/holidayData';
-import CurrentData from 'pages/currentData/index';
 import Home from '@/pages/home';
 
 const routerConf = [
   {
     path:"/",
-    redirect:"/parking-special/data-overview"
+    redirect:"/data-analyse/data-overview"
   },
   {
-    path:"/parking-special",
-    redirect:"/parking-special/data-overview"
+    path:"/data-analyse",
+    redirect:"/data-analyse/data-overview"
   },
   {
     path: '/home',
@@ -28,29 +24,9 @@ const routerConf = [
     component: Home,
   },
   {
-    path: '/parking-special/data-overview',
+    path: '/data-analyse/data-overview',
     layout: MainLayout,
     component: Overview,
-  },
-  {
-    path: '/parking-special/holiday-data',
-    layout: MainLayout,
-    component: HolidayData,
-  },
-  {
-    path: '/parking-special/cur-data',
-    layout: MainLayout,
-    component: CurrentData,
-  },
-  {
-    path: '/parking-special/traffic-flow',
-    layout: MainLayout,
-    component: Traffic,
-  },
-  {
-    path: '/parking-special/trade-data',
-    layout: MainLayout,
-    component: Trade,
   },
   {
     path:'/user',
