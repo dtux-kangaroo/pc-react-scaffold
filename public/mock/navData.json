@@ -1,0 +1,26 @@
+{
+  "result": true,
+  "message": "执行成功",
+  "data": [{
+    "id": 0,
+    "permissionCode": "menu-analyse",
+    "permissionName": "数据统计分析",
+    "permissionUrl": "/analyse",
+    "permissionIcon": "",
+    "children": [{
+      "id": 1,
+      "permissionCode": "menu-analyse-example1",
+      "permissionName": "页面一",
+      "permissionUrl": "/analyse/example1",
+      "permissionIcon": "",
+      "children": []
+    }, {
+      "id": 2,
+      "permissionCode": "menu-analyse-example2",
+      "permissionName": "页面二",
+      "permissionUrl": "/analyse/example2",
+      "permissionIcon": "",
+      "children": []
+    }]
+  }]
+}

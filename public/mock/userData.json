@@ -1,0 +1,13 @@
+{
+  "result": true,
+  "message": "执行成功",
+  "data": [{
+    "parentPermissionCode": "menu-analyse"
+  }, {
+    "parentPermissionCode": "menu-analyse",
+    "permissionCode": "menu-analyse-example1"
+  }, {
+    "parentPermissionCode": "menu-analyse",
+    "permissionCode": "menu-analyse-example2"
+  }]
+}

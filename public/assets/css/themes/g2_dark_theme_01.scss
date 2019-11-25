@@ -1,0 +1,857 @@
+@charset 'UTF-8';
+
+$g2_01DarkBgPanel: #2C363F;
+$g2_01DarkBackGround: #242c33;
+$g2_01DarkFontColor: #e3e3e3;
+$g2_01DarkBorderColor: #464646;
+$g2_01Primary: #108ee9;
+
+
+.g-dashbdapp {
+
+  &.g2_dark_01 {
+    background-color: $g2_01DarkBackGround;
+  }
+
+  .g2_dark_theme_01 {
+    background-color: $g2_01DarkBackGround;
+
+    /**  侧导航  **/
+    .m-sidebar {
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+      border-right: 0 !important;
+      background-color: $g2_01DarkBackGround;
+
+      .m-applicationlist {
+        .searchbox {
+          background: $g2_01DarkBgPanel;
+          border-color: $g2_01DarkBorderColor;
+
+          h3,
+          .add,
+          .ant-input-suffix,
+          .theme {
+            color: $g2_01DarkFontColor;
+          }
+
+          .ant-input {
+            background: $g2_01DarkBgPanel;
+            border-color: $g2_01DarkBorderColor;
+          }
+
+          .ant-input-search {
+            .ant-input {
+              color: $g2_01DarkFontColor;
+            }
+          }
+        }
+
+        .ant-menu {
+          background: $g2_01DarkBgPanel;
+          color: $g2_01DarkFontColor;
+        }
+
+        .ant-menu-submenu,
+        .ant-menu-item,
+        .ant-menu-sub a {
+          color: $g2_01DarkFontColor;
+        }
+
+      }
+    }
+
+    /** 仪表盘头部 **/
+    .m-editorheader {
+      background: $g2_01DarkBgPanel !important;
+      border-bottom: 1px solid $g2_01DarkBgPanel !important;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+
+      h3 {
+        color: $g2_01DarkFontColor;
+      }
+
+      .ant-btn {
+        background: $g2_01DarkBgPanel;
+        color: $g2_01DarkFontColor;
+        border-color: $g2_01DarkBorderColor;
+
+        &.ant-btn-primary {
+          background: $g2_01Primary;
+          border-color: $g2_01Primary;
+        }
+      }
+
+      .widget,
+      .chartlist {
+        background: $g2_01DarkBackGround;
+        border-color: $g2_01DarkBorderColor;
+      }
+
+      .chartlist {
+        li:hover {
+          background: $g2_01DarkBgPanel;
+        }
+      }
+
+      .widget:hover {
+        background: $g2_01DarkBgPanel;
+        color: #94a8c6;
+      }
+
+      .tool-menus {
+        .btn {
+          color: #e3e3e3;
+        }
+        .ant-switch {
+          background: #999;
+          &.ant-switch-checked {
+            background: $g2_01Primary;
+          }
+        }
+      }
+    }
+
+    .g-content {
+      background: $g2_01DarkBackGround !important;
+    }
+
+    .ant-input:focus {
+      box-shadow: 0 0 0 2px rgba(36, 145, 247, .6);
+    }
+
+    .ant-select-focused .ant-select-selection,
+    .ant-select-selection:focus,
+    .ant-select-selection:active {
+      box-shadow: 0 0 0 2px rgba(36, 145, 247, .6);
+    }
+
+    .react-grid-layout {
+
+      .react-grid-item {
+        background: $g2_01DarkBgPanel !important;
+
+        .m-panel {
+          background: $g2_01DarkBgPanel;
+
+          .marked-text {
+            color: $g2_01DarkFontColor;
+          }
+
+          .info {
+            color: $g2_01DarkFontColor;
+          }
+
+          .paneltitle {
+            color: $g2_01DarkFontColor;
+            border-bottom: 1px solid $g2_01DarkBorderColor;
+          }
+
+          .loadmask {
+            background-color: $g2_01DarkBgPanel;
+          }
+
+          .m-widgetarea {
+            margin: 0 auto;
+            border-color: $g2_01DarkBorderColor;
+            background-color: $g2_01DarkBgPanel;
+          }
+
+          .ant-table-tbody {
+            &>tr>td {
+              border-color: $g2_01DarkBorderColor;
+            }
+
+            .ant-table-row:hover {
+              border-color: $g2_01DarkBorderColor;
+              box-shadow: 0 0 10px 3px $g2_01DarkBorderColor;
+
+              &>td {
+                background: $g2_01DarkBackGround;
+              }
+            }
+          }
+
+          .map-title {
+            display: inline-block;
+            width: 50px;
+            color: #161719;
+            text-shadow: $g2_01DarkFontColor 1px 0 0, $g2_01DarkFontColor 0 1px 0, $g2_01DarkFontColor -1px 0 0, $g2_01DarkFontColor 0 -1px 0;
+          }
+
+          .ant-table-wrapper {
+
+            .ant-table {
+              color: $g2_01DarkFontColor;
+            }
+
+            .ant-table-header {
+              background: $g2_01DarkBgPanel;
+
+              .ant-table-thead>tr>th {
+                background: $g2_01DarkBgPanel;
+                color: $g2_01DarkFontColor;
+                border-bottom: 1px solid $g2_01DarkBorderColor;
+                font-weight: 600;
+              }
+            }
+
+            .ant-table-body {
+              background: $g2_01DarkBgPanel !important;
+
+              tr>td {
+                border-color: $g2_01DarkBorderColor;
+                color: $g2_01DarkFontColor;
+                word-break: break-all;
+                white-space: normal;
+              }
+            }
+
+            .ant-table-fixed-left table,
+            .ant-table-fixed-right table {
+              background: $g2_01DarkBgPanel;
+            }
+
+            .ant-table-pagination {
+
+              .ant-pagination-item-link,
+              .ant-pagination-item {
+                background-color: $g2_01DarkBgPanel;
+                border-color: $g2_01DarkBorderColor;
+                color: $g2_01DarkFontColor;
+              }
+
+              .ant-pagination-item {
+                a {
+                  color: $g2_01DarkFontColor;
+                }
+
+                &.ant-pagination-item-active {
+                  background-color: #108ee9;
+                  border-color: #108ee9;
+                }
+              }
+
+              .ant-pagination-jump-next:after,
+              .ant-pagination-jump-prev:after {
+                color: $g2_01DarkFontColor;
+              }
+            }
+          }
+        }
+
+        .ace_scrollbar-inner {
+          height: 5px;
+        }
+      }
+    }
+
+    .m-widgetarea {
+      margin: 0 10px;
+
+      .ghost {
+        border-color: #333;
+      }
+    }
+
+    .m-widgetbox {
+      border-color: $g2_01DarkBorderColor;
+
+      label {
+        color: $g2_01DarkFontColor !important;
+      }
+
+      .anticon {
+        color: $g2_01DarkFontColor;
+      }
+
+      .widget {
+
+        .ant-input,
+        .ant-input-group-addon,
+        .ant-select-selection,
+        .ant-radio-button-wrapper {
+          background: $g2_01DarkBgPanel;
+          color: $g2_01DarkFontColor;
+          border-color: $g2_01DarkBorderColor
+        }
+
+        .ant-select-selection {
+          .ant-select-arrow {
+            color: $g2_01DarkFontColor;
+          }
+        }
+
+        .ant-radio-group {
+          .ant-radio-button-wrapper {
+            &:first-child {
+              border-color: $g2_01DarkBorderColor;
+            }
+
+            &:not(:first-child):before {
+              background-color: $g2_01DarkBorderColor;
+            }
+          }
+
+          .ant-radio-button-wrapper-checked {
+            box-shadow: 0 0 0 1px #2491f7 !important;
+
+            &:hover {
+              box-shadow: 0 0 0 1px #2491f7 !important;
+            }
+          }
+        }
+      }
+    }
+
+    .m-chartplaceholder {
+      .error {
+        background: $g2_01DarkBgPanel;
+        opacity: .5;
+      }
+
+      .content {
+        color: $g2_01DarkFontColor;
+      }
+    }
+
+    .m-emptypanels {
+      color: $g2_01DarkFontColor;
+
+      h3 {
+        color: $g2_01DarkFontColor;
+      }
+    }
+
+
+    /** 重写滚动条 style**/
+    *::-webkit-scrollbar-track-piece {
+      background-color: $g2_01DarkBgPanel;
+      border-left: 1px solid $g2_01DarkBorderColor;
+      border-right: 1px solid $g2_01DarkBorderColor;
+    }
+
+    *::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #323d46;
+      background-clip: padding-box;
+      border: 1px solid #323d46;
+      border-radius: 5px;
+      min-height: 14px;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+      border: 1px solid #323d46;
+      background-color: #323d46;
+    }
+
+  }
+
+  .g2_dark_01_configuration {
+    background: $g2_01DarkBackGround;
+
+    .ant-tabs-tab {
+      margin-right: 0;
+      padding: 9px 36px 10px;
+      color: $g2_01DarkFontColor;
+
+      &.ant-tabs-tab-active {
+        color: $g2_01Primary;
+      }
+    }
+
+    .configuration-header {
+      background: $g2_01DarkBgPanel;
+      border-bottom-color: $g2_01DarkBorderColor;
+
+      .configuration-title {
+        color: $g2_01DarkFontColor;
+      }
+    }
+
+    .ant-tabs-bar {
+      background: $g2_01DarkBgPanel;
+    }
+
+    .configuration-item {
+      border-bottom-color: $g2_01DarkBorderColor;
+
+      .sql-main {
+        background: #212124 !important;
+
+        .item-sql {
+          .code {
+            &.hljs {
+              color: #fff !important;
+              background: #161719 !important;
+            }
+          }
+        }
+      }
+
+      .chart-item-container {
+        border-color: $g2_01DarkBorderColor;
+      }
+
+    }
+
+    .ant-input,
+    .ant-select-selection,
+    .ant-input-number-handler-wrap,
+    .ant-input-number-input {
+      background-color: $g2_01DarkBackGround;
+      color: $g2_01DarkFontColor;
+      border-color: $g2_01DarkBorderColor;
+    }
+
+    .ant-select-arrow {
+      color: $g2_01DarkFontColor;
+    }
+
+    .ant-input-number,
+    .ant-input-number-handler-down {
+      border-color: $g2_01DarkBorderColor;
+    }
+
+    .ant-input-number-input {
+      border-radius: 2px;
+    }
+
+
+    .ant-radio-button-wrapper {
+      background-color: $g2_01DarkBgPanel;
+      border-color: $g2_01DarkBorderColor;
+      color: $g2_01DarkFontColor;
+
+      &:not(:first-child)::before {
+        background-color: transparent;
+      }
+
+      &.ant-radio-button-wrapper-checked {
+        border-color: $g2_01Primary;
+      }
+    }
+
+    .ant-checkbox-inner,
+    .ant-radio-inner {
+      background-color: $g2_01DarkBgPanel;
+      border-color: $g2_01DarkBorderColor;
+    }
+
+    .ant-checkbox-checked {
+      .ant-checkbox-inner {
+        background-color: $g2_01Primary;
+      }
+    }
+
+    .ant-radio-wrapper {
+      .ant-radio-inner {
+        background-color: $g2_01Primary;
+
+        &:after {
+          background-color: $g2_01DarkBackGround;
+        }
+      }
+
+      .ant-radio-disabled+span {
+        color: #94a8c6;
+      }
+    }
+
+    .ant-switch:after {
+      background: #ccc;
+    }
+
+    .content {
+      .ant-form-item-control {
+        color: $g2_01DarkFontColor;
+      }
+    }
+  }
+
+  .m-widgetconfigure {
+    &.g2_dark_01_configuration {
+      h3 {
+        background: $g2_01DarkBgPanel;
+        color: $g2_01DarkFontColor;
+        border-color: $g2_01DarkBorderColor;
+      }
+
+      .staticdata {
+        h4 {
+          color: $g2_01DarkFontColor;
+        }
+      }
+    }
+  }
+}
+
+.g2_dark_theme_01_modal {
+  .ant-modal-content {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+
+    .ant-modal-close {
+      color: $g2_01DarkFontColor;
+    }
+
+    .ant-modal-header,
+    .ant-modal-footer {
+      background-color: $g2_01DarkBgPanel;
+      border-color: $g2_01DarkBorderColor;
+
+      .ant-modal-title {
+        color: $g2_01DarkFontColor;
+      }
+    }
+
+    .ant-modal-footer {
+      .ant-btn {
+        background-color: $g2_01DarkBackGround;
+        border-color: $g2_01DarkBorderColor;
+        color: $g2_01DarkFontColor;
+
+        &.ant-btn-primary {
+          background-color: #108ee9;
+          border-color: #108ee9;
+        }
+      }
+    }
+
+    .ant-modal-body {
+      background-color: $g2_01DarkBgPanel;
+      color: $g2_01DarkFontColor;
+
+      .m-privilege .useritem {
+        color: $g2_01DarkFontColor;
+      }
+
+      .m-privilege .useritem:hover {
+        background-color: $g2_01DarkBgPanel;
+      }
+
+      .ant-input,
+      .ant-radio-disabled+span {
+        background-color: $g2_01DarkBackGround;
+        border-color: $g2_01DarkBorderColor;
+        color: $g2_01DarkFontColor;
+      }
+
+      .ant-form-item {
+        label {
+          border-color: $g2_01DarkBorderColor;
+          color: $g2_01DarkFontColor;
+        }
+
+        .quanxian {
+          color: $g2_01DarkFontColor;
+          background: $g2_01DarkBackGround;
+        }
+      }
+
+      .ant-select-selection {
+        background-color: $g2_01DarkBackGround !important;
+        border-color: $g2_01DarkBorderColor;
+        color: $g2_01DarkFontColor;
+
+        .ant-select-arrow {
+          color: $g2_01DarkFontColor;
+        }
+      }
+
+      .dark-btn {
+        color: $g2_01DarkFontColor;
+        background: $g2_01DarkBackGround;
+      }
+
+      .ant-confirm-title,
+      .ant-confirm-content {
+        color: $g2_01DarkFontColor;
+      }
+
+      .ant-confirm-btns {
+        background: $g2_01DarkBgPanel;
+
+        .ant-btn {
+          color: $g2_01DarkFontColor;
+          background: $g2_01DarkBackGround;
+          border: 1px solid $g2_01DarkBorderColor;
+        }
+
+        .ant-btn-primary {
+          background-color: #108ee9;
+          border-color: #108ee9;
+        }
+
+        .ant-btn-danger {
+          color: #f04134;
+        }
+      }
+
+      .ace-tm {
+        background-color: $g2_01DarkBackGround;
+        color: $g2_01DarkFontColor;
+
+        .ace_variable {
+          color: rgb(38, 198, 230);
+        }
+
+        .ace_string {
+          color: #ec7e48;
+        }
+
+        .ace_constant.ace_numeric {
+          color: #a144c4;
+        }
+      }
+
+      .data-result {
+        background-color: $g2_01DarkBgPanel;
+        color: $g2_01DarkFontColor;
+        border-color: $g2_01DarkBorderColor;
+      }
+
+      .fields-box {
+        h3 {
+          color: $g2_01DarkFontColor;
+        }
+      }
+    }
+
+    .theme-box {
+      width: 188px;
+      li {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        margin: 0 10px 10px 0;
+        float: left;
+        cursor: pointer;
+        list-style: none;
+        img {
+          width: 40px;
+          height: 40px;
+          border: 1px solid #ccc;
+          opacity: .6;
+        }
+    
+        &.active {
+          border: 1px solid #108ee9;
+          box-shadow: 0 0 5px #108ee9;
+    
+          img {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.g2_dark_theme_01_popover {
+  .ant-popover-arrow {
+    border-bottom-color: $g2_01DarkBackGround !important;
+
+    &:after {
+      border-bottom-color: $g2_01DarkBackGround !important;
+    }
+  }
+
+  .ant-popover-inner {
+    background: $g2_01DarkBackGround;
+
+    .ant-popover-title {
+      color: $g2_01DarkFontColor;
+      border-bottom: 1px solid $g2_01DarkBorderColor;
+    }
+
+    .ant-popover-inner-content {
+      color: $g2_01DarkFontColor;
+      .m-timerselector {
+        .ant-tabs {
+          color: $g2_01DarkFontColor;
+
+          .ant-tabs-bar {
+            border-color: $g2_01DarkBorderColor;
+          }
+
+          .quicklist li {
+            border-color: #555;
+            background-color: $g2_01DarkBgPanel;
+
+            &.active {
+              border-color: rgba(15, 131, 230, .7);
+            }
+
+            &:hover {
+              background-color: #555;
+            }
+          }
+
+          .ant-input {
+            background-color: $g2_01DarkBackGround;
+            color: $g2_01DarkFontColor;
+            border-color: #333;
+
+            span,
+            .ant-calendar-picker-icon:after {
+              color: #94a8c6;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.g2_dark_theme_01_widget {
+  // background-color: $darkThemeBackground;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  color: $g2_01DarkFontColor;
+
+  .ant-select-dropdown-menu-item {
+    color: $g2_01DarkFontColor;
+
+    &:hover {
+      background-color: $g2_01DarkBgPanel;
+      border: 2px solid rgba(15, 131, 230, 0.7);
+      border-radius: 3px;
+    }
+  }
+
+  .ant-dropdown-menu-item {
+    a {
+      color: $g2_01DarkFontColor;
+    }
+
+    &:hover {
+      background-color: $g2_01DarkBgPanel;
+      border: 2px solid rgba(15, 131, 230, 0.7);
+      border-radius: 3px;
+    }
+  }
+
+  .ant-select-dropdown-menu-item-active {
+    background-color: $g2_01DarkBgPanel;
+    border: 2px solid rgba(15, 131, 230, 0.7);
+    border-radius: 3px;
+  }
+
+  .ant-select-dropdown-menu-item-selected {
+    color: $g2_01DarkFontColor;
+    background-color: $g2_01DarkBgPanel;
+  }
+
+  .ant-popover-arrow {
+    border-bottom-color: $g2_01DarkBackGround !important;
+
+    &:after {
+      border-bottom-color: $g2_01DarkBorderColor !important;
+    }
+  }
+
+  .ant-popover-inner {
+    background-color: #1b1b1f;
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, .65);
+  }
+
+  .ant-popover-inner-content {
+    color: $g2_01DarkFontColor;
+
+    .ant-tabs {
+      color: inherit;
+
+      .ant-tabs-bar {
+        border-color: $g2_01DarkBorderColor;
+      }
+
+      .quicklist li {
+        border-color: #555;
+        background-color: $g2_01DarkBgPanel;
+
+        &.active {
+          border-color: rgba(15, 131, 230, .7);
+        }
+
+        &:hover {
+          background-color: #555;
+        }
+      }
+
+      .ant-input {
+        background-color: $g2_01DarkBgPanel;
+        color: $g2_01DarkFontColor;
+        border-color: #333;
+
+        span,
+        .ant-calendar-picker-icon:after {
+          color: #94a8c6;
+        }
+      }
+    }
+  }
+}
+
+.g2_dark_theme_01_dropdown {
+  background-color: $g2_01DarkBackGround!important;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2)!important;
+  color: $g2_01DarkFontColor!important;
+  border: 1px solid $g2_01DarkBgPanel!important;
+
+  .ant-dropdown-menu {
+    background: $g2_01DarkBackGround;
+  }
+  .ant-select-dropdown-menu-item {
+    color: $g2_01DarkFontColor;
+
+    &:hover {
+      background-color: $g2_01DarkBgPanel;
+      border: 2px solid rgba(15, 131, 230, 0.7);
+      border-radius: 3px;
+    }
+  }
+
+  .ant-dropdown-menu-item {
+    a {
+      color: $g2_01DarkFontColor;
+    }
+
+    &:hover {
+      background-color: $g2_01DarkBgPanel;
+      border: 2px solid rgba(15, 131, 230, 0.7);
+      border-radius: 3px;
+    }
+  }
+  .ant-dropdown-menu-submenu-title:hover {
+    background-color: $g2_01DarkBgPanel;
+  }
+
+  .ant-dropdown-menu-submenu-title {
+    color: $g2_01DarkFontColor;
+  }
+
+  .ant-select-dropdown-menu-item-active {
+    background-color: $g2_01DarkBgPanel;
+    border: 2px solid rgba(15, 131, 230, 0.7);
+    border-radius: 3px;
+  }
+
+  .ant-select-dropdown-menu-item-selected {
+    color: $g2_01DarkFontColor;
+    background-color: $g2_01DarkBgPanel;
+  }
+
+  ul > li:hover {
+    background: $g2_01DarkBgPanel!important;
+  }
+
+  &:after {
+    border-color: transparent $g2_01DarkBackGround transparent transparent!important;
+  }
+
+}
+

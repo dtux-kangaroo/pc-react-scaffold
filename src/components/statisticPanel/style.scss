@@ -1,0 +1,49 @@
+.statistic-bar-cus{
+	font-family:PingFangSC-Semibold,PingFangSC;
+	margin-top: 20px;
+	// padding: 5px!important;
+	.ant-card {
+		height: 152px;
+		border: none;
+		.ant-card-body {
+			padding: 0 20px;
+			padding-bottom: 20px;
+			.empty {
+				.ant-empty-image {
+					height: 60px;
+				}
+			}
+		}
+	}
+	.margin-vertical16 {
+		margin: 16px 0;
+	}
+	.title-row {
+		font-size:16px;
+		font-weight:600;
+		color:rgba(46,46,52,1);
+		line-height:24px;
+		.ques-icon {
+			margin-left: 8px;
+			width: 18px;
+			height: 18px;
+			color: rgba(234,235,240,1);
+			cursor: pointer;
+		}
+	}
+	.value-row {
+		font-weight:400;
+		font-size: 28px;
+		color:rgba(46,46,52,1);
+		line-height:34px;
+	}
+	.change-row {
+		font-size:14px;
+		font-weight:400;
+		color:rgba(166,166,179,1);
+		line-height:22px;
+		img {
+			margin: 0 4px;
+		}
+	}
+}

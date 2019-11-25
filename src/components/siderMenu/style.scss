@@ -1,0 +1,288 @@
+@charset 'UTF-8';
+
+$height: 60px;
+
+.yux-sider {
+  min-height: 100vh;
+  // box-shadow: 2px 0 6px rgba(0,21,41,.35);
+  .logo {
+    display: inline-block;
+    width: 100%;
+    height: $height;
+    line-height: $height;
+    padding-left: 20px;
+    font-size: 22px;
+    color: #fff;
+    img {
+      display: inline-block;
+      width: 32px;
+      // height: 32px;
+      vertical-align: middle;
+    }
+    h1 {
+      display: inline-block;
+      margin: 0 0 0 12px;
+      color: #fff;
+      font-size: 20px;
+      font-family: Avenir,Helvetica Neue,Arial,Helvetica,sans-serif;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+  }
+  .next-ver {
+    // position: absolute;
+    // width: 100%;
+    // left: 0;
+    // bottom: 30px;
+    color: #ccc;
+    border-right: 0;
+    .ant-menu-submenu > .ant-menu {
+      // background: #001529;
+      color: #ccc;
+    }
+    .ant-menu-item  a {
+      color: #ccc;
+    }
+    .ant-menu-item-selected {
+      width: 100%;
+      background: #1890ff;
+      color: #fff;
+      .anticon {
+        color: #fff;
+      }
+      a {
+        color: #fff;
+      }
+    }
+    &.menu-position {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 180px;
+    }
+  }
+  .serchBox{
+    border-bottom:solid 1px #666;
+
+    input{
+      width: 168px;
+      margin: 10px 16px;
+      font-size: 14px;
+      border: 0;
+      background: none;
+      color: #fff;
+    }
+  }
+  .appStore{
+    .title{
+      padding:10px 16px;
+      color:#fff;
+      font-size: 14px;
+      // overflow: hidden;
+
+      .plusIcon{
+        display: none;
+        float: right;
+        margin-right:10px;
+      }
+      .importIcon{
+        display: none;
+        float: right;
+        // margin-right:10px;
+      }
+      &:hover{
+        .plusIcon{
+          display: block;
+        }
+        .importIcon{
+          display: block;
+        }
+      }
+    }
+    .menuItem{
+      position:relative;
+
+      .operate{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100px;
+        line-height: 30px;
+        border-radius:5px;
+        box-shadow: #001529;
+        padding:10px;
+        // background:#fff;
+      }
+      .menuOperate{
+        display: none;
+        float: right;
+
+      }
+      &:hover{
+        .menuOperate{
+          display: block;
+        }
+      }
+    }
+  }
+  &.fix-sider {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+  }
+}
+
+
+.detailMoreMenu{
+  background:#fff;
+  box-shadow: 0 0 1px #001529;
+  border-radius: 4px;
+  line-height: 25px;
+  padding: 10px;
+  z-index: 1050;
+  width: 150px;
+
+  ul{
+    li{
+      line-height: 30px;
+      padding-left: 10px;
+      cursor: pointer;
+    }
+  }
+}
+.insideNew{
+  .fileType,.appName{
+    .label{
+      display: inline-block;
+      width: 80px;
+      text-align: right;
+      margin-right: 20px;
+      b {
+        color:red;
+        font-size:14px;
+      }
+    }
+  }
+  .appName{
+    margin-top: 10px;
+  }
+}
+.attentions{
+  margin-top: 10px;
+  font-size: 14px;
+  span{
+    color:orange;
+  }
+}
+.newTopApp{
+  .appName{
+    .label{
+      display: inline-block;
+      width: 80px;
+      text-align: right;
+      margin-right:20px;
+      b{
+        color:red;
+        font-size:14px;
+      }
+    }
+  }
+  .search{
+    margin-left:100px;
+    margin-top:10px;
+  }
+  .checkbox{
+    margin-top:10px;
+    .checkAll{
+      .label{
+        display: inline-block;
+        width:80px;
+        text-align: right;
+        margin-right:20px;
+        // float: left;
+      }
+    }
+    .checkOptions{
+      margin-left:100px;
+      margin-top:10px;
+    }
+  }
+}
+
+.create-application {
+  .checkbox {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+    .account-group {
+      max-height: 300px;
+      overflow-y: auto;
+      .ant-checkbox-wrapper {
+        display: block;
+        padding: 5px 0;
+        & + .ant-checkbox-wrapper {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.ant-menu-submenu-arrow{
+  margin: 6px auto;
+  width:0 !important;
+  top: 14px !important;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color:rgba(255, 255, 255, 0.65);
+}
+.ant-menu-submenu-arrow:after{
+  width:0 !important;
+}
+.ant-menu-submenu-arrow::before{
+  width:0 !important;
+}
+
+.ant-menu-dark .ant-menu-submenu-open{
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ant-menu-submenu-selected{
+  .ant-menu-submenu-title{
+    color:#fff;
+  }
+  .ant-menu-submenu-arrow{
+    border-top-color:#fff;
+  }
+}
+
+.ant-layout-sider{
+  position: fixed!important;
+  top:60px;
+  height:100vh;
+  padding-top:20px;
+  background: #1F1E2D!important;
+  ul{
+    background: #1F1E2D!important;
+  }
+}
+.ant-menu-dark .ant-menu-inline.ant-menu-sub{
+  background: #1B1B28!important;
+}
+
+.ant-menu-submenu-open .ant-menu-submenu-arrow{
+  margin: 6px auto;
+  width:0 !important;
+  top: 8px !important;
+  height: 0;
+  border: 6px solid transparent;
+  border-bottom-color:rgba(255, 255, 255, 0.65);
+}
+.ant-menu-dark .ant-menu-inline.ant-menu-sub{
+  box-shadow:0px 0 0  #1b1b2b;
+}
+.ant-menu-inline > .ant-menu-item,.ant-menu-sub.ant-menu-inline > .ant-menu-item{
+  height:44px;
+  line-height:44px;
+}

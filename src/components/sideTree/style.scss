@@ -1,0 +1,16 @@
+.comp-sideTree {
+  min-height: calc(100vh - 174px);
+  max-height: 700px;
+  padding: 20px;
+  overflow: auto;
+
+  .ant-tree {
+    overflow-x: hidden;
+  }
+
+  .ant-tree li .ant-tree-node-content-wrapper:hover,
+  .ant-tree-node-selected,
+  .ant-tree-child-tree .ant-tree-node-content-wrapper:hover {
+    background: transparent !important;
+  }
+}

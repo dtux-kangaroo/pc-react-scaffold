@@ -1,0 +1,17 @@
+.basic-layout{
+  height:100%;
+  .ant-result{
+    padding:120px;
+  }
+}
+.footer{
+    display: none;;
+    height: 60px;
+    text-align: center;
+    flex: 0 0 auto;
+    .copyright {
+      margin: 25px 0 15px 0;
+      color: rgba(0, 0, 0, .45);
+      font-size: 14px;
+    }
+}

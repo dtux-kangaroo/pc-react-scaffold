@@ -1,0 +1,39 @@
+.page-title{
+    width:calc(100% - 200px);
+    height:70px;
+    line-height: 70px;
+    position: fixed;
+    top: 64px;
+    z-index:888;
+    margin-left: -20px;
+    background:#ffffff;
+    padding: 0 20px;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+    .title-txt{
+        font-size:20px;
+        font-family:PingFangSC-Semibold,PingFangSC;
+        font-weight:600;
+        color:rgba(46,46,52,1);
+        line-height:70px;
+    }
+    .ant-radio-button-wrapper {
+      margin: 0 8px;
+      border-radius: 4px !important;
+    }
+}
+
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)  {
+  position: relative;
+  background: #fff;
+  color: #1890ff;
+}
+
+.headfix {
+  height: 70px;
+
+  &.fixed {
+    position: fixed;
+    top: 64px;
+  }
+}
